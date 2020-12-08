@@ -368,11 +368,17 @@ $Mname= mysqli_real_escape_string($con, $_POST['Mname']);
 $Lname= mysqli_real_escape_string($con, $_POST['Lname']);  
 $Phone_no= mysqli_real_escape_string($con, $_POST['Phone_no']);   
 $Gender= mysqli_real_escape_string($con, $_POST['Gender']);
-$Dob= mysqli_real_escape_string($con, $_POST['Dob']);
-$Reg_date= mysqli_real_escape_string($con, $_POST['Reg_date']);
+$Dob= $_POST['Dob'];
+$Reg_date= $_POST['Reg_date'];
 $Residence= mysqli_real_escape_string($con, $_POST['Residence']);
 $Id_no= mysqli_real_escape_string($con, $_POST['Id_no']);
-  $sql = "INSERT INTO admission 
+
+
+$Dob = date('Y-m-d', strtotime('$Dob'));
+$Reg_date = date('Y-m-d', strtotime('$Reg_date') );
+
+
+  echo $sql = "INSERT INTO admission 
 (
     Fname,Mname,Lname,Phone_no,Gender,Dob,Reg_date,Residence,Id_no
   ) 
