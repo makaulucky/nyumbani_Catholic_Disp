@@ -439,13 +439,13 @@ mysqli_close($con);
 									<div class="col-md-6">
 										<div class="form-group">
 											<label> Last Name :</label>
-											<input type="text" class="form-control">
+											<input required name="Lname" type="text" class="form-control">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Phone Number:</label>
-											<input type="tel" placeholder="07XX XXXXXXXX" class="form-control">
+											<input required name="Phone_no"type="tel" placeholder="07XX XXXXXXXX" class="form-control">
 										</div>
 									</div>
 								</div>
