@@ -364,16 +364,21 @@
  {
 
 $Fname= mysqli_real_escape_string($con, $_POST['Fname']);                          
-$Mname= mysqli_real_escape_string($con, $_POST['Mname']);  
-
-
+$Mname= mysqli_real_escape_string($con, $_POST['Mname']); 
+$Lname= mysqli_real_escape_string($con, $_POST['Lname']);  
+$Phone_no= mysqli_real_escape_string($con, $_POST['Phone_no']);   
+$Gender= mysqli_real_escape_string($con, $_POST['Gender']);
+$Dob= mysqli_real_escape_string($con, $_POST['Dob']);
+$Reg_date= mysqli_real_escape_string($con, $_POST['Reg_date']);
+$Residence= mysqli_real_escape_string($con, $_POST['Residence']);
+$Id_no= mysqli_real_escape_string($con, $_POST['Id_no']);
   $sql = "INSERT INTO admission 
 (
-    Fname,Mname
+    Fname,Mname,Lname,Phone_no,Gender,Dob,Reg_date,Residence,Id_no
   ) 
 
 VALUES (
- '$Fname', '$Mname'
+ '$Fname', '$Mname', '$Lname', '$Phone_no','$Gender','$Dob','$Reg_date','$Residence','$Id_no'
  
 )";
 
@@ -431,20 +436,20 @@ mysqli_close($con);
 									<div class="col-md-6">
 										<div class="form-group">
 											<label >Middle Name :</label>
-											<input required name="Mname" type="text" placeholder="Optional" class="form-control">
+											<input name="Mname" type="text" placeholder="Optional" class="form-control">
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label> Last Name :</label>
+											<label> Last Name *:</label>
 											<input required name="Lname" type="text" class="form-control">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label>Phone Number:</label>
+											<label>Phone Number *:</label>
 											<input required name="Phone_no"type="tel" placeholder="07XX XXXXXXXX" class="form-control">
 										</div>
 									</div>
@@ -454,20 +459,20 @@ mysqli_close($con);
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Gender :</label>
-											<select class="custom-select form-control">
+											<select name='Gender' class="custom-select form-control" required>
 												<option value="">Select Option</option>
-												<option value="Amsterdam">Male</option>
-												<option value="Berlin">Female</option>
+												<option value="M">Male</option>
+												<option value="F">Female</option>
 										</select>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Residence:</label>
-											<select class="custom-select form-control">
+											<select name='Residence' class="custom-select form-control" required>
 												<option value="">Select Option</option>
-												<option value="Amsterdam">Village</option>
-												<option value="Berlin">Community</option>
+												<option value="Village">Village</option>
+												<option value="Community">Community</option>
 										</select>
 										</div>
 									</div>
@@ -476,19 +481,19 @@ mysqli_close($con);
 									<div class="col-md-6">
 										<div class="form-group">
 											<label >Date of Birth :</label>
-											<input type="text" class="form-control date-picker" placeholder="Select Date">
+											<input  name='Dob' type="text" class="form-control date-picker" placeholder="Select Date">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
 											<label >Admission Date :</label>
-											<input type="text" class="form-control date-picker" placeholder="Select Date">
+											<input name='Reg_date' type="text" class="form-control date-picker" placeholder="Select Date">
 										</div>
 									</div>
 								<div class="col-md-6">
 										<div class="form-group">
 											<label>ID Number:</label>
-											<input type="text" placeholder="Optional" class="form-control">
+											<input name='Id_no' type="text" placeholder="Optional" class="form-control">
 										</div>
 									</div>
 								</div>
