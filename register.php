@@ -37,7 +37,7 @@
 	<div class="login-header box-shadow">
 		<div class="container-fluid d-flex justify-content-between align-items-center">
 			<div class="brand-logo">
-				<a href="login.html">
+				<a href="login.php">
 					<img src="vendors/images/deskapp-logo.svg" alt="">
 				</a>
 			</div>
@@ -57,6 +57,85 @@
 				<div class="col-md-6 col-lg-5">
 					<div class="register-box bg-white box-shadow border-radius-10">
 						<div class="wizard-content">
+
+
+
+
+						<?php 
+  include 'dbconfig.php';
+
+  
+ if(isset($_POST['user_reg']))
+
+ {
+
+$Fname= mysqli_real_escape_string($con, $_POST['Fname']);                          
+$Lname= mysqli_real_escape_string($con, $_POST['Lname']); 
+$username= mysqli_real_escape_string($con, $_POST['username']);  
+$email= mysqli_real_escape_string($con, $_POST['email']);   
+$passwordk= mysqli_real_escape_string($con, $_POST['passwordk']);
+$con_passwordk= mysqli_real_escape_string($con, $_POST['con_passwordk']);
+$Gender= mysqli_real_escape_string($con, $_POST['Gender']);
+
+
+//$Dob = date('Y-m-d', strtotime('$Dob'));
+   //$Reg_date = date('Y-m-d', strtotime('$Reg_date') );
+
+
+ echo $sql = "INSERT INTO user_reg
+(
+    Fname,Lname,username,email, passwordk,con_passwordk,Gender,
+  ) 
+
+VALUES (
+ '$Fname', '$Lname', '$username','$email','$passwordk','$con_passwordk','$Gender'
+ 
+)";
+
+if(mysqli_query($con, $sql)){
+
+
+echo   "<div class='alert alert-success'>";
+                      echo  "<button class='close' data-dismiss='alert'>&times;</button>";
+                      echo "<h5><b>User Registered Successfully!</h5>";
+                      echo   '</div>';    
+
+    
+        } else
+        {
+
+             echo   "<div class='alert alert-danger'>";
+      echo  "<button class='close' data-dismiss='alert'>&times;</button>";
+      echo   "<strong>Oops! We could not Enroll you. Looks like you already enrolled. Kindly create an account by clicking 
+
+
+
+<a class=\"btn btn-danger\" href=\"login.php\">Create Account to Login</a>
+
+
+      </strong> ";
+      echo   '</div>';
+    
+        }
+}
+ include 'dbconfig.php';
+// close connection
+mysqli_close($con);
+  
+  
+  
+  ?>
+
+
+
+
+
+
+
+
+
+
+
 							<form class="tab-wizard2 wizard-circle wizard">
 								<h5>User Registration</h5>
 								<section>
@@ -64,55 +143,67 @@
 									    <div class="form-group row">
 											<label class="col-sm-4 col-form-label">First Name*</label>
 											<div class="col-sm-8">
-												<input type="text" class="form-control">
+												<input name='Fname' placeholder='First name' type="text" class="form-control" required>
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-4 col-form-label">Last Name*</label>
 											<div class="col-sm-8">
-												<input type="text" class="form-control">
+												<input name='Lname' placeholder='Last name' type="text" class="form-control" required>
 											</div>
 										</div>
 
 										<div class="form-group row">
 											<label class="col-sm-4 col-form-label">Email Address*</label>
 											<div class="col-sm-8">
-												<input type="email" class="form-control">
+												<input name='email' placeholder='email@email.com' type="email" class="form-control" required>
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-4 col-form-label">Username*</label>
 											<div class="col-sm-8">
-												<input type="text" class="form-control">
+												<input name='username' placeholder='Username' type="username" class="form-control" required>
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-4 col-form-label">Password*</label>
 											<div class="col-sm-8">
-												<input type="password" class="form-control">
+												<input name='passwordk' type="password" placeholder='....' class="form-control" required>
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-4 col-form-label">Confirm Password*</label>
 											<div class="col-sm-8">
-												<input type="password" class="form-control">
+												<input name='con_passwordk' type="password" class="form-control">
 											</div>
 										</div>
 										<div class="form-group row align-items-center">
 											<label class="col-sm-4 col-form-label">Gender*</label>
 											<div class="col-sm-8">
-												<div class="custom-control custom-radio custom-control-inline pb-0">
-													<input type="radio" id="male" name="gender" class="custom-control-input">
-													<label class="custom-control-label" for="male">Male</label>
-												</div>
-												<div class="custom-control custom-radio custom-control-inline pb-0">
-													<input type="radio" id="female" name="gender" class="custom-control-input">
-													<label class="custom-control-label" for="female">Female</label>
-												</div>
-											</div>
-										</div>
+
+											
+										<div class="form-group">
+											
+											<select name='Gender' class="custom-select form-control" required>
+												<option value="">Select Option</option>
+												<option value="M">Male</option>
+												<option value="F">Female</option>
+										</select>
+										
+									</div>
+
+												
+
+												
+
+										
 									</div>
 								</section>
+								<div class="form-group text-center">
+                                  
+								  <button type="submit" id="submit" name="user_reg" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b>  Submit </b></button>
+							  
+						  </div>
 							</form>
 						</div>
 					</div>
@@ -121,21 +212,7 @@
 		</div>
 	</div>
 	<!-- success Popup html Start -->
-	<button type="button" id="success-modal-btn" hidden data-toggle="modal" data-target="#success-modal" data-backdrop="static">Launch modal</button>
-	<div class="modal fade" id="success-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered max-width-400" role="document">
-			<div class="modal-content">
-				<div class="modal-body text-center font-18">
-					<h3 class="mb-20">Submit Form</h3>
-					<div class="mb-30 text-center"><img src="vendors/images/success.png"></div>
-					User Registered Successfully!
-				</div>
-				<div class="modal-footer justify-content-center">
-					<a href="login.php" class="btn btn-primary">Done</a>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 	<!-- success Popup html End -->
 	<!-- js -->
 	<script src="vendors/scripts/core.js"></script>

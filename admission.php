@@ -374,11 +374,11 @@ $Residence= mysqli_real_escape_string($con, $_POST['Residence']);
 $Id_no= mysqli_real_escape_string($con, $_POST['Id_no']);
 
 
-$Dob = date('Y-m-d', strtotime('$Dob'));
-$Reg_date = date('Y-m-d', strtotime('$Reg_date') );
+//$Dob = date('Y-m-d', strtotime('$Dob'));
+   //$Reg_date = date('Y-m-d', strtotime('$Reg_date') );
 
 
-  echo $sql = "INSERT INTO admission 
+  $sql = "INSERT INTO admission 
 (
     Fname,Mname,Lname,Phone_no,Gender,Dob,Reg_date,Residence,Id_no
   ) 
@@ -393,7 +393,7 @@ if(mysqli_query($con, $sql)){
 
 echo   "<div class='alert alert-success'>";
                       echo  "<button class='close' data-dismiss='alert'>&times;</button>";
-                      echo "<h5><b>You have been Enrolled Successfully</h5>";
+                      echo "<h5><b>Client Registered Successfully!</h5>";
                       echo   '</div>';    
 
     
@@ -487,15 +487,17 @@ mysqli_close($con);
 									<div class="col-md-6">
 										<div class="form-group">
 											<label >Date of Birth :</label>
-											<input  name='Dob' type="text" class="form-control date-picker" placeholder="Select Date">
+											<input  name='Dob' type="date" class="form-control date-picker" placeholder="Select Date">
 										</div>
 									</div>
+
 									<div class="col-md-6">
 										<div class="form-group">
 											<label >Admission Date :</label>
-											<input name='Reg_date' type="text" class="form-control date-picker" placeholder="Select Date">
+											<input name='Reg_date' type="date" class="form-control date-picker" placeholder="Select Date">
 										</div>
 									</div>
+
 								<div class="col-md-6">
 										<div class="form-group">
 											<label>ID Number:</label>
