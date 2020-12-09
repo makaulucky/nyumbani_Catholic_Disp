@@ -5,4 +5,5 @@ $con = @mysqli_connect("localhost","root","",clinic_db);
 	  die(mysqli_error());
 	  }
 mysqli_select_db($con,"clinic_db");
+
 ?>

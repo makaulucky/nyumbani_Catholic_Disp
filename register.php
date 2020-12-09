@@ -82,9 +82,9 @@ $Gender= mysqli_real_escape_string($con, $_POST['Gender']);
    //$Reg_date = date('Y-m-d', strtotime('$Reg_date') );
 
 
- echo $sql = "INSERT INTO user_reg
+ $sql = "INSERT INTO user_reg
 (
-    Fname,Lname,username,email, passwordk,con_passwordk,Gender,
+    Fname,Lname,username,email, passwordk,con_passwordk,Gender
   ) 
 
 VALUES (
@@ -95,13 +95,14 @@ VALUES (
 if(mysqli_query($con, $sql)){
 
 
-echo   "<div class='alert alert-success'>";
-                      echo  "<button class='close' data-dismiss='alert'>&times;</button>";
-                      echo "<h5><b>User Registered Successfully!</h5>";
-                      echo   '</div>';    
-
-    
-        } else
+	echo   "<div class='alert alert-success'>";
+						  echo  "<button class='close' data-dismiss='alert'>&times;</button>";
+						  echo "<h5><b>Client Registered Successfully!</h5>";
+						  echo   '</div>';    
+	
+		
+			} else
+		
         {
 
              echo   "<div class='alert alert-danger'>";
@@ -131,12 +132,7 @@ mysqli_close($con);
 
 
 
-
-
-
-
-
-							<form class="tab-wizard2 wizard-circle wizard">
+							<form class="tab-wizard2 wizard-circle wizard" method="POST">
 								<h5>User Registration</h5>
 								<section>
 									<div class="form-wrap max-width-600 mx-auto">
@@ -162,7 +158,7 @@ mysqli_close($con);
 										<div class="form-group row">
 											<label class="col-sm-4 col-form-label">Username*</label>
 											<div class="col-sm-8">
-												<input name='username' placeholder='Username' type="username" class="form-control" required>
+												<input name='username' placeholder='Username' type="text" class="form-control" required>
 											</div>
 										</div>
 										<div class="form-group row">
@@ -177,6 +173,8 @@ mysqli_close($con);
 												<input name='con_passwordk' type="password" class="form-control">
 											</div>
 										</div>
+
+										
 										<div class="form-group row align-items-center">
 											<label class="col-sm-4 col-form-label">Gender*</label>
 											<div class="col-sm-8">
@@ -192,12 +190,13 @@ mysqli_close($con);
 										
 									</div>
 
-												
-
-												
-
+									
 										
 									</div>
+
+
+
+
 								</section>
 								<div class="form-group text-center">
                                   
