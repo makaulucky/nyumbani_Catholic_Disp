@@ -1,3 +1,10 @@
+<?php
+error_reporting();
+ob_start();
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,34 +66,58 @@
 
 
 
-<?php
-   include("dbconfig.php");
-   session_start();
-   
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form 
-      
-      $username = mysqli_real_escape_string($db,$_POST['username']);
-      $passwordk = mysqli_real_escape_string($db,$_POST['password']); 
-      
-      $sql = "SELECT id FROM clinic_db WHERE username = '$username' and passcode = '$passwordk'";
-      $result = mysqli_query($db,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $active = $row['active'];
-      
-      $count = mysqli_num_rows($result);
-      
-      // If result matched $myusername and $mypassword, table row must be 1 row
-		
-      if($count == 1) {
-         session_register("username");
-         $_SESSION['login_user'] = $username;
-         
-         header("location: welcome.php");
-      }else {
-         $error = "Your Login Name or Password is invalid";
-      }
-   }
+						<?php
+
+if (isset($_POST['Submit']))
+    {     
+include_once 'dbconfig.php';
+$username=$_POST['username'];
+$password=$_POST['Passwordk'];
+
+// Starting session
+
+ 
+// Storing session data
+$_SESSION["username"] = "$username";
+
+
+
+//$encryptpassword=md5($password);
+
+//$encryptpasswordwithsalt=$encryptpasswordPTz~*mnh,mb3/8E9;    
+        
+        
+$pass = $password;
+//$salt = '##[]_H38E9';
+//$hash = md5($pass, '$2y$07$'.$salt.'$');
+
+     
+                
+ echo $query = mysqli_query($con, "SELECT * FROM user_reg WHERE username='$username' and passwordk='$pass' ");
+
+ if (mysqli_num_rows($query) >= 1)
+{ 
+
+    header("Location:index.php");
+    
+  }
+
+            
+
+        else
+        {            
+          
+       echo   "<div class='alert alert-danger'>";
+            echo  "<button class='close' data-dismiss='alert'>&times;</button>";
+            echo  " <strong>Oops! Account does not exist! Kindly register as a memeber</strong> ";
+            echo   '</div>';
+        
+        }
+
+
+ }
+
+
 ?>
 
 
@@ -100,12 +131,16 @@
 
 
 						<form method="POST">
+
+
 							<div class="input-group custom">
 								<input type="text" name="username" class="form-control form-control-lg" placeholder="Username">
 								<div class="input-group-append custom">
 									<span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
 								</div>
 							</div>
+
+
 							<div class="input-group custom">
 								<input type="password" name="passwordk" class="form-control form-control-lg" placeholder="**********">
 								<div class="input-group-append custom">

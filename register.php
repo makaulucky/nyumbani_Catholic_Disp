@@ -164,13 +164,13 @@ mysqli_close($con);
 										<div class="form-group row">
 											<label class="col-sm-4 col-form-label">Password*</label>
 											<div class="col-sm-8">
-												<input name='passwordk' type="password" placeholder='....' class="form-control" required>
+												<input name='passwordk' type="password" placeholder='********' class="form-control" required>
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-4 col-form-label">Confirm Password*</label>
 											<div class="col-sm-8">
-												<input name='con_passwordk' type="password" class="form-control">
+												<input name='con_passwordk' placeholder='********' type="password" class="form-control">
 											</div>
 										</div>
 
