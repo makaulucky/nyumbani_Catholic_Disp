@@ -164,16 +164,17 @@ $pass = $password;
 
 
 
-									<button type="submit" id="submit" name="user_reg" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b> Login </b></button>
+								<button type="submit" id="submit" name="user_reg" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b> Login </b>
+								</button>
 										<!--
 											use code for form submit
 											<input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
 										-->
-										<a class="btn btn-primary btn-lg btn-block" href="index.php">Sign In</a>
+										
 									</div>
 									<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">OR</div>
 									<div class="input-group mb-0">
-										<a class="btn btn-outline-primary btn-lg btn-block" href="register.hp">Register To Create Account</a>
+										<a class="btn btn-outline-primary btn-lg btn-block" href="register.php">Register To Create Account</a>
 									</div>
 								</div>
 							</div>
