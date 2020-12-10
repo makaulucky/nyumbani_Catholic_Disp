@@ -1,3 +1,18 @@
+<?php
+session_start();
+error_reporting (0);
+ob_start();
+  if (!isset($_SESSION["username"]))
+   {
+      header("location: login.php");
+   }
+
+
+$User_Name=$_SESSION["username"] ;    
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -284,7 +299,7 @@
 							<span class="micon dw dw-library"></span><span class="mtext">Tables</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="datatable.php">CCC Table</a></li>
+							<li><a href="ccclist.php">CCC Table</a></li>
 						</ul>
 					</li>
 					
@@ -312,7 +327,8 @@
 						<img src="vendors/images/banner-img.png" alt="">
 					</div>
 					<div class="col-md-8">
-						<h4 class="font-20 weight-500 mb-10 text-capitalize">Hi,
+						<h4 class="font-20 weight-500 mb-10 text-capitalize">Hi, <?php echo "$User_Name";
+						?>
 							Welcome to<div class="weight-600 font-30 text-blue">NYUMBANI CATHOLIC DISPENSARY</div>
 						</h4>
 						<p class="font-18 max-width-600"></p>
@@ -327,7 +343,20 @@
 								<div id="chart"></div>
 							</div>
 							<div class="widget-data">
-								<div class="h4 mb-0">134</div>
+								<div class="h4 mb-0">134/
+
+<?php 
+
+ include 'dbconfig.php';
+$result2 = mysqli_query($con,"SELECT COUNT(*) FROM admission ");
+
+$row = mysqli_fetch_assoc($result2);
+$size = $row['COUNT(*)'];
+
+echo $size;
+?>
+
+								</div>
 								<div class="weight-600 font-14">Active Clients</div>
 							</div>
 						</div>

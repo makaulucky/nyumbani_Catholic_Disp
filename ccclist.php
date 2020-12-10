@@ -1,3 +1,19 @@
+<?php
+session_start();
+error_reporting (0);
+ob_start();
+
+  if (!isset($_SESSION["username"]))
+   {
+      header("location: login.php");
+   }
+
+
+$User_Name=$_SESSION["username"] ;    
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -487,116 +503,61 @@
 						<h4 class="text-blue h4">All CCC Data</h4>
 					</div>
 					<div class="pb-20">
-						<table class="table hover multiple-select-row data-table-export nowrap">
+
+
+
+<?php
+					include 'dbconfig.php';
+                          
+                             $query = "select *
+                               FROM 
+
+							   admission
+                              
+
+                            ";
+                             $result = mysqli_query($con,$query);
+                            while($row=mysqli_fetch_array($result))
+                            {  
+                               
+                                $ccc_no=$row['ccc_no']; 
+								$Fname=$row['Fname']; 
+								$Mname=$row['Mname']; 
+								$Lname=$row['Lname']; 
+								$Phone_no=$row['Phone_no']; 
+								
+								
+
+                                echo "   
+
+                              
+						<table class=\"table hover multiple-select-row data-table-export nowrap\">
 							<thead>
 								<tr>
-									<th class="table-plus datatable-nosort">Name</th>
-									<th>Age</th>
-									<th>Office</th>
-									<th>Address</th>
-									<th>Start Date</th>
-									<th>Salart</th>
+									<th class=\"table-plus datatable-nosort\">ccc_no</th>
+									<th>Name</th>
+									<th>Phone_no</th>
+									
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td class="table-plus">Gloria F. Mead</td>
-									<td>25</td>
-									<td>Sagittarius</td>
-									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
-									<td>29-03-2018</td>
-									<td>$162,700</td>
+									<td class=\"table-plus\">$ccc_no</td>
+									<td>$Fname $Mname $Lname</td>
+									<td>$Phone_no</td>
 								</tr>
-								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
-									<td>30</td>
-									<td>Gemini</td>
-									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-									<td>29-03-2018</td>
-									<td>$162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
-									<td>20</td>
-									<td>Gemini</td>
-									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
-									<td>29-03-2018</td>
-									<td>$162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
-									<td>30</td>
-									<td>Sagittarius</td>
-									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-									<td>29-03-2018</td>
-									<td>$162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
-									<td>25</td>
-									<td>Gemini</td>
-									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
-									<td>29-03-2018</td>
-									<td>$162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
-									<td>20</td>
-									<td>Sagittarius</td>
-									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-									<td>29-03-2018</td>
-									<td>$162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
-									<td>18</td>
-									<td>Gemini</td>
-									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-									<td>29-03-2018</td>
-									<td>$162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
-									<td>30</td>
-									<td>Sagittarius</td>
-									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-									<td>29-03-2018</td>
-									<td>$162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
-									<td>30</td>
-									<td>Sagittarius</td>
-									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-									<td>29-03-2018</td>
-									<td>$162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
-									<td>30</td>
-									<td>Gemini</td>
-									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-									<td>29-03-2018</td>
-									<td>$162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
-									<td>30</td>
-									<td>Gemini</td>
-									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-									<td>29-03-2018</td>
-									<td>$162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
-									<td>30</td>
-									<td>Gemini</td>
-									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-									<td>29-03-2018</td>
-									<td>$162,700</td>
-								</tr>
+								
 							</tbody>
 						</table>
+
+						";
+
+					}
+					?>
+
+
+
+
 					</div>
 				</div>
 				<!-- Export Datatable End -->

@@ -77,10 +77,6 @@ $password=$_POST['passwordk'];
 
 // Starting session
 
- 
-// Storing session data
-$_SESSION["username"] = "$username";
-
 
 
 //$encryptpassword=md5($password);
@@ -103,6 +99,10 @@ $pass =md5($password.$Salt);
 
  if (mysqli_num_rows($query) >= 1)
 { 
+ 
+// Storing session data
+$_SESSION["username"] = "$username";
+
 
     header("Location:index.php");
     
