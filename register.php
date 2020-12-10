@@ -77,7 +77,8 @@ $passwordk= mysqli_real_escape_string($con, $_POST['passwordk']);
 $con_passwordk= mysqli_real_escape_string($con, $_POST['con_passwordk']);
 $Gender= mysqli_real_escape_string($con, $_POST['Gender']);
 
-
+$Salt="#76#Secure?";  
+$passwordk=md5($passwordk.$Salt);
 //$Dob = date('Y-m-d', strtotime('$Dob'));
    //$Reg_date = date('Y-m-d', strtotime('$Reg_date') );
 
@@ -92,12 +93,14 @@ VALUES (
  
 )";
 
-if(mysqli_query($con, $sql)){
+if(mysqli_query($con, $sql))
+
+{
 
 
 	echo   "<div class='alert alert-success'>";
 						  echo  "<button class='close' data-dismiss='alert'>&times;</button>";
-						  echo "<h5><b>Client Registered Successfully!</h5>";
+						  echo "<h5><b>User Registered Successfully!</h5>";
 						  echo   '</div>';    
 	
 		

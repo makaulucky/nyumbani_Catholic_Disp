@@ -56,3 +56,42 @@ $pass = $password;
 
 
 ?>                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+if($_POST) {
+$username = $_POST['username'];
+$password = $_POST['passwordk'];
+
+$con = mysql_connect("localhost","root","");
+if(!$con) {
+die('Could not connect: ' . mysql_error());
+}
+
+mysql_select_db("user_reg", $con);
+
+$result = mysql_query("SELECT username, passwordk FROM user_reg");
+
+while($row = mysql_fetch_array($result)) {
+if($row['username'] == $username && $row['passwordk'] == $password) {
+
+$_SESSION['username'] = $username;
+header("Location: index.php");
+    exit;
+ }
+}
+echo '<script type="text/javascript">alert(\'Wrong username or password\')</script>';
+}
+?>

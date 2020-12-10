@@ -66,13 +66,14 @@ session_start();
 
 
 
-						<?php
+						
+<?php
 
 if (isset($_POST['Submit']))
     {     
 include_once 'dbconfig.php';
 $username=$_POST['username'];
-$password=$_POST['Passwordk'];
+$password=$_POST['passwordk'];
 
 // Starting session
 
@@ -86,14 +87,19 @@ $_SESSION["username"] = "$username";
 
 //$encryptpasswordwithsalt=$encryptpasswordPTz~*mnh,mb3/8E9;    
         
-        
-$pass = $password;
+$Salt="#76#Secure?";      
+$pass =md5($password.$Salt);
+
+//echo "$pass >>>>$password>>>$Salt";
+
+
+
 //$salt = '##[]_H38E9';
 //$hash = md5($pass, '$2y$07$'.$salt.'$');
 
-     
+  
                 
- echo $query = mysqli_query($con, "SELECT * FROM user_reg WHERE username='$username' and passwordk='$pass' ");
+ $query = mysqli_query($con, "SELECT * FROM user_reg WHERE username='$username' and passwordk='$pass' ");
 
  if (mysqli_num_rows($query) >= 1)
 { 
@@ -112,13 +118,16 @@ $pass = $password;
             echo  " <strong>Oops! Account does not exist! Kindly register as a memeber</strong> ";
             echo   '</div>';
         
+
+        
+        
         }
 
 
  }
 
 
-?>
+?>                
 
 
 
@@ -134,7 +143,7 @@ $pass = $password;
 
 
 							<div class="input-group custom">
-								<input type="text" name="username" class="form-control form-control-lg" placeholder="Username">
+								<input type="text" name="username" class="form-control form-control-lg" placeholder="Username" required>
 								<div class="input-group-append custom">
 									<span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
 								</div>
@@ -142,7 +151,7 @@ $pass = $password;
 
 
 							<div class="input-group custom">
-								<input type="password" name="passwordk" class="form-control form-control-lg" placeholder="**********">
+								<input type="password" name="passwordk" class="form-control form-control-lg" placeholder="**********" required>
 								<div class="input-group-append custom">
 									<span class="input-group-text"><i class="dw dw-padlock1"></i></span>
 								</div>
@@ -164,7 +173,7 @@ $pass = $password;
 
 
 
-								<button type="submit" id="submit" name="user_reg" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b> Login </b>
+								<button type="submit" value="submit" id="submit" name="Submit" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b> Sign In </b>
 								</button>
 										<!--
 											use code for form submit
