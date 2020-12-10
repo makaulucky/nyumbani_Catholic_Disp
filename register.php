@@ -1,53 +1,12 @@
 <?php
-session_start();
-error_reporting (0);
+error_reporting();
 ob_start();
-
-  if (!isset($_SESSION["username"]))
-   {
-      header("location: login.php");
-   }
-
-
-$User_Name=$_SESSION["username"] ;    
-
-
-
+session_start();
 ?>
+
 <!DOCTYPE html>
 <html>
-
-<head>
-	<!-- Basic Page Info -->
-	<meta charset="utf-8">
-	<title>NYUMBANI Village-Clinic</title>
-
-	<!-- Site favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="vendors/images/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="vendors/images/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="vendors/images/favicon-16x16.png">
-
-	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="src/plugins/jquery-steps/jquery.steps.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-119386393-1');
-	</script>
-</head>
+<?php include 'head.php'; ?>
 
 <body class="login-page">
 	<div class="login-header box-shadow">
@@ -152,7 +111,9 @@ mysqli_close($con);
 
 
 							<form class="tab-wizard2 wizard-circle wizard" method="POST">
-								<h5>User Registration</h5>
+								
+								<h5></h5>
+								<p>User Registration</p>
 								<section>
 									<div class="form-wrap max-width-600 mx-auto">
 									    <div class="form-group row">
@@ -201,20 +162,13 @@ mysqli_close($con);
 											
 										<div class="form-group">
 											
-											<select name='Gender' class="custom-select form-control" required>
+										<select name='Gender' class="custom-select form-control" required>
 												<option value="">Select Option</option>
 												<option value="M">Male</option>
 												<option value="F">Female</option>
 										</select>
 										
 									</div>
-
-									
-										
-									</div>
-
-
-
 
 								</section>
 								<div class="form-group text-center">
