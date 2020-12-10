@@ -1,3 +1,19 @@
+<?php
+session_start();
+error_reporting (0);
+ob_start();
+
+  if (!isset($_SESSION["username"]))
+   {
+      header("location: login.php");
+   }
+
+
+$User_Name=$_SESSION["username"] ;    
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 

@@ -173,7 +173,10 @@ $User_Name=$_SESSION["username"] ;
 						<span class="user-icon">
 							<img src="vendors/images/photo1.jpg" alt="">
 						</span>
-						<span class="user-name">Ross C. Lopez</span>
+						<span class="user-name">
+						<?php echo "$User_Name";
+						?>
+						</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 						<a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
@@ -516,7 +519,27 @@ $User_Name=$_SESSION["username"] ;
                               
 
                             ";
-                             $result = mysqli_query($con,$query);
+							 $result = mysqli_query($con,$query);
+							 
+							 echo "	<table class=\"table hover multiple-select-row data-table-export nowrap\">
+							 <thead>
+								 <tr>
+									 <th class=\"table-plus datatable-nosort\">ccc_no</th>
+									 <th>Name</th>
+									 <th>Phone N0.</th>
+									 <th>Gender</th>
+									 <th>Residence</th>
+									 <th>DoB</th>
+									 <th>ID N0.</th>
+									 <th>Reg_date</th>
+									 
+									 
+								 </tr>
+							 </thead>
+							 <tbody>";
+
+
+
                             while($row=mysqli_fetch_array($result))
                             {  
                                
@@ -525,34 +548,43 @@ $User_Name=$_SESSION["username"] ;
 								$Mname=$row['Mname']; 
 								$Lname=$row['Lname']; 
 								$Phone_no=$row['Phone_no']; 
-								
+								$Gender=$row['Gender'];
+								$Residence=$row['Residence'];
+								$Dob=$row['Dob'];
+								$Id_no=$row['Id_no'];
+								$Reg_date=$row['Reg_date'];
 								
 
                                 echo "   
 
                               
-						<table class=\"table hover multiple-select-row data-table-export nowrap\">
-							<thead>
-								<tr>
-									<th class=\"table-plus datatable-nosort\">ccc_no</th>
-									<th>Name</th>
-									<th>Phone_no</th>
-									
-								</tr>
-							</thead>
-							<tbody>
+					
 								<tr>
 									<td class=\"table-plus\">$ccc_no</td>
 									<td>$Fname $Mname $Lname</td>
 									<td>$Phone_no</td>
+									<td>$Gender</td>
+									<td>$Residence</td>
+									<td>$Dob</td>
+									<td>$Id_no</td>
+									<td>$Reg_date</td>
+									
 								</tr>
 								
-							</tbody>
-						</table>
+						
 
 						";
 
+
+						
 					}
+
+					echo "	</tbody>
+					</table>";
+
+
+
+
 					?>
 
 
