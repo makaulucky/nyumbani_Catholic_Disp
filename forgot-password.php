@@ -1,15 +1,20 @@
 
+<?php
+error_reporting();
+ob_start();
+session_start();
+?>
 
 <!DOCTYPE html>
 <html>
 
-
+<?php include 'head.php'; ?>
 
 <body>
 	<div class="login-header box-shadow">
 		<div class="container-fluid d-flex justify-content-between align-items-center">
 			<div class="brand-logo">
-				<a href="login.html">
+				<a href="login.php">
 					<img src="vendors/images/deskapp-logo.gif" alt="">
 				</a>
 			</div>
