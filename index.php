@@ -94,7 +94,8 @@ echo $size;
 <?php 
 
  include 'dbconfig.php';
-$result2 = mysqli_query($con,"SELECT COUNT(*) FROM results ");
+$result2 = mysqli_query($con,"SELECT viral_load COUNT(*), LDL FROM results ");
+
 
 $row = mysqli_fetch_assoc($result2);
 $size = $row['COUNT(*)'];

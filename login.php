@@ -16,11 +16,11 @@ session_start();
 					<img src="vendors/images/deskapp-logo.gif" alt="">
 				</a>
 			</div>
-			<div class="login-menu">
+			<!--div class="login-menu">
 				<ul>
 					<li><a href="register.php">Register</a></li>
 				</ul>
-			</div>
+			</!--div>-->
 		</div>
 	</div>
 	<div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
@@ -86,7 +86,7 @@ $_SESSION["username"] = "$username";
           
        echo   "<div class='alert alert-danger'>";
             echo  "<button class='close' data-dismiss='alert'>&times;</button>";
-            echo  " <strong>Oops! Account does not exist! Kindly register as a memeber</strong> ";
+            echo  " <strong>Oops! Account does not exist! Kindly contact Admin for Account Creation</strong> ";
             echo   '</div>';
         
 
@@ -142,7 +142,7 @@ $_SESSION["username"] = "$username";
 
 
 
-								<button type="submit" value="submit" id="submit" name="Submit" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b> Sign In </b>
+								<button type="submit" value="submit" id="submit" name="Submit" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b>Login</b>
 								</button>
 										<!--
 											use code for form submit
@@ -150,10 +150,10 @@ $_SESSION["username"] = "$username";
 										-->
 										
 									</div>
-									<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">OR</div>
+									<!--div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">OR</!--div>
 									<div class="input-group mb-0">
 										<a class="btn btn-outline-primary btn-lg btn-block" href="register.php">Register To Create Account</a>
-									</div>
+									</div>-->
 								</div>
 							</div>
 						</form>

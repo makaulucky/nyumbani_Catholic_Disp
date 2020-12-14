@@ -82,7 +82,6 @@ $User_Name=$_SESSION["username"] ;
 									 <th>Name</th>
 									 <th>Gender.</th>
 									 <th>Age</th>
-									 <th>ART Start D</th>
 									 <th>Regimen</th>
 									 <th>Curr ART D</th>
 									 <th>Pre VL D</th>
@@ -90,7 +89,7 @@ $User_Name=$_SESSION["username"] ;
 									 <th>Curr VL D</th>
 									 <th>Viral Load</th>
 									 <th>cd4</th>
-									 <th>Line</th>
+									 
 									 
 								 </tr>
 							 </thead>
@@ -107,7 +106,6 @@ $User_Name=$_SESSION["username"] ;
 								$Lname=$row['Lname']; 
 								$Gender=$row['Gender']; 
 								$Age=$row['Age'];
-								$art_start_date=$row['art_start_date'];
 								$art_regimen=$row['art_regimen'];
 								$current_art_date=$row['current_art_date'];
 								$pre_vl_date=$row['pre_vl_date'];
@@ -115,7 +113,6 @@ $User_Name=$_SESSION["username"] ;
 								$curr_vl_date=$row['curr_vl_date'];
 								$viral_load=$row['viral_load'];
 								$cd4=$row['cd4'];
-								$line=$row['line'];
 
                                 echo "   
 
