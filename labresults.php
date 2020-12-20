@@ -59,11 +59,15 @@ $User_Name=$_SESSION["username"] ;
 					</div>
 				</div>
 				<!-- Simple Datatable start -->
-				<div class="card-box mb-30">
-					<div class="pd-20">
+				<div class="pd-20 card-box mb-30">
+					<div class="clearfix mb-2">
 						<h4 class="text-blue h4">CCC Results Table</h4>
-					</div>
-					<?php
+				</div>
+
+
+
+
+<?php
 					include 'dbconfig.php';
                           
                              $query = "select *
@@ -75,7 +79,7 @@ $User_Name=$_SESSION["username"] ;
                             ";
 							 $result = mysqli_query($con,$query);
 							 
-							 echo "	<table class=\"table hover multiple-select-row data-table-export nowrap\">
+							 echo "	<table class=\"table table-bordered\">
 							 <thead>
 								 <tr>
 									 <th class=\"table-plus datatable-nosort\">CCC N0</th>
@@ -123,7 +127,6 @@ $User_Name=$_SESSION["username"] ;
 									<td>$Fname $Mname $Lname</td>
 									<td>$Gender</td>
 									<td>$Age</td>
-									<td>$art_start_date</td>
 									<td>$art_regimen</td>
 									<td>$current_art_date</td>
 									<td>$pre_vl_date</td>
@@ -131,7 +134,7 @@ $User_Name=$_SESSION["username"] ;
 									<td>$curr_vl_date</td>
 									<td>$viral_load</td>
 									<td>$cd4</td>
-									<td>$line</td>
+									
 									
 								</tr>
 								
