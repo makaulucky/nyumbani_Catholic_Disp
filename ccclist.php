@@ -62,7 +62,7 @@ $User_Name=$_SESSION["username"] ;
 				<!-- Export Datatable start -->
 				<div class="card-box mb-30">
 					<div class="pd-20">
-						<h4 class="text-blue h4">All CCC Data</h4>
+						<h4 class="text-blue h4">MASTER CCC LIST</h4>
 					</div>
 					<div class="pb-20">
 
