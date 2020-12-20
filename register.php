@@ -85,7 +85,7 @@ if(mysqli_query($con, $sql))
 
              echo   "<div class='alert alert-danger'>";
       echo  "<button class='close' data-dismiss='alert'>&times;</button>";
-      echo   "<strong>Oops! We could not Enroll you. Looks like you already enrolled. Kindly create an account by clicking 
+      echo   "<strong>Oops! We could not Register you. Looks like you already have an account. Kindly login to your account by clicking 
 
 
 
