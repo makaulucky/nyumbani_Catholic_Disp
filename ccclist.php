@@ -69,18 +69,17 @@ $User_Name=$_SESSION["username"] ;
 
 
 <?php
-					include 'dbconfig.php';
-                          
-                             $query = "select *
-                               FROM 
+include 'dbconfig.php';
 
-							   admission
-                              
 
-                            ";
-							 $result = mysqli_query($con,$query);
-							 
-							 echo "	<table class=\"table hover multiple-select-row data-table-export nowrap\">
+$query = "select * FROM admission";
+$result = mysqli_query($con,$query); 
+
+
+
+
+
+echo "	<table id=\"editableTable\" class=\"table hover multiple-select-row data-table-export nowrap\">
 							 <thead>
 								 <tr>
 									 <th class=\"table-plus datatable-nosort\">ccc_no</th>
@@ -90,18 +89,12 @@ $User_Name=$_SESSION["username"] ;
 									 <th>Residence</th>
 									 <th>DoB</th>
 									 <th>ID N0.</th>
-									 <th>Reg_date</th>
-									 
-									 
+									 <th>Reg_date</th>						 
 								 </tr>
 							 </thead>
 							 <tbody>";
-
-
-
-                            while($row=mysqli_fetch_array($result))
-                            {  
-                               
+while($row=mysqli_fetch_array($result))
+                            {          
                                 $ccc_no=$row['ccc_no']; 
 								$Fname=$row['Fname']; 
 								$Mname=$row['Mname']; 
@@ -112,52 +105,34 @@ $User_Name=$_SESSION["username"] ;
 								$Dob=$row['Dob'];
 								$Id_no=$row['Id_no'];
 								$Reg_date=$row['Reg_date'];
-								
-
-                                echo "   
-
-                              
-					
+							echo "         
 								<tr>
 									<td class=\"table-plus\">$ccc_no</td>
-									<td>$Fname $Mname $Lname</td>
+									<td><a href=results_entry.php?ccc_no=$ccc_no>
+									
+									
+									$Fname $Mname $Lname  </a></td>
 									<td>$Phone_no</td>
 									<td>$Gender</td>
 									<td>$Residence</td>
 									<td>$Dob</td>
 									<td>$Id_no</td>
 									<td>$Reg_date</td>
-									
-								</tr>
-								
-						
-
-						";
-
-
-						
+								</tr>";
 					}
-
 					echo "	</tbody>
 					</table>";
-
-
-
-
-					?>
-
-
-
-
-					</div>
-				</div>
-				<!-- Export Datatable End -->
+?>
 			</div>
+		</div>
+				<!-- Export Datatable End -->
+</div>
 			<?php include 'footer.php'; ?>
 		</div>
 	</div>
 	<!-- js -->
 	<script src="vendors/scripts/core.js"></script>
+	<script src="vendors/scripts/editable.js"></script>
 	<script src="vendors/scripts/script.min.js"></script>
 	<script src="vendors/scripts/process.js"></script>
 	<script src="vendors/scripts/layout-settings.js"></script>
