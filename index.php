@@ -77,7 +77,7 @@ echo $size;
 ?>
 
 								</div>
-								<div class="weight-600 font-14">Active Clients</div>
+								<div class="weight-600 font-14">Current Active</div>
 							</div>
 						</div>
 					</div>
@@ -94,7 +94,7 @@ echo $size;
 <?php 
 
  include 'dbconfig.php';
-$result2 = mysqli_query($con,"SELECT viral_load COUNT(*), LDL FROM results ");
+$result2 = mysqli_query($con,"SELECT COUNT(*) FROM results ");
 
 
 $row = mysqli_fetch_assoc($result2);
@@ -120,6 +120,13 @@ echo $size;
 							</div>
 							<div class="widget-data">
 								<div class="h4 mb-0">14</div>
+
+
+
+
+
+
+
 								<div class="weight-600 font-14">With High VL</div>
 							</div>
 						</div>

@@ -217,7 +217,7 @@ mysqli_close($con);
 						
 							<div class="form-group text-center">
                                   
-								  <button type="submit" id="submit" name="Admission" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b>  Submit </b></button>
+								  <button type="submit" id="submit" name="Admission" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b>Register </b></button>
 							  
 						  </div>
 
