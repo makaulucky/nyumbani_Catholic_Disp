@@ -47,12 +47,12 @@ $User_Name=$_SESSION["username"] ;
 
 				<div class="pd-20 card-box mb-30">
 				<div class="clearfix">
-						<h4 class="text-blue h4">Client Registration</h4>
+						<h4 class="text-blue h4">Results Entry</h4>
 											
 				<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.php">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Admissions</li>
+									<li class="breadcrumb-item active" aria-current="page">Results Entry</li>
 								</ol>
 							</nav>
 							</div>
@@ -64,32 +64,33 @@ $User_Name=$_SESSION["username"] ;
   include 'dbconfig.php';
 
   
- if(isset($_POST['Admission']))
+ if(isset($_POST['results']))
 
  {
 
-$Fname= mysqli_real_escape_string($con, $_POST['Fname']);                          
-$Mname= mysqli_real_escape_string($con, $_POST['Mname']); 
-$Lname= mysqli_real_escape_string($con, $_POST['Lname']);  
-$Phone_no= mysqli_real_escape_string($con, $_POST['Phone_no']);   
-$Gender= mysqli_real_escape_string($con, $_POST['Gender']);
-$Dob= $_POST['Dob'];
-$Reg_date= $_POST['Reg_date'];
-$Residence= mysqli_real_escape_string($con, $_POST['Residence']);
-$Id_no= mysqli_real_escape_string($con, $_POST['Id_no']);
+$Age= mysqli_real_escape_string($con, $_POST['Age']);                          
+$art_start_date= mysqli_real_escape_string($con, $_POST['art_start_date']); 
+$art_regimen= mysqli_real_escape_string($con, $_POST['art_regimen']);  
+$current_art_date= mysqli_real_escape_string($con, $_POST['current_art_date']);   
+$pre_vl_date= mysqli_real_escape_string($con, $_POST['pre_vl_date']);
+$pre_vl_results= $_POST['pre_vl_results'];
+$curr_vl_date= $_POST['curr_vl_date'];
+$viral_load= mysqli_real_escape_string($con, $_POST['viral_load']);
+$cd4= mysqli_real_escape_string($con, $_POST['cd4']);
+$mstari= mysqli_real_escape_string($con, $_POST['mstari']);
 
 
 //$Dob = date('Y-m-d', strtotime('$Dob'));
    //$Reg_date = date('Y-m-d', strtotime('$Reg_date') );
+   //Fname 	Mname 	Lname 	Gender 	Age 	art_start_date 	art_regimen 	current_art_date 	pre_vl_date 	pre_vl_results 	curr_vl_date 	viral_load 	cd4  mstari 	
 
-
-  $sql = "INSERT INTO admission 
+  $sql = "INSERT INTO results 
 (
-    Fname,Mname,Lname,Phone_no,Gender,Dob,Reg_date,Residence,Id_no
+    Age,art_start_date,art_regimen,current_art_date,pre_vl_date,pre_vl_results,curr_vl_date,viral_load,cd4,mstari
   ) 
 
 VALUES (
- '$Fname', '$Mname', '$Lname', '$Phone_no','$Gender','$Dob','$Reg_date','$Residence','$Id_no'
+ '$Age','$art_start_date', '$art_regimen', '$current_art_date', '$pre_vl_date', '$pre_vl_results', '$curr_vl_date', '$viral_load', '$cd4', '$mstari'
  
 )";
 
@@ -98,7 +99,7 @@ if(mysqli_query($con, $sql)){
 
 echo   "<div class='alert alert-success'>";
                       echo  "<button class='close' data-dismiss='alert'>&times;</button>";
-                      echo "<h5><b>Client Registered Successfully!</h5>";
+                      echo "<h5><b>Results Updated Successfully!</h5>";
                       echo   '</div>';    
 
     
@@ -107,11 +108,11 @@ echo   "<div class='alert alert-success'>";
 
              echo   "<div class='alert alert-danger'>";
       echo  "<button class='close' data-dismiss='alert'>&times;</button>";
-      echo   "<strong>Oops! We could not Enroll you. Looks like you already enrolled. Kindly create an account by clicking 
+      echo   "<strong>Oops! An Error Occured during Results submission!
 
 
 
-<a class=\"btn btn-danger\" href=\"student_registration.php\">Create Account to Login</a>
+<a class=\"btn btn-danger\" href=\"results_entry.php\">Try Again</a>
 
 
       </strong> ";
@@ -126,98 +127,104 @@ mysqli_close($con);
   
   
   ?>
-
-
-
-
-
-
-
-
-						<form method="post" class="tab-wizard wizard-circle wizard">
+	<form method="post" class="tab-wizard wizard-circle wizard">
 							<h5></h5>
 							<section>
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label >First Name *:</label>
-											<input name="Fname" type="text" class="form-control" required>
+											<label >Age :</label>
+                                            <input name="Age" type="number" class="form-control" placeholder="Current Age">
+                                            
+
+                                            
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label >Middle Name :</label>
-											<input name="Mname" type="text" placeholder="Optional" class="form-control">
+											<label >Initial ART Start Date:</label>
+											<input name="art_start_date" type="date" placeholder="Remeber the Date?" class="form-control">
 										</div>
-									</div>
+                                    </div>
+                                    
 								</div>
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label> Last Name *:</label>
-											<input required name="Lname" type="text" class="form-control">
+											<label> Facility ART Start Date:</label>
+											<input  name="current_art_date" type="date" class="form-control">
+										</div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+										<div class="form-group">
+											<label>Previous Viral Load *:</label>
+											<input  name="pre_vl_results"type="text" placeholder="Previous Viral Load" class="form-control">
+										</div>
+                                    </div>
+                                    <div class="col-md-6">
+										<div class="form-group">
+											<label>Previous Viral Date *:</label>
+											<input  name="pre_vl_date"type="date" placeholder="Previous Viral Load " class="form-control">
 										</div>
 									</div>
+                                    
 									<div class="col-md-6">
 										<div class="form-group">
-											<label>Phone Number *:</label>
-											<input required name="Phone_no"type="tel" placeholder="07XX XXXXXXXX" class="form-control">
+											<label>Viral Load *:</label>
+											<input required name="viral_load"type="text" placeholder="Most Recent Results" class="form-control">
+										</div>
+                                    </div>
+                                    <div class="col-md-6">
+										<div class="form-group">
+											<label >Current VL Date :</label>
+											<input required type="date" class="form-control" placeholder="Pick Date" name='curr_vl_date'>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group">
+											<label>Line:</label>
+											<select name='mstari' class="custom-select form-control" required>
+												<option value="">Select Option</option>
+												<option value="1">1</option>
+												<option value="2">2</option>
+										</select>
 										</div>
 									</div>
-								</div>
+                                </div>
+                                
 								
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label>Gender :</label>
-											<select name='Gender' class="custom-select form-control" required>
-												<option value="">Select Option</option>
-												<option value="M">Male</option>
-												<option value="F">Female</option>
+											<label>Regimen:</label>
+											<select name='art_regimen' class="custom-select form-control" required>
+                                            <option value="">Select Option</option>
+					                            <option value="ABC/3TC/KALETRA">ABC/3TC/KALETRA</option>
+                                                <option value="ABC/3TC/LPVR">ABC/3TC/LPVR</option>
+                                                <option value="ABC/3TC/DTG">ABC/3TC/DTG</option>
+                                                <option value="TDF/3TC/DTG">TDF/3TC/DTG</option>
+                                                <option value="TDF/3TC/KALETRA">TDF/3TC/KALETRA</option>
+                                                <option value="TDF/3TC/EFV">TTDF/3TC/EFV</option>
 										</select>
 										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label>Residence:</label>
-											<select name='Residence' class="custom-select form-control" required>
-												<option value="">Select Option</option>
-												<option value="Village">Village</option>
-												<option value="Community">Community</option>
-										</select>
-										</div>
-									</div>
-
-
-									<div class="col-md-6">
-										<div class="form-group">
-											<label >Date of Birth :</label>
-											<input  name='Dob' class="form-control date-picker" placeholder="Select Date">
-										</div>
-									</div>
-
-									<div class="col-md-6">
-										<div class="form-group">
-											<label >Admission Date :</label>
-											<input  type="text" class="form-control date-picker" placeholder="Select Date" name='Reg_date'>
-										</div>
-									</div>
-
+                                    </div>
+   
 								<div class="col-md-6">
 										<div class="form-group">
-											<label>ID Number:</label>
-											<input name='Id_no' type="text" placeholder="Optional" class="form-control">
+											<label>CD4:</label>
+											<input name='cd4' type="text" placeholder="Anything new?" class="form-control">
 										</div>
-									</div>
-								</div>
+                                    </div>
 
-
-								</div>
-							</section>
+                                    
+                                </div>
+                            </section>
 						
 							<div class="form-group text-center">
                                   
-								  <button type="submit" id="submit" name="Admission" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b>Register </b></button>
+								  <button type="submit" id="submit" name="results" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b>Update Results</b></button>
 							  
 						  </div>
 
