@@ -84,15 +84,16 @@ $User_Name=$_SESSION["username"] ;
 								 <tr>
 									 <th class=\"table-plus datatable-nosort\">CCC N0</th>
 									 <th>Name</th>
-									 <th>Gender.</th>
+									 <th>GND</th>
 									 <th>Age</th>
-									 <th>Regimen</th>
+									 <th>Regi</th>
 									 <th>Curr ART D</th>
 									 <th>Pre VL D</th>
 									 <th>Pre VL</th>
-									 <th>Curr VL D</th>
-									 <th>Viral Load</th>
-									 <th>cd4</th>
+									 <th>Rec VL D</th>
+									 <th>VL</th>
+									 <th>Cd4</th>
+									 <th>Line</th>
 									 
 									 
 								 </tr>
@@ -117,6 +118,7 @@ $User_Name=$_SESSION["username"] ;
 								$curr_vl_date=$row['curr_vl_date'];
 								$viral_load=$row['viral_load'];
 								$cd4=$row['cd4'];
+								$mstari=$row['mstari'];
 
                                 echo "   
 
@@ -134,6 +136,7 @@ $User_Name=$_SESSION["username"] ;
 									<td>$curr_vl_date</td>
 									<td>$viral_load</td>
 									<td>$cd4</td>
+									<td>$mstari</td>
 									
 									
 								</tr>
