@@ -99,22 +99,16 @@ if(mysqli_query($con, $sql)){
 
 echo   "<div class='alert alert-success'>";
                       echo  "<button class='close' data-dismiss='alert'>&times;</button>";
-                      echo "<h5><b>Results Updated Successfully!</h5>";
-                      echo   '</div>';    
-
-    
+					  echo "<h5><b>Results Updated Successfully!</h5>";
+					  
+                      echo   '</div>';        
         } else
         {
 
              echo   "<div class='alert alert-danger'>";
       echo  "<button class='close' data-dismiss='alert'>&times;</button>";
       echo   "<strong>Oops! An Error Occured during Results submission!
-
-
-
 <a class=\"btn btn-danger\" href=\"results_entry.php\">Try Again</a>
-
-
       </strong> ";
       echo   '</div>';
     
@@ -124,8 +118,6 @@ echo   "<div class='alert alert-success'>";
 // close connection
 mysqli_close($con);
   
-  
-  
   ?>
 	<form method="post" class="tab-wizard wizard-circle wizard">
 							<h5></h5>
@@ -134,10 +126,7 @@ mysqli_close($con);
 									<div class="col-md-6">
 										<div class="form-group">
 											<label >Age :</label>
-                                            <input name="Age" type="number" class="form-control" placeholder="Current Age">
-                                            
-
-                                            
+                                            <input name="Age" type="number" class="form-control" placeholder="Age">
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -154,10 +143,9 @@ mysqli_close($con);
 											<label> Facility ART Start Date:</label>
 											<input  name="current_art_date" type="date" class="form-control">
 										</div>
-                                    </div>
-
-
-                                    <div class="col-md-6">
+									</div>
+									
+									<div class="col-md-6">
 										<div class="form-group">
 											<label>Previous Viral Load *:</label>
 											<input  name="pre_vl_results"type="text" placeholder="Previous Viral Load" class="form-control">
@@ -192,8 +180,7 @@ mysqli_close($con);
 										</select>
 										</div>
 									</div>
-                                </div>
-                                
+								</div>
 								
 								<div class="row">
 									<div class="col-md-6">
@@ -216,29 +203,24 @@ mysqli_close($con);
 											<label>CD4:</label>
 											<input name='cd4' type="text" placeholder="Anything new?" class="form-control">
 										</div>
-                                    </div>
-
-                                    
-                                </div>
+									</div>
+								</div>
                             </section>
 						
 							<div class="form-group text-center">
                                   
-								  <button type="submit" id="submit" name="results" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b>Update Results</b></button>
-							  
-						  </div>
-
+								  <button type="submit" id="submit" name="results" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b>Update Results</b>
+								</button>
+							</div>
 						</form>
 					</div>
 				</div>
-
-				
-
-			
 			</div>
-			<?php include 'footer.php'; ?>
-		</div>
-	</div>
+<?php include 'footer.php'; ?>
+		
+</div>
+	
+</div>
 	<!-- js -->
 	<script src="vendors/scripts/core.js"></script>
 	<script src="vendors/scripts/script.min.js"></script>
