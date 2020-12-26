@@ -73,7 +73,7 @@ $User_Name=$_SESSION["username"] ;
                              $query = "select *
                                FROM 
 
-							   results
+							   detailed_results
                               
 
                             ";
@@ -85,7 +85,6 @@ $User_Name=$_SESSION["username"] ;
 									 <th class=\"table-plus datatable-nosort\">CCC N0</th>
 									 <th>Name</th>
 									 <th>GND</th>
-									 <th>Age</th>
 									 <th>Regi</th>
 									 <th>Curr ART D</th>
 									 <th>Pre VL D</th>
@@ -109,8 +108,7 @@ $User_Name=$_SESSION["username"] ;
 								$Fname=$row['Fname']; 
 								$Mname=$row['Mname']; 
 								$Lname=$row['Lname']; 
-								$Gender=$row['Gender']; 
-								$Age=$row['Age'];
+								$Gender=$row['Gender'];
 								$art_regimen=$row['art_regimen'];
 								$current_art_date=$row['current_art_date'];
 								$pre_vl_date=$row['pre_vl_date'];
@@ -128,7 +126,6 @@ $User_Name=$_SESSION["username"] ;
 									<td class=\"table-plus\">$ccc_count</td>
 									<td>$Fname $Mname $Lname</td>
 									<td>$Gender</td>
-									<td>$Age</td>
 									<td>$art_regimen</td>
 									<td>$current_art_date</td>
 									<td>$pre_vl_date</td>

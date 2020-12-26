@@ -48,11 +48,31 @@ $User_Name=$_SESSION["username"] ;
 				<div class="pd-20 card-box mb-30">
 				<div class="clearfix">
 						<h4 class="text-blue h4">Results Entry</h4>
+
+<?php
+include 'dbconfig.php'; 
+$ccc_no=$_GET['ccc_no'];
+$query = "select * FROM admission WHERE ccc_no='$ccc_no'";
+$result = mysqli_query($con,$query);
+while($row=mysqli_fetch_array($result))
+                            {          
+                                $ccc_no=$row['ccc_no']; 
+								$Fname=$row['Fname']; 
+								$Mname=$row['Mname']; 
+								$Lname=$row['Lname']; 
+							}
+?>
+
 											
 				<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.php">Home</a></li>
 									<li class="breadcrumb-item active" aria-current="page">Results Entry</li>
+									<li class="breadcrumb-item active" aria-current="page">
+										<?php
+										echo "$ccc_no $Fname $Mname $Lname" ;
+										?>
+									</li>
 								</ol>
 							</nav>
 							</div>
@@ -68,12 +88,28 @@ $User_Name=$_SESSION["username"] ;
 
  {
 
-$Age= mysqli_real_escape_string($con, $_POST['Age']);                          
-$art_start_date= mysqli_real_escape_string($con, $_POST['art_start_date']); 
-$art_regimen= mysqli_real_escape_string($con, $_POST['art_regimen']);  
+	
+
+	$ccc_no=$_GET['ccc_no'];
+	 $query = "select * FROM results WHERE ccc_count='$ccc_no' order by curr_vl_date desc limit 1 ";
+	$result = mysqli_query($con,$query);
+	while($row=mysqli_fetch_array($result))
+								{          
+									$ccc_count=$row['ccc_count']; 
+									$curr_vl_dateFromPre=$row['curr_vl_date']; 
+									$viral_loadFromPre=$row['viral_load'];
+									
+									
+								}
+	
+								
+					
+                          
+$initial_RegDate= $art_start_date; 
+$initial_artDate=$art_regimen;  
 $current_art_date= mysqli_real_escape_string($con, $_POST['current_art_date']);   
-$pre_vl_date= mysqli_real_escape_string($con, $_POST['pre_vl_date']);
-$pre_vl_results= $_POST['pre_vl_results'];
+$pre_vl_date= $curr_vl_dateFromPre;
+$pre_vl_results= $viral_loadFromPre;
 $curr_vl_date= $_POST['curr_vl_date'];
 $viral_load= mysqli_real_escape_string($con, $_POST['viral_load']);
 $cd4= mysqli_real_escape_string($con, $_POST['cd4']);
@@ -86,11 +122,11 @@ $mstari= mysqli_real_escape_string($con, $_POST['mstari']);
 
   $sql = "INSERT INTO results 
 (
-    Age,art_start_date,art_regimen,current_art_date,pre_vl_date,pre_vl_results,curr_vl_date,viral_load,cd4,mstari
+	ccc_count,art_start_date,art_regimen,current_art_date,pre_vl_date,pre_vl_results,curr_vl_date,viral_load,cd4,mstari
   ) 
 
 VALUES (
- '$Age','$art_start_date', '$art_regimen', '$current_art_date', '$pre_vl_date', '$pre_vl_results', '$curr_vl_date', '$viral_load', '$cd4', '$mstari'
+ '$ccc_no','$art_start_date', '$art_regimen', '$current_art_date', '$pre_vl_date', '$pre_vl_results', '$curr_vl_date', '$viral_load', '$cd4', '$mstari'
  
 )";
 
@@ -119,42 +155,68 @@ echo   "<div class='alert alert-success'>";
 mysqli_close($con);
   
   ?>
+
+
+<?php
+include 'dbconfig.php'; 
+$ccc_no=$_GET['ccc_no'];
+ $query = "select * FROM results WHERE ccc_count='$ccc_no' order by curr_vl_date desc limit 1 ";
+$result = mysqli_query($con,$query);
+while($row=mysqli_fetch_array($result))
+                            {          
+                                $ccc_count=$row['ccc_count']; 
+								$curr_vl_dateFromPre=$row['curr_vl_date']; 
+								$viral_loadFromPre=$row['viral_load']; 
+								
+							}
+?>
+<?php
+include 'dbconfig.php'; 
+$ccc_no=$_GET['ccc_no'];
+ $query = "select * FROM admissions WHERE ccc_no='$ccc_no' order by Reg_date desc limit 1 ";
+$result = mysqli_query($con,$query);
+while($row=mysqli_fetch_array($result))
+                            {          
+                                $ccc_no=$row['ccc_count']; 
+								$initial_RegDate=$row['Reg_date'];
+								$initial_artDate=$row['art_start_date'];
+								
+							}
+?>
+
+
+	
 	<form method="post" class="tab-wizard wizard-circle wizard">
 							<h5></h5>
 							<section>
 								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<label >Age :</label>
-                                            <input name="Age" type="number" class="form-control" placeholder="Age">
-										</div>
-									</div>
+									
 									<div class="col-md-6">
 										<div class="form-group">
 											<label >Initial ART Start Date:</label>
-											<input name="art_start_date" type="date" placeholder="Remeber the Date?" class="form-control">
+
+											<?php echo "<input readonly name=\"art_start_date\" placeholder=\"$initial_artDate\"; value=\"$initial_artDate\"; class=\"form-control\"> ";  ?>
 										</div>
                                     </div>
-                                    
-								</div>
-								<div class="row">
-									<div class="col-md-6">
+                                    <div class="col-md-6">
 										<div class="form-group">
 											<label> Facility ART Start Date:</label>
 											<input  name="current_art_date" type="date" class="form-control">
 										</div>
 									</div>
-									
+								</div>
+								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label>Previous Viral Load *:</label>
-											<input  name="pre_vl_results"type="text" placeholder="Previous Viral Load" class="form-control">
+											<label>Previous Viral Load:</label>
+										
+											<?php echo "<input readonly name=\"pre_vl_results\" placeholder=\"$viral_loadFromPre\"; value=\"$viral_loadFromPre\"; class=\"form-control\"> ";  ?>
 										</div>
                                     </div>
                                     <div class="col-md-6">
 										<div class="form-group">
-											<label>Previous Viral Date *:</label>
-											<input  name="pre_vl_date"type="date" placeholder="Previous Viral Load " class="form-control">
+											<label>Previous Viral Date:</label>
+											<?php echo "<input readonly  name=\"pre_vl_date\" placeholder=\"$curr_vl_dateFromPre\"; value=\"$curr_vl_dateFromPre\"; class=\"form-control\"> "; ?>
 										</div>
 									</div>
                                     
@@ -166,18 +228,8 @@ mysqli_close($con);
                                     </div>
                                     <div class="col-md-6">
 										<div class="form-group">
-											<label >Current VL Date :</label>
+											<label >Current VL Date:</label>
 											<input required type="date" class="form-control" placeholder="Pick Date" name='curr_vl_date'>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="form-group">
-											<label>Line:</label>
-											<select name='mstari' class="custom-select form-control" required>
-												<option value="">Select Option</option>
-												<option value="1">1</option>
-												<option value="2">2</option>
-										</select>
 										</div>
 									</div>
 								</div>
@@ -202,6 +254,15 @@ mysqli_close($con);
 										<div class="form-group">
 											<label>CD4:</label>
 											<input name='cd4' type="text" placeholder="Anything new?" class="form-control">
+										</div>
+									</div>
+									<div class="form-group">
+											<label>Line:</label>
+											<select name='mstari' class="custom-select form-control" required>
+												<option value="">Options</option>
+												<option value="1">1</option>
+												<option value="2">2</option>
+										</select>
 										</div>
 									</div>
 								</div>

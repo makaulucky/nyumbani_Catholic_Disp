@@ -122,17 +122,8 @@ echo   "<div class='alert alert-success'>";
  include 'dbconfig.php';
 // close connection
 mysqli_close($con);
-  
-  
-  
+ 
   ?>
-
-
-
-
-
-
-
 
 						<form method="post" class="tab-wizard wizard-circle wizard">
 							<h5></h5>
@@ -192,26 +183,30 @@ mysqli_close($con);
 									<div class="col-md-6">
 										<div class="form-group">
 											<label >Date of Birth :</label>
-											<input  name='Dob' class="form-control date-picker" placeholder="Select Date">
+											<input required type="date"  name='Dob' class="form-control " placeholder="Select Date">
 										</div>
 									</div>
+									
 
 									<div class="col-md-6">
 										<div class="form-group">
 											<label >Admission Date :</label>
-											<input  type="text" class="form-control date-picker" placeholder="Select Date" name='Reg_date'>
+											<input required  type="date" class="form-control" placeholder="Select Date" name='Reg_date'>
 										</div>
 									</div>
 
 								<div class="col-md-6">
-										<div class="form-group">
-											<label>ID Number:</label>
-											<input name='Id_no' type="text" placeholder="Optional" class="form-control">
+								<div class="form-group">
+											<label>Initial Art Start Date::</label>
+											<input required name='art_start_date' type="date" placeholder="Optional" class="form-control">
 										</div>
 									</div>
-								</div>
-
-
+										<div class="form-group">
+											<label>ID Number:</label>
+											<input name='Id_no' type="value" placeholder="Optional" class="form-control">
+										</div>
+									</div>
+									
 								</div>
 							</section>
 						

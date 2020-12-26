@@ -47,7 +47,7 @@ $User_Name=$_SESSION["username"] ;
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+									<li class="breadcrumb-item"><a href="index.php">Home</a></li>
 									<li class="breadcrumb-item active" aria-current="page">Profile</li>
 								</ol>
 							</nav>
@@ -65,7 +65,7 @@ $User_Name=$_SESSION["username"] ;
 							<h5 class="text-center h5 mb-0"><?php echo "$User_Name";
 						?>
 </h5>
-							<p class="text-center text-muted font-14">Lorem ipsum dolor sit amet</p>
+							<p class="text-center text-muted font-14">This is your Account</p>
 							<div class="profile-info">
 								<h5 class="mb-20 h5 text-blue">Contact Information</h5>
 								
@@ -80,7 +80,7 @@ $User_Name=$_SESSION["username"] ;
 									<ul class="nav nav-tabs customtab" role="tablist">
 										
 										<li class="nav-item">
-											<a class="nav-link" data-toggle="tab" href="#setting" role="tab">Settings</a>
+											<a class="nav-link" data-toggle="tab" href="#setting" role="tab">View Settings</a>
 										</li>
 									</ul>
 									<div class="tab-content">
@@ -97,56 +97,25 @@ $User_Name=$_SESSION["username"] ;
 																<label>Full Name</label>
 																<input class="form-control form-control-lg" type="text">
 															</div>
-															<div class="form-group">
-																<label>Title</label>
-																<input class="form-control form-control-lg" type="text">
-															</div>
+															
 															<div class="form-group">
 																<label>Email</label>
-																<input class="form-control form-control-lg" type="email">
+																<input required class="form-control form-control-lg" type="email">
 															</div>
 															<div class="form-group">
 																<label>Date of birth</label>
-																<input class="form-control form-control-lg date-picker" type="text">
+																<input class="form-control form-control-lg " type="date">
 															</div>
-															<div class="form-group">
-																<label>Gender</label>
-																<div class="d-flex">
-																<div class="custom-control custom-radio mb-5 mr-20">
-																	<input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
-																	<label class="custom-control-label weight-400" for="customRadio4">Male</label>
-																</div>
-																<div class="custom-control custom-radio mb-5">
-																	<input type="radio" id="customRadio5" name="customRadio" class="custom-control-input">
-																	<label class="custom-control-label weight-400" for="customRadio5">Female</label>
-																</div>
-																</div>
-															</div>
-															<div class="form-group">
-																<label>Facility</label>
-																<select class="selectpicker form-control form-control-lg" data-style="btn-outline-secondary btn-lg" title="Not Chosen">
-																	<option>Nyumbani Village</option>
-																	<option>Nyumbani Home</option>
-																	<option>Kangemi</option>
-																</select>
-															</div>
-															<div class="form-group">
-																<label>County</label>
-																<input class="form-control form-control-lg" type="text">
-															</div>
+															
+															
 															
 															<div class="form-group">
 																<label>Phone Number</label>
-																<input class="form-control form-control-lg" type="text">
+																<input placeholder="Optional" class="form-control form-control-lg" type="value">
 															</div>
 															
 																						
-															<div class="form-group">
-																<div class="custom-control custom-checkbox mb-5">
-																	<input type="checkbox" class="custom-control-input" id="customCheck1-1">
-																	<label class="custom-control-label weight-400" for="customCheck1-1">I agree to receive notification emails</label>
-																</div>
-															</div>
+															
 															<div class="form-group mb-0">
 																<input type="submit" class="btn btn-primary" value="Update Information">
 															</div>
@@ -171,35 +140,6 @@ $User_Name=$_SESSION["username"] ;
 	<script src="vendors/scripts/process.js"></script>
 	<script src="vendors/scripts/layout-settings.js"></script>
 	<script src="src/plugins/cropperjs/dist/cropper.js"></script>
-	<script>
-		window.addEventListener('DOMContentLoaded', function () {
-			var image = document.getElementById('image');
-			var cropBoxData;
-			var canvasData;
-			var cropper;
 
-			$('#modal').on('shown.bs.modal', function () {
-				cropper = new Cropper(image, {
-					autoCropArea: 0.5,
-					dragMode: 'move',
-					aspectRatio: 3 / 3,
-					restore: false,
-					guides: false,
-					center: false,
-					highlight: false,
-					cropBoxMovable: false,
-					cropBoxResizable: false,
-					toggleDragModeOnDblclick: false,
-					ready: function () {
-						cropper.setCropBoxData(cropBoxData).setCanvasData(canvasData);
-					}
-				});
-			}).on('hidden.bs.modal', function () {
-				cropBoxData = cropper.getCropBoxData();
-				canvasData = cropper.getCanvasData();
-				cropper.destroy();
-			});
-		});
-	</script>
 </body>
 </html>
