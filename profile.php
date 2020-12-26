@@ -134,7 +134,7 @@ while($row=mysqli_fetch_array($result))
 																<label>First Name</label>
 																<input required class="form-control form-control-lg" type="text">
 																<label>Last Name</label>
-																<input class="form-control form-control-lg" type="text">
+																<input required class="form-control form-control-lg" type="text">
 																
 															</div>
 															
