@@ -6,7 +6,9 @@
 		<div class="header-left">
 			<div class="menu-icon dw dw-menu"></div>
 			<div class="search-toggle-icon dw dw-search2" data-toggle="header_search"></div>
-			
+			<p text-center id="time"></p>
+
+
 		</div>
 
 
@@ -217,3 +219,7 @@
 	</div>
 	//left Nav Ends here
 
+	<script>
+var d = new Date();
+document.getElementById("time").innerHTML = d;
+</script>
