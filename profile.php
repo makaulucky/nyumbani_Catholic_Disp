@@ -62,12 +62,48 @@ $User_Name=$_SESSION["username"] ;
 								<img src="vendors/images/photo1.jpg" alt="" class="avatar-photo">
 								
 							</div>
-							<h5 class="text-center h5 mb-0"><?php echo "$User_Name";
-						?>
+							<h5 class="text-center h5 mb-0">
+								<?php 
+								echo "$User_Name";
+								?>
 </h5>
-							<p class="text-center text-muted font-14">This is your Account</p>
+							<p class="text-center text-muted font-14">_______________</p>
 							<div class="profile-info">
-								<h5 class="mb-20 h5 text-blue">Contact Information</h5>
+							
+<?php
+include 'dbconfig.php'; 
+$ccc_no=$_GET['ccc_no'];
+ $query = "select * FROM user_reg";
+$result = mysqli_query($con,$query);
+while($row=mysqli_fetch_array($result))
+                            {          
+                                $Fname=$row['Fname']; 
+								$Lname=$row['Lname'];
+								$email=$row['email'];
+								$Gender=$row['Gender'];
+								
+							}
+?>
+
+								<h5 class="mb-20 h5 text-blue">Personal Information</h5>
+								<p class="text-muted font-14">Name:
+								<?php 
+								echo "$Fname"; 
+								?>
+								<?php 
+								echo "$Lname";
+								?>
+								 </p>
+								<p class="text-muted font-14">Email:
+								<?php 
+								echo "$email";
+								?>
+								</p>
+								<p class="text-muted font-14">Gender:
+								<?php 
+								echo "$Gender";
+								?> 
+								</p>
 								
 							</div>
 							
@@ -92,29 +128,20 @@ $User_Name=$_SESSION["username"] ;
 												<form>
 													<ul class="profile-edit-list row">
 														<li class="weight-500 col-md-6">
-															<h4 class="text-blue h5 mb-20">Edit Your Personal Setting</h4>
+															<h4 class="text-blue h5 mb-20">Edit Your Account Details</h4>
+															<p>NOTE: YOU CAN'T CHANGE YOUR USERNAME</p>
 															<div class="form-group">
-																<label>Full Name</label>
+																<label>First Name</label>
+																<input required class="form-control form-control-lg" type="text">
+																<label>Last Name</label>
 																<input class="form-control form-control-lg" type="text">
+																
 															</div>
 															
 															<div class="form-group">
 																<label>Email</label>
 																<input required class="form-control form-control-lg" type="email">
 															</div>
-															<div class="form-group">
-																<label>Date of birth</label>
-																<input class="form-control form-control-lg " type="date">
-															</div>
-															
-															
-															
-															<div class="form-group">
-																<label>Phone Number</label>
-																<input placeholder="Optional" class="form-control form-control-lg" type="value">
-															</div>
-															
-																						
 															
 															<div class="form-group mb-0">
 																<input type="submit" class="btn btn-primary" value="Update Information">
