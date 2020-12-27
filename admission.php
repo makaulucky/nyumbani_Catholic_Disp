@@ -107,11 +107,11 @@ echo   "<div class='alert alert-success'>";
 
              echo   "<div class='alert alert-danger'>";
       echo  "<button class='close' data-dismiss='alert'>&times;</button>";
-      echo   "<strong>Oops! We could not Enroll you. Looks like you already enrolled. Kindly create an account by clicking 
+      echo   "<strong>Oops! An Error occured during Registration. Kindly contact System Admin for Assistance. 
 
 
 
-<a class=\"btn btn-danger\" href=\"student_registration.php\">Create Account to Login</a>
+<a class=\"btn btn-danger\" href=\"student_registration.php\">New Registration</a>
 
 
       </strong> ";
