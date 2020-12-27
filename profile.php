@@ -66,7 +66,7 @@ $User_Name=$_SESSION["username"] ;
 								<?php 
 								echo "$User_Name";
 								?>
-</h5>
+							</h5>
 							<p class="text-center text-muted font-14">_______________</p>
 							<div class="profile-info">
 							
@@ -125,6 +125,15 @@ while($row=mysqli_fetch_array($result))
 										<!-- Setting Tab start -->
 										<div class="tab-pane fade height-100-p" id="setting" role="tabpanel">
 											<div class="profile-setting">
+
+
+
+
+
+
+
+
+											
 												<form>
 													<ul class="profile-edit-list row">
 														<li class="weight-500 col-md-6">
