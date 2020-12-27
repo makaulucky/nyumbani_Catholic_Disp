@@ -85,7 +85,7 @@ $User_Name=$_SESSION["username"] ;
 									 <th class=\"table-plus datatable-nosort\">CCC N0</th>
 									 <th>Name</th>
 									 <th>GND</th>
-									 <th>Regi</th>
+									 <th>Regimen</th>
 									 <th>Curr ART D</th>
 									 <th>Pre VL D</th>
 									 <th>Pre VL</th>
@@ -136,25 +136,15 @@ $User_Name=$_SESSION["username"] ;
 									<td>$mstari</td>
 									
 									
-								</tr>
-								
-						
-
-						";
-
-
-						
+								</tr>";
+		
 					}
 
-					echo "	</tbody>
-					</table>";
-
-
-
-
+					echo 
+					"</tbody></table>";
 					?>
 
-</div>
+					</div>
 				</div>
 				<!-- Export Datatable End -->
 			</div>
