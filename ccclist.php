@@ -62,7 +62,7 @@ $User_Name=$_SESSION["username"] ;
 				<!-- Export Datatable start -->
 				<div class="card-box mb-30">
 					<div class="pd-20">
-						<h4 class="text-blue h4">MASTER CCC LIST</h4>
+						<h4 class="text-blue h4">MASTER REGISTRATION LIST</h4>
 					</div>
 					<div class="pb-20">
 
@@ -74,10 +74,6 @@ include 'dbconfig.php';
 
 $query = "select * FROM admission";
 $result = mysqli_query($con,$query); 
-
-
-
-
 
 echo "	<table id=\"editableTable\" class=\"table hover multiple-select-row data-table-export nowrap\">
 							 <thead>
@@ -109,8 +105,7 @@ while($row=mysqli_fetch_array($result))
 								<tr>
 									<td class=\"table-plus\">$ccc_no</td>
 									<td><a href=results_entry.php?ccc_no=$ccc_no>
-									
-									
+
 									$Fname $Mname $Lname  </a></td>
 									<td>$Phone_no</td>
 									<td>$Gender</td>
