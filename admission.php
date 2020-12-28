@@ -64,7 +64,7 @@ $User_Name=$_SESSION["username"] ;
   include 'dbconfig.php';
 
   
- if(isset($_POST['Admission']))
+ if(isset($_POST['admission']))
 
  {
 
@@ -74,6 +74,7 @@ $Lname= mysqli_real_escape_string($con, $_POST['Lname']);
 $Phone_no= mysqli_real_escape_string($con, $_POST['Phone_no']);   
 $Gender= mysqli_real_escape_string($con, $_POST['Gender']);
 $Dob= $_POST['Dob'];
+$art_start_date= $_POST['art_start_date'];
 $Reg_date= $_POST['Reg_date'];
 $Residence= mysqli_real_escape_string($con, $_POST['Residence']);
 $Id_no= mysqli_real_escape_string($con, $_POST['Id_no']);
@@ -85,11 +86,11 @@ $Id_no= mysqli_real_escape_string($con, $_POST['Id_no']);
 
   $sql = "INSERT INTO admission 
 (
-    Fname,Mname,Lname,Phone_no,Gender,Dob,Reg_date,Residence,Id_no
+    Fname,Mname,Lname,Phone_no,Gender,Dob,art_start_date,Reg_date,Residence,Id_no
   ) 
 
 VALUES (
- '$Fname', '$Mname', '$Lname', '$Phone_no','$Gender','$Dob','$Reg_date','$Residence','$Id_no'
+ '$Fname', '$Mname', '$Lname', '$Phone_no','$Gender','$Dob','$art_start_date',$Reg_date','$Residence','$Id_no'
  
 )";
 
@@ -108,11 +109,6 @@ echo   "<div class='alert alert-success'>";
              echo   "<div class='alert alert-danger'>";
       echo  "<button class='close' data-dismiss='alert'>&times;</button>";
       echo   "<strong>Oops! An Error occured during Registration. Kindly contact System Admin for Assistance. 
-
-
-
-<a class=\"btn btn-danger\" href=\"student_registration.php\">New Registration</a>
-
 
       </strong> ";
       echo   '</div>';
@@ -163,8 +159,8 @@ mysqli_close($con);
 											<label>Gender :</label>
 											<select name='Gender' class="custom-select form-control" required>
 												<option value="">Select Option</option>
-												<option value="M">Male</option>
-												<option value="F">Female</option>
+												<option value="Male">Male</option>
+												<option value="Female">Female</option>
 										</select>
 										</div>
 									</div>
@@ -212,7 +208,7 @@ mysqli_close($con);
 						
 							<div class="form-group text-center">
                                   
-								  <button type="submit" id="submit" name="Admission" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b>Register </b></button>
+								  <button type="submit" id="submit" name="admission" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b>Register </b></button>
 							  
 						  </div>
 
