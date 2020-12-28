@@ -128,32 +128,47 @@ while($row=mysqli_fetch_array($result))
 
 
 
+<?php
+include 'dbconfig.php'; 
+$User_Name=$_GET['username'];
+ $query = "select * FROM user_reg WHERE username='$User_Name' order by User_id";
+$result = mysqli_query($con,$query);
+while($row=mysqli_fetch_array($result))
+                            {          
+                                $Fname=$row['Fname']; 
+								$Lname=$row['Lname'];
+								$email=$row['email'];
+								
+							}
+?>
+
+
 
 
 
 
 
 											
-												<form>
+												<form method="POST">
 													<ul class="profile-edit-list row">
 														<li class="weight-500 col-md-6">
 															<h4 class="text-blue h5 mb-20">Edit Your Account Details</h4>
 															<p>NOTE: YOU CAN'T CHANGE YOUR USERNAME</p>
 															<div class="form-group">
 																<label>First Name</label>
-																<input required class="form-control form-control-lg" type="text">
+																<input name="Fname" required class="form-control form-control-lg" type="text">
 																<label>Last Name</label>
-																<input required class="form-control form-control-lg" type="text">
+																<input name="Lname" required class="form-control form-control-lg" type="text">
 																
 															</div>
 															
 															<div class="form-group">
 																<label>Email</label>
-																<input required class="form-control form-control-lg" type="email">
+																<input name="email" required class="form-control form-control-lg" type="email">
 															</div>
 															
 															<div class="form-group mb-0">
-																<input type="submit" class="btn btn-primary" value="Update Information">
+																<input name="user_reg" id="submit" type="submit" class="btn btn-primary" value="Update Information">
 															</div>
 													</ul>
 												</form>
