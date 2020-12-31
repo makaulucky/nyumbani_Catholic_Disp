@@ -88,11 +88,9 @@ while($row=mysqli_fetch_array($result))
 								<h5 class="mb-20 h5 text-blue">Personal Information</h5>
 								<p class="text-muted font-14">Name:
 								<?php 
-								echo "$Fname"; 
+								echo "$Fname $Lname"; 
 								?>
-								<?php 
-								echo "$Lname";
-								?>
+								
 								 </p>
 								<p class="text-muted font-14">Email:
 								<?php 
@@ -140,6 +138,7 @@ while($row=mysqli_fetch_array($result))
 								$email=$row['email'];
 								
 							}
+							
 ?>
 
 
