@@ -72,10 +72,13 @@ $result = mysqli_query($con,$query);
 while($row=mysqli_fetch_array($result))
                             {          
                                 $ccc_no=$row['ccc_no']; 
-								$Fname=$row['Fname']; 
-								$Mname=$row['Mname']; 
+                                $Fname=$row['Fname']; 
                                 $Lname=$row['Lname'];
-                                $Gender=$row['Gender']; 
+                                $Gender=$row['Gender'];
+                                $art_regimen=$row['art_regimen'];
+                                $Dob=$row['Dob'];
+                                $mstari=$row['mstari'];
+                                
 							}
 ?>
 								
@@ -94,16 +97,23 @@ while($row=mysqli_fetch_array($result))
 								
 								<p class="text-muted font-14">DoB:
 								<?php 
-								echo "";
+								echo "$Dob";
 								?> 
                                 </p>
                                 <p class="text-muted font-14">Gender:
 								<?php 
-								echo "";
+								echo "$Gender";
 								?> 
                                 </p>
                                 <p class="text-muted font-14">Regimen:
-								
+								<?php 
+								echo "$art_regimen";
+								?> 
+                                </p>
+                                <p class="text-muted font-14">Line:
+								<?php 
+								echo "$mstari";
+								?> 
 								</p>
 								
 							</div>
@@ -143,7 +153,7 @@ while($row=mysqli_fetch_array($result))
 include 'dbconfig.php';
 
 
-$query = "select * FROM detailed_results ";
+$query = "select * FROM detailed_results WHERE ccc_no='$ccc_no'";
 $result = mysqli_query($con,$query); 
 
 echo "	<table id=\"editableTable\" class=\"table hover multiple-select-row data-table-export nowrap\">
