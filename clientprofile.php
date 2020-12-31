@@ -59,7 +59,7 @@ $User_Name=$_SESSION["username"] ;
 						<div class="pd-20 card-box height-100-p">
 							<div class="profile-photo">
 								<a href="modal" data-toggle="modal" data-target="#modal" class="edit-avatar"><i class="fa fa-pencil"></i></a>
-								<img src="vendors/images/photo5.jpg" alt="" class="avatar-photo">
+								<img src="vendors/images/client.png" alt="" class="avatar-photo">
 								
 							</div>
 							
@@ -90,17 +90,20 @@ while($row=mysqli_fetch_array($result))
 								<?php 
 								echo "$Fname $Lname"; 
 								?>
-								
-								 </p>
-								<p class="text-muted font-14">Facility:
-								<?php 
-								echo "";
-								?>
 								</p>
-								<p class="text-muted font-14">Gender:
+								
+								<p class="text-muted font-14">DoB:
 								<?php 
 								echo "";
 								?> 
+                                </p>
+                                <p class="text-muted font-14">Gender:
+								<?php 
+								echo "";
+								?> 
+                                </p>
+                                <p class="text-muted font-14">Regimen:
+								
 								</p>
 								
 							</div>
@@ -114,7 +117,7 @@ while($row=mysqli_fetch_array($result))
 									<ul class="nav nav-tabs customtab" role="tablist">
 										
 										<li class="nav-item">
-											<a class="nav-link" data-toggle="tab" href="#setting" role="tab">View Settings</a>
+											<a class="nav-link" role="tab">Client's Results</a>
 										</li>
 									</ul>
 									<div class="tab-content">
@@ -127,7 +130,59 @@ while($row=mysqli_fetch_array($result))
 		
 											</div>
 										</div>
-										<!-- Setting Tab End -->
+									<!-- Export Datatable start -->
+				<div class="card-box mb-30">
+					<div class="pd-20">
+						<h4 class="text-blue h4">ALL HISTORY</h4>
+					</div>
+					<div class="pb-20">
+
+
+
+<?php
+include 'dbconfig.php';
+
+
+$query = "select * FROM detailed_results ";
+$result = mysqli_query($con,$query); 
+
+echo "	<table id=\"editableTable\" class=\"table hover multiple-select-row data-table-export nowrap\">
+							 <thead>
+								 <tr>
+									 <th class=\"table-plus datatable-nosort\">CCC N0</th>
+									 <th>Date</th>
+									 <th>Viral Load</th>
+									 <th>CD4</th>
+									 
+									 
+									 					 
+								 </tr>
+							 </thead>
+							 <tbody>";
+while($row=mysqli_fetch_array($result))
+                            {          
+                                $ccc_no=$row['ccc_no'];
+								$current_art_date=$row['current_art_date']; 
+								$viral_load=$row['viral_load'];
+								$cd4=$row['cd4'];
+								
+								
+							echo "         
+								<tr>
+									<td class=\"table-plus\">$ccc_no</td>
+									<td>$current_art_date</a></td>
+									<td>$viral_load</td>
+									<td>$cd4</td>
+									
+								</tr>";
+					}
+					echo "	</tbody>
+					</table>";
+?>
+			</div>
+		</div>
+                <!-- Export Datatable End -->
+                	<!-- Setting Tab End -->
 
 
 					
