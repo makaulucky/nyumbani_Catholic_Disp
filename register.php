@@ -164,8 +164,8 @@ mysqli_close($con);
 											
 										<select name='Gender' class="custom-select form-control" required>
 												<option value="">Select Option</option>
-												<option value="M">Male</option>
-												<option value="F">Female</option>
+												<option value="Male">Male</option>
+												<option value="Female">Female</option>
 										</select>
 										
 									</div>
