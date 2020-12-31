@@ -143,6 +143,57 @@ while($row=mysqli_fetch_array($result))
 
 
 
+<?php
+
+if(isset($_POST['submit']))
+
+ {
+$User_Name=$_SESSION["username"] ;  
+$Fname= mysqli_real_escape_string($con, $_POST['Fname']);
+$Lname= mysqli_real_escape_string($con, $_POST['Lname']);
+$email= mysqli_real_escape_string($con, $_POST['email']);
+
+
+//$Dob = date('Y-m-d', strtotime('$Dob'));
+   //$Reg_date = date('Y-m-d', strtotime('$Reg_date') );
+
+
+echo $sql = "UPDATE user_reg set Fname='$Fname', Lname='$Lname', email='$email' WHERE username='$User_Name'
+
+ 
+";
+
+if(mysqli_query($con, $sql)){
+
+
+echo   "<div class='alert alert-success'>";
+                      echo  "<button class='close' data-dismiss='alert'>&times;</button>";
+                      echo "<h5><b>Profile Updated Successfully!</h5>";
+                      echo   '</div>';    
+
+    
+        } else
+        {
+
+             echo   "<div class='alert alert-danger'>";
+      echo  "<button class='close' data-dismiss='alert'>&times;</button>";
+      echo   "<strong>Oops! Ouliskia Wapi!!!
+      </strong> ";
+      echo   '</div>';
+    
+        }
+}
+ include 'dbconfig.php';
+// close connection
+mysqli_close($con);
+ 
+  ?>
+
+
+
+
+
+
 
 
 
@@ -155,19 +206,39 @@ while($row=mysqli_fetch_array($result))
 															<p>NOTE: YOU CAN'T CHANGE YOUR USERNAME</p>
 															<div class="form-group">
 																<label>First Name</label>
-																<input name="Fname" required class="form-control form-control-lg" type="text">
+																<?php echo "<input name=\"Fname\" placeholder=\"$Fname\"; value=\"$Fname\"; class=\"form-control form-control-lg\"
+																type=\"text\"
+																>";  ?>
+
+
+
 																<label>Last Name</label>
-																<input name="Lname" required class="form-control form-control-lg" type="text">
 																
+																<?php echo "<input name=\"Lname\" placeholder=\"$Lname\"; value=\"$Lname\"; class=\"form-control form-control-lg\"
+																type=\"text\"
+																>";  ?>
+
+
+
+
 															</div>
 															
 															<div class="form-group">
 																<label>Email</label>
-																<input name="email" required class="form-control form-control-lg" type="email">
+																<?php echo "<input name=\"email\" placeholder=\"$email\"; value=\"$email\"; class=\"form-control form-control-lg\"
+																type=\"email\"
+																>";  ?>
+																
+																
+																
+																
 															</div>
 															
 															<div class="form-group mb-0">
-																<input name="user_reg" id="submit" type="submit" class="btn btn-primary" value="Update Information">
+
+
+															
+																<input name="submit" id="submit" type="submit" class="btn btn-primary" value="Update Information">
 															</div>
 													</ul>
 												</form>
