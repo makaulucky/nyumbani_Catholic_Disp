@@ -39,7 +39,7 @@
 								</li>
 								<li>
 									<a href="#">
-										<img src="vendors/images/photo1.jpg" alt="">
+										<img src="vendors/images/user.png" alt="">
 										<h3>Lea R. Frith</h3>
 										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
 									</a>
@@ -61,7 +61,7 @@
 				<div class="dropdown">
 					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 						<span class="user-icon">
-							<img src="vendors/images/photo1.jpg" alt="">
+							<img src="vendors/images/user.png" alt="">
 						</span>
 						<span class="user-name"> <?php echo "$User_Name";
 						?>

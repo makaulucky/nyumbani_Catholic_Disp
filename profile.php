@@ -59,7 +59,7 @@ $User_Name=$_SESSION["username"] ;
 						<div class="pd-20 card-box height-100-p">
 							<div class="profile-photo">
 								<a href="modal" data-toggle="modal" data-target="#modal" class="edit-avatar"><i class="fa fa-pencil"></i></a>
-								<img src="vendors/images/photo1.jpg" alt="" class="avatar-photo">
+								<img src="vendors/images/user.png" alt="" class="avatar-photo">
 								
 							</div>
 							<h5 class="text-center h5 mb-0">
