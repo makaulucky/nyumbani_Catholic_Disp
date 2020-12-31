@@ -84,13 +84,13 @@ $Id_no= mysqli_real_escape_string($con, $_POST['Id_no']);
    //$Reg_date = date('Y-m-d', strtotime('$Reg_date') );
 
 
-  $sql = "INSERT INTO admission 
+ $sql = "INSERT INTO admission 
 (
     Fname,Mname,Lname,Phone_no,Gender,Dob,art_start_date,Reg_date,Residence,Id_no
   ) 
 
 VALUES (
- '$Fname', '$Mname', '$Lname', '$Phone_no','$Gender','$Dob','$art_start_date',$Reg_date','$Residence','$Id_no'
+ '$Fname', '$Mname', '$Lname', '$Phone_no','$Gender','$Dob','$art_start_date','$Reg_date','$Residence','$Id_no'
  
 )";
 
