@@ -124,7 +124,9 @@ $User_Name=$_SESSION["username"] ;
 					
 								<tr>
 									<td class=\"table-plus\">$ccc_count</td>
-									<td>$Fname $Mname $Lname</td>
+									
+									<td><a href=clientprofile.php?ccc_count=$ccc_count>
+									$Fname $Mname $Lname</td>
 									<td>$Gender</td>
 									<td>$art_regimen</td>
 									<td>$current_art_date</td>
