@@ -190,7 +190,7 @@
 						</a>
 						<ul class="submenu">
 							<li><a href="admission.php">Admission</a></li>
-							<li><a href="labresults.php" >Lab Results</a></li>
+							<li><a href="labresults.php" >Results & History</a></li>
 
 						</ul>
 					</li>
