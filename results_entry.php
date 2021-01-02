@@ -239,13 +239,15 @@ while($row=mysqli_fetch_array($result))
 										<div class="form-group">
 											<label>Regimen:</label>
 											<select name='art_regimen' class="custom-select form-control" required>
-                                            <option value="">Select Option</option>
-					                            <option value="ABC/3TC/KALETRA">ABC/3TC/KALETRA</option>
-                                                <option value="ABC/3TC/LPVR">ABC/3TC/LPVR</option>
-                                                <option value="ABC/3TC/DTG">ABC/3TC/DTG</option>
-                                                <option value="TDF/3TC/DTG">TDF/3TC/DTG</option>
-                                                <option value="TDF/3TC/KALETRA">TDF/3TC/KALETRA</option>
-                                                <option value="TDF/3TC/EFV">TTDF/3TC/EFV</option>
+										<option value="">Select Regimen</option>
+										
+                                        <option value="ABC/3TC/LPVR">ABC/3TC/LPVR</option>
+                                        <option value="ABC/3TC/DTG">ABC/3TC/DTG</option>
+										<option value="TDF/3TC/DTG">TDF/3TC/DTG</option>
+										<option value="TDF/3TC/KALETRA">TDF/3TC/KALETRA</option>
+										<option value="TDF/3TC/EFV">TDF/3TC/EFV</option>
+										<option value="ABC/3TC/KALETRA">ABC/3TC/KALETRA</option>
+										
 										</select>
 										</div>
                                     </div>
