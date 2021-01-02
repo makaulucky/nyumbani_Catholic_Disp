@@ -94,7 +94,7 @@ echo $size;
 <?php 
 
  include 'dbconfig.php';
-$result2 = mysqli_query($con,"SELECT COUNT(*) FROM results ");
+$result2 = mysqli_query($con,"SELECT COUNT(*) FROM results  ");
 
 
 $row = mysqli_fetch_assoc($result2);
