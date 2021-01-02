@@ -179,7 +179,7 @@ echo "	<table id=\"editableTable\" class=\"table hover multiple-select-row data-
 while($row=mysqli_fetch_array($result))
                             {          
                                 $ccc_no=$row['ccc_no'];
-								$current_art_date=$row['current_art_date']; 
+								$curr_vl_date=$row['curr_vl_date']; 
 								$viral_load=$row['viral_load'];
 								$cd4=$row['cd4'];
 								
@@ -187,7 +187,7 @@ while($row=mysqli_fetch_array($result))
 							echo "         
 								<tr>
 									<td class=\"table-plus\">$ccc_no</td>
-									<td>$current_art_date</a></td>
+									<td>$curr_vl_date</a></td>
 									<td>$viral_load</td>
 									<td>$cd4</td>
 									
