@@ -70,13 +70,7 @@ $User_Name=$_SESSION["username"] ;
 <?php
 					include 'dbconfig.php';
                           
-                             $query = "select *
-                               FROM 
-
-							   detailed_results
-                              
-
-                            ";
+                             $query = "select * FROM  detailed_results";
 							 $result = mysqli_query($con,$query);
 							 
 							 echo "	<table class=\"table table-bordered\">
@@ -86,10 +80,10 @@ $User_Name=$_SESSION["username"] ;
 									 <th>Name</th>
 									 <th>GND</th>
 									 <th>Regimen</th>
-									 <th>Curr ART D</th>
-									 <th>Pre VL D</th>
+									 <th>Curr ART DT</th>
+									 <th>Pre VL DT</th>
 									 <th>Pre VL</th>
-									 <th>Rec VL D</th>
+									 <th>Rec VL DT</th>
 									 <th>VL</th>
 									 <th>Cd4</th>
 									 <th>Line</th>
@@ -118,10 +112,7 @@ $User_Name=$_SESSION["username"] ;
 								$cd4=$row['cd4'];
 								$mstari=$row['mstari'];
 
-                                echo "   
-
-                              
-					
+								echo "   
 								<tr>
 									<td class=\"table-plus\">$ccc_count</td>
 									
