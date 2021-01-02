@@ -76,7 +76,9 @@ while($row=mysqli_fetch_array($result))
                                 $Lname=$row['Lname'];
                                 $Gender=$row['Gender'];
                                 $art_regimen=$row['art_regimen'];
-                                $Dob=$row['Dob'];
+								$Dob=$row['Dob'];
+								$years=$row['years'];
+								$months=$row['months'];
                                 $mstari=$row['mstari'];
                                 
 							}
@@ -98,6 +100,11 @@ while($row=mysqli_fetch_array($result))
 								<p class="text-muted font-14">DoB:
 								<?php 
 								echo "$Dob";
+								?> 
+								</p>
+								<p class="text-muted font-14">Age:
+								<?php 
+								echo "$years Yr(s) $months Month(s)";
 								?> 
                                 </p>
                                 <p class="text-muted font-14">Gender:
@@ -193,17 +200,7 @@ while($row=mysqli_fetch_array($result))
 		</div>
                 <!-- Export Datatable End -->
                 	<!-- Setting Tab End -->
-
-
 					
-
-
-
-
-
-
-
-											
 										
 									</div>
 								</div>
