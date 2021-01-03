@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 31, 2020 at 06:54 PM
+-- Generation Time: Jan 03, 2021 at 10:55 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -48,12 +48,12 @@ CREATE TABLE `admission` (
 --
 
 INSERT INTO `admission` (`ccc_no`, `Fname`, `Mname`, `Lname`, `Phone_no`, `Gender`, `Residence`, `Dob`, `art_start_date`, `Reg_date`, `Id_no`, `Added_on`, `Added_by`) VALUES
-(62, 'MUNYWOKI ', '', 'SYOMBUA', '710644809.', 'M', 'Village', '0000-00-00', '2020-12-01', '0000-00-00', 0, '0000-00-00 00:00:00', ''),
-(82, 'JULIANA ', '', 'MBEKE', '710645057.', 'F', 'Village', '0000-00-00', '0000-00-00', '0000-00-00', 0, '0000-00-00 00:00:00', ''),
-(93, 'JOHN ', '', 'KISEKO', '710644648.', 'M', 'Village', '0000-00-00', '0000-00-00', '0000-00-00', 0, '0000-00-00 00:00:00', ''),
-(94, 'MARGARET ', '', 'KIMONDIU', '710644777', 'F', 'Village', '0000-00-00', '0000-00-00', '0000-00-00', 0, '0000-00-00 00:00:00', ''),
-(95, 'GIFTON ', '', 'MWIKALI', '710644827.', 'M', 'Village', '0000-00-00', '0000-00-00', '0000-00-00', 0, '0000-00-00 00:00:00', ''),
-(96, 'MBITHE ', '', 'KIMANZI', '710644800', 'F', 'Village', '0000-00-00', '0000-00-00', '0000-00-00', 0, '0000-00-00 00:00:00', ''),
+(62, 'MUNYWOKI ', '', 'SYOMBUA', '710644809.', 'M', 'Village', '2010-01-02', '2020-12-01', '2020-12-01', 0, '0000-00-00 00:00:00', ''),
+(82, 'JULIANA ', '', 'MBEKE', '710645057.', 'F', 'Village', '2017-11-06', '0000-00-00', '0000-00-00', 0, '0000-00-00 00:00:00', ''),
+(93, 'JOHN ', '', 'KISEKO', '710644648.', 'M', 'Village', '2015-11-10', '0000-00-00', '0000-00-00', 0, '0000-00-00 00:00:00', ''),
+(94, 'MARGARET ', '', 'KIMONDIU', '710644777', 'F', 'Village', '2011-11-11', '0000-00-00', '0000-00-00', 0, '0000-00-00 00:00:00', ''),
+(95, 'GIFTON ', '', 'MWIKALI', '710644827.', 'M', 'Village', '2006-05-11', '0000-00-00', '0000-00-00', 0, '0000-00-00 00:00:00', ''),
+(96, 'MBITHE ', '', 'KIMANZI', '710644800', 'F', 'Village', '1971-08-14', '0000-00-00', '0000-00-00', 0, '0000-00-00 00:00:00', ''),
 (97, 'MUTUKU ', '', 'MUTINDA', '710644878.', 'M', 'Village', '0000-00-00', '0000-00-00', '0000-00-00', 0, '0000-00-00 00:00:00', ''),
 (98, 'MARY ', '', 'KILONZI', '710644583', 'F', 'Village', '0000-00-00', '0000-00-00', '0000-00-00', 0, '0000-00-00 00:00:00', ''),
 (99, 'CAROL ', '', 'WANZA', '710644731', 'F', 'Village', '0000-00-00', '2020-12-24', '2020-12-23', 0, '0000-00-00 00:00:00', ''),
@@ -182,7 +182,7 @@ INSERT INTO `admission` (`ccc_no`, `Fname`, `Mname`, `Lname`, `Phone_no`, `Gende
 (279, 'FAITH ', 'NDUNGE ', 'MUENI', '710645172.', 'F', 'Village', '0000-00-00', '0000-00-00', '0000-00-00', 0, '0000-00-00 00:00:00', ''),
 (280, 'MARTHA ', 'MUENI ', 'GRACE', '710645177.', 'F', 'Village', '0000-00-00', '0000-00-00', '0000-00-00', 0, '0000-00-00 00:00:00', ''),
 (281, 'James', 'Ngungi', 'Kinyua', '0710644583', 'Male', 'Village', '2017-11-01', '2020-12-08', '2020-12-31', 0, '2020-12-31 14:07:42', ''),
-(282, 'James', 'Ngungi', 'Kinyua', '0710644583', 'Male', 'Village', '2017-11-01', '2020-12-08', '2020-12-31', 0, '2020-12-31 14:08:12', '');
+(282, 'James', 'Ngungi', 'Kinyua', '0710644583', 'Male', 'Village', '2010-12-04', '2020-12-08', '2020-12-31', 0, '2020-12-31 14:08:12', '');
 
 -- --------------------------------------------------------
 
@@ -197,6 +197,8 @@ CREATE TABLE `detailed_results` (
 ,`Lname` varchar(20)
 ,`Gender` varchar(255)
 ,`Dob` date
+,`years` double(17,0)
+,`months` int(6)
 ,`ResultsID` int(11)
 ,`ccc_count` int(30)
 ,`art_start_date` date
@@ -243,7 +245,9 @@ INSERT INTO `results` (`ResultsID`, `ccc_count`, `art_start_date`, `art_regimen`
 (7, 96, '2020-12-22', 'ABC/3TC/LPVR', '2020-12-01', '0000-00-00', 'LDL', '2020-12-23', '457', 0, 1),
 (8, 99, '2020-12-01', 'TDF/3TC/DTG', '2020-12-01', '0000-00-00', '', '2020-12-01', '111', 124, 1),
 (9, 99, '2020-12-01', 'ABC/3TC/KALETRA', '2020-12-01', '2020-12-01', '111', '2020-12-04', 'LDL', 452, 1),
-(10, 99, '2020-12-01', 'ABC/3TC/LPVR', '2020-12-01', '2020-12-04', 'LDL', '2020-12-10', '1457', 741, 1);
+(10, 99, '2020-12-01', 'ABC/3TC/LPVR', '2020-12-01', '2020-12-04', 'LDL', '2020-12-10', '1457', 741, 1),
+(23, 282, '0000-00-00', 'ABC/3TC/LPVR', '0000-00-00', '0000-00-00', '', '2021-01-01', '4544', 443, 1),
+(24, 282, '0000-00-00', 'ABC/3TC/DTG', '0000-00-00', '2021-01-01', '4544', '2021-01-02', 'LDL', 452, 1);
 
 -- --------------------------------------------------------
 
@@ -277,7 +281,7 @@ INSERT INTO `user_reg` (`User_id`, `Fname`, `Lname`, `username`, `email`, `passw
 --
 DROP TABLE IF EXISTS `detailed_results`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `detailed_results`  AS SELECT `a`.`ccc_no` AS `ccc_no`, `a`.`Fname` AS `Fname`, `a`.`Mname` AS `Mname`, `a`.`Lname` AS `Lname`, `a`.`Gender` AS `Gender`, `a`.`Dob` AS `Dob`, `r`.`ResultsID` AS `ResultsID`, `r`.`ccc_count` AS `ccc_count`, `r`.`art_start_date` AS `art_start_date`, `r`.`art_regimen` AS `art_regimen`, `r`.`current_art_date` AS `current_art_date`, `r`.`pre_vl_date` AS `pre_vl_date`, `r`.`pre_vl_results` AS `pre_vl_results`, `r`.`curr_vl_date` AS `curr_vl_date`, `r`.`viral_load` AS `viral_load`, `r`.`cd4` AS `cd4`, `r`.`mstari` AS `mstari` FROM (`results` `r` left join `admission` `a` on(`a`.`ccc_no` = `r`.`ccc_count`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `detailed_results`  AS SELECT `a`.`ccc_no` AS `ccc_no`, `a`.`Fname` AS `Fname`, `a`.`Mname` AS `Mname`, `a`.`Lname` AS `Lname`, `a`.`Gender` AS `Gender`, `a`.`Dob` AS `Dob`, date_format(curdate(),'%Y') - date_format(`a`.`Dob`,'%Y') - (date_format(curdate(),'00-%m-%d') < date_format(`a`.`Dob`,'00-%m-%d')) AS `years`, period_diff(date_format(curdate(),'%Y%m'),date_format(`a`.`Dob`,'%Y%m')) MOD 12 AS `months`, `r`.`ResultsID` AS `ResultsID`, `r`.`ccc_count` AS `ccc_count`, `r`.`art_start_date` AS `art_start_date`, `r`.`art_regimen` AS `art_regimen`, `r`.`current_art_date` AS `current_art_date`, `r`.`pre_vl_date` AS `pre_vl_date`, `r`.`pre_vl_results` AS `pre_vl_results`, `r`.`curr_vl_date` AS `curr_vl_date`, `r`.`viral_load` AS `viral_load`, `r`.`cd4` AS `cd4`, `r`.`mstari` AS `mstari` FROM (`results` `r` left join `admission` `a` on(`a`.`ccc_no` = `r`.`ccc_count`)) ;
 
 --
 -- Indexes for dumped tables
@@ -315,13 +319,13 @@ ALTER TABLE `admission`
 -- AUTO_INCREMENT for table `results`
 --
 ALTER TABLE `results`
-  MODIFY `ResultsID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ResultsID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `user_reg`
 --
 ALTER TABLE `user_reg`
-  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
