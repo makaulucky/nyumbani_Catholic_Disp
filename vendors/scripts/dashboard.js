@@ -27,7 +27,7 @@ var options = {
 					show: true,
 					color: '#333',
 					offsetY: 5,
-					fontSize: '15px'
+					fontSize: '12px'
 				}
 			}
 		}
@@ -237,7 +237,7 @@ var options4 = {
 					show: true,
 					color: '#333',
 					offsetY: 5,
-					fontSize: '15px'
+					fontSize: '12px'
 				}
 			}
 		}
@@ -320,7 +320,7 @@ var options5 = {
 		labels: {
 			style: {
 				colors: ['#353535'],
-				fontSize: '16px',
+				fontSize: '11px',
 			},
 		},
 		axisBorder: {
@@ -334,7 +334,7 @@ var options5 = {
 		labels: {
 			style: {
 				colors: '#353535',
-				fontSize: '16px',
+				fontSize: '11px',
 			},
 		},
 		axisBorder: {
@@ -344,7 +344,7 @@ var options5 = {
 	legend: {
 		horizontalAlign: 'right',
 		position: 'top',
-		fontSize: '16px',
+		fontSize: '12px',
 		offsetY: 0,
 		labels: {
 			colors: '#353535',
