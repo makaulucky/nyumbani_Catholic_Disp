@@ -80,7 +80,7 @@ while($row=mysqli_fetch_array($result))
 
 
 
-					<?php 
+<?php 
   include 'dbconfig.php';
 
   
@@ -98,6 +98,7 @@ while($row=mysqli_fetch_array($result))
 									$ccc_count=$row['ccc_count']; 
 									$curr_vl_dateFromPre=$row['curr_vl_date']; 
 									$viral_loadFromPre=$row['viral_load'];
+									$art_start_date=$row['art_start_date'];
 									
 									
 								}
@@ -105,8 +106,8 @@ while($row=mysqli_fetch_array($result))
 								
 					
                           
-$initial_RegDate= $art_start_date; 
-$initial_artDate=$art_regimen;  
+$art_start_date= $art_start_date;
+$art_regimen= mysqli_real_escape_string($con, $_POST['art_regimen']); 
 $current_art_date= mysqli_real_escape_string($con, $_POST['current_art_date']);   
 $pre_vl_date= $curr_vl_dateFromPre;
 $pre_vl_results= $viral_loadFromPre;
@@ -120,7 +121,7 @@ $mstari= mysqli_real_escape_string($con, $_POST['mstari']);
    //$Reg_date = date('Y-m-d', strtotime('$Reg_date') );
    //Fname 	Mname 	Lname 	Gender 	Age 	art_start_date 	art_regimen 	current_art_date 	pre_vl_date 	pre_vl_results 	curr_vl_date 	viral_load 	cd4  mstari 	
 
-  $sql = "INSERT INTO results 
+ echo $sql = "INSERT INTO results 
 (
 	ccc_count,art_start_date,art_regimen,current_art_date,pre_vl_date,pre_vl_results,curr_vl_date,viral_load,cd4,mstari
   ) 
@@ -179,7 +180,7 @@ while($row=mysqli_fetch_array($result))
                             {          
                                 $ccc_no=$row['ccc_count']; 
 								$initial_RegDate=$row['Reg_date'];
-								$initial_artDate=$row['art_start_date'];
+								$initial_art_start_date=$row['art_start_date'];
 								
 							}
 ?>
@@ -195,7 +196,7 @@ while($row=mysqli_fetch_array($result))
 										<div class="form-group">
 											<label >Initial ART Start Date:</label>
 
-											<?php echo "<input readonly name=\"art_start_date\" placeholder=\"$initial_artDate\"; value=\"$initial_artDate\"; class=\"form-control\"> ";  ?>
+											<?php echo "<input readonly name=\"art_start_date\" placeholder=\"$art_start_date\"; value=\"$art_start_date\"; class=\"form-control\"> ";  ?>
 										</div>
                                     </div>
                                     <div class="col-md-6">
@@ -239,14 +240,15 @@ while($row=mysqli_fetch_array($result))
 										<div class="form-group">
 											<label>Regimen:</label>
 											<select name='art_regimen' class="custom-select form-control" required>
-										<option value="">Select Regimen</option>
-										
-                                        <option value="ABC/3TC/LPVR">ABC/3TC/LPVR</option>
+										<option value="">Select Options</option>
+										<option value="ABC/3TC/LPVR">ABC/3TC/LPVR</option>
                                         <option value="ABC/3TC/DTG">ABC/3TC/DTG</option>
 										<option value="TDF/3TC/DTG">TDF/3TC/DTG</option>
-										<option value="TDF/3TC/KALETRA">TDF/3TC/KALETRA</option>
 										<option value="TDF/3TC/EFV">TDF/3TC/EFV</option>
+										<option value="TDF/3TC/KALETRA">TDF/3TC/KALETRA</option>
 										<option value="ABC/3TC/KALETRA">ABC/3TC/KALETRA</option>
+										<option value="HEI">HEI</option>
+										
 										
 										</select>
 										</div>
