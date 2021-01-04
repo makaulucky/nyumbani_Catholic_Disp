@@ -47,8 +47,8 @@ $User_Name=$_SESSION["username"] ;
 						<img src="vendors/images/banner-img.png" alt="">
 					</div>
 					<div class="col-md-8">
-						<h4 class="font-20 weight-500 mb-10 text-capitalize">Hi, <?php echo "$User_Name";
-						?>
+						<h4 class="font-20 weight-500 mb-10 text-capitalize">Hi <?php echo "$User_Name";
+						?>,
 							Welcome to<div class="weight-600 font-30 text-blue">NYUMBANI CATHOLIC DISPENSARY</div>
 						</h4>
 						<p class="font-18 max-width-600"></p>
@@ -70,15 +70,13 @@ $User_Name=$_SESSION["username"] ;
 
  include 'dbconfig.php';
 $result2 = mysqli_query($con,"SELECT COUNT(*) FROM admission ");
-
 $row = mysqli_fetch_assoc($result2);
 $size = $row['COUNT(*)'];
-
 echo $size;
 ?>
 
 								</div>
-								<div class="weight-600 font-14">Current Active</div>
+								<div class="weight-600 font-14">Total Case Load</div>
 							</div>
 						</div>
 					</div>
@@ -91,21 +89,16 @@ echo $size;
 							</div>
 							<div class="widget-data">
 								<div class="h4 mb-0">
-								<?php 
+<?php 
 
 include 'dbconfig.php';
 $result2 = mysqli_query($con,"SELECT COUNT(*) FROM detailed_results WHERE viral_load <1000 ");
-
-
 $row = mysqli_fetch_assoc($result2);
 $size = $row['COUNT(*)'];
 
 echo $size;
 ?>
 							
-								
-								
-								
 								</div>
 								<div class="weight-600 font-14">Suppressed</div>
 							</div>
@@ -126,18 +119,13 @@ echo $size;
 
 include 'dbconfig.php';
 $result2 = mysqli_query($con,"SELECT COUNT(*) FROM detailed_results WHERE viral_load >1000 ");
-
-
 $row = mysqli_fetch_assoc($result2);
 $size = $row['COUNT(*)'];
 
 echo $size;
 ?>
 
-
-
-
-								<div class="weight-600 font-14">With High VL</div>
+								<div class="weight-600 font-14">Not Suppressed</div>
 							</div>
 						</div>
 					</div>
@@ -149,8 +137,17 @@ echo $size;
 								<div id="chart4"></div>
 							</div>
 							<div class="widget-data">
-								<div class="h4 mb-0">2</div>
-								<div class="weight-600 font-14">Recent Exits</div>
+								<div class="h4 mb-0"></div>
+
+<?php 
+
+include 'dbconfig.php';
+$result2 = mysqli_query($con,"SELECT COUNT(*) FROM detailed_results WHERE viral_load = 'HEI' ");
+$row = mysqli_fetch_assoc($result2);
+$size = $row['COUNT(*)'];
+echo $size;
+?>
+								<div class="weight-600 font-14">Exposed</div>
 							</div>
 						</div>
 					</div>
