@@ -196,10 +196,11 @@
 					</li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Tables</span>
+							<span class="micon dw dw-library"></span><span class="mtext">Reports</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="ccclist.php">CCC Table</a></li>
+							<li><a href="ccclist.php">Registration List</a></li>
+							<li><a href="ccctable.php">CCC Report</a></li>
 						</ul>
 					</li>
 					
