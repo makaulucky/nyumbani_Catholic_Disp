@@ -55,6 +55,7 @@ $User_Name=$_SESSION["username"] ;
 					</div>
 				</div>
 			</div>
+			
 			<div class="row">
 				<div class="col-xl-3 mb-30">
 					<div class="card-box height-100-p widget-style1">
@@ -83,18 +84,17 @@ echo $size;
 					</div>
 				</div>
 				<div class="col-xl-3 mb-30">
-					<div class="card-box height-100-p widget-style1">
+					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap align-items-center">
 							<div class="progress-data">
 								<div id="chart2"></div>
 							</div>
 							<div class="widget-data">
 								<div class="h4 mb-0">
-								
-<?php 
+								<?php 
 
- include 'dbconfig.php';
-$result2 = mysqli_query($con,"SELECT COUNT(*) FROM results  ");
+include 'dbconfig.php';
+$result2 = mysqli_query($con,"SELECT COUNT(*) FROM detailed_results WHERE viral_load <1000 ");
 
 
 $row = mysqli_fetch_assoc($result2);
@@ -102,7 +102,7 @@ $size = $row['COUNT(*)'];
 
 echo $size;
 ?>
-								
+							
 								
 								
 								
@@ -119,10 +119,20 @@ echo $size;
 								<div id="chart3"></div>
 							</div>
 							<div class="widget-data">
-								<div class="h4 mb-0">14</div>
+								<div class="h4 mb-0"></div>
 
 
+								<?php 
 
+include 'dbconfig.php';
+$result2 = mysqli_query($con,"SELECT COUNT(*) FROM detailed_results WHERE viral_load >1000 ");
+
+
+$row = mysqli_fetch_assoc($result2);
+$size = $row['COUNT(*)'];
+
+echo $size;
+?>
 
 
 
@@ -146,6 +156,7 @@ echo $size;
 					</div>
 				</div>
 			</div>
+			
 			<div class="row">
 				<div class="col-xl-8 mb-30">
 					<div class="card-box height-100-p pd-20">
@@ -153,12 +164,12 @@ echo $size;
 						<div id="chart5"></div>
 					</div>
 				</div>
-				<div class="col-xl-4 mb-30">
+				<!--div class="col-xl-4 mb-30">
 					<div class="card-box height-100-p pd-20">
 						<h2 class="h4 mb-20">Set Target</h2>
 						<div id="chart6"></div>
 					</div>
-				</div>
+				</div>-->
 			</div>
 			<div class="card-box mb-30">
 				<h2 class="h4 pd-20">Recent CCC Activities</h2>
@@ -190,5 +201,6 @@ echo $size;
 	<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
 	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 	<script src="vendors/scripts/dashboard.js"></script>
+	
 </body>
 </html>
