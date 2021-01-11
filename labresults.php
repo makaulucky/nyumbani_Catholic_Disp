@@ -80,10 +80,10 @@ $User_Name=$_SESSION["username"] ;
 									 <th>Name</th>
 									 <th>GND</th>
 									 <th>Regimen</th>
-									 <th>Curr ART DT</th>
+									 <th>Init ART DT</th>
 									 <th>Pre VL DT</th>
 									 <th>Pre VL</th>
-									 <th>Rec VL DT</th>
+									 <th>VL Date</th>
 									 <th>VL</th>
 									 <th>Cd4</th>
 									 <th>Line</th>

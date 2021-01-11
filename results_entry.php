@@ -230,7 +230,12 @@ while($row=mysqli_fetch_array($result))
                                     <div class="col-md-6">
 										<div class="form-group">
 											<label >Current VL Date:</label>
-											<input required type="date" class="form-control" placeholder="Pick Date" name='curr_vl_date'>
+											<input required type="date"
+											 class="form-control" placeholder="Pick Date" name= 'curr_vl_date'
+
+										
+											
+											>
 										</div>
 									</div>
 								</div>

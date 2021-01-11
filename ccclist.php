@@ -80,11 +80,11 @@ echo "	<table id=\"editableTable\" class=\"table hover multiple-select-row data-
 								 <tr>
 									 <th class=\"table-plus datatable-nosort\">ccc_no</th>
 									 <th>Name</th>
-									 <th>Phone N0.</th>
+									 <th>Phone N0</th>
 									 <th>Gender</th>
 									 <th>Residence</th>
 									 <th>DoB</th>
-									 <th>ID N0.</th>
+									 <th>ID N0</th>
 									 <th>Reg_date</th>						 
 								 </tr>
 							 </thead>
