@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2021 at 10:55 AM
+-- Generation Time: Jan 11, 2021 at 03:53 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -181,8 +181,7 @@ INSERT INTO `admission` (`ccc_no`, `Fname`, `Mname`, `Lname`, `Phone_no`, `Gende
 (278, 'RHODA  ', 'NDUKU', 'NTHAMBI', '710645168', 'F', 'Village', '0000-00-00', '0000-00-00', '0000-00-00', 0, '0000-00-00 00:00:00', ''),
 (279, 'FAITH ', 'NDUNGE ', 'MUENI', '710645172.', 'F', 'Village', '0000-00-00', '0000-00-00', '0000-00-00', 0, '0000-00-00 00:00:00', ''),
 (280, 'MARTHA ', 'MUENI ', 'GRACE', '710645177.', 'F', 'Village', '0000-00-00', '0000-00-00', '0000-00-00', 0, '0000-00-00 00:00:00', ''),
-(281, 'James', 'Ngungi', 'Kinyua', '0710644583', 'Male', 'Village', '2017-11-01', '2020-12-08', '2020-12-31', 0, '2020-12-31 14:07:42', ''),
-(282, 'James', 'Ngungi', 'Kinyua', '0710644583', 'Male', 'Village', '2010-12-04', '2020-12-08', '2020-12-31', 0, '2020-12-31 14:08:12', '');
+(283, 'Catherine', '', 'Mbisi', '0720123456', 'Female', 'Village', '2000-03-03', '2006-03-30', '2021-01-05', 0, '2021-01-05 09:42:34', '');
 
 -- --------------------------------------------------------
 
@@ -246,8 +245,10 @@ INSERT INTO `results` (`ResultsID`, `ccc_count`, `art_start_date`, `art_regimen`
 (8, 99, '2020-12-01', 'TDF/3TC/DTG', '2020-12-01', '0000-00-00', '', '2020-12-01', '111', 124, 1),
 (9, 99, '2020-12-01', 'ABC/3TC/KALETRA', '2020-12-01', '2020-12-01', '111', '2020-12-04', 'LDL', 452, 1),
 (10, 99, '2020-12-01', 'ABC/3TC/LPVR', '2020-12-01', '2020-12-04', 'LDL', '2020-12-10', '1457', 741, 1),
-(23, 282, '0000-00-00', 'ABC/3TC/LPVR', '0000-00-00', '0000-00-00', '', '2021-01-01', '4544', 443, 1),
-(24, 282, '0000-00-00', 'ABC/3TC/DTG', '0000-00-00', '2021-01-01', '4544', '2021-01-02', 'LDL', 452, 1);
+(25, 62, '0000-00-00', 'ABC/3TC/LPVR', '0000-00-00', '0000-00-00', '', '2021-01-03', '987', 2322, 2),
+(26, 62, '0000-00-00', 'TDF/3TC/DTG', '0000-00-00', '2021-01-03', '987', '2021-01-01', 'LDL', 443, 1),
+(27, 283, '0000-00-00', 'TDF/3TC/KALETRA', '0000-00-00', '0000-00-00', '', '2020-12-28', '46', 0, 1),
+(28, 283, '0000-00-00', 'TDF/3TC/EFV', '0000-00-00', '2020-12-28', '46', '2021-01-05', '17', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -272,7 +273,8 @@ CREATE TABLE `user_reg` (
 
 INSERT INTO `user_reg` (`User_id`, `Fname`, `Lname`, `username`, `email`, `passwordk`, `con_passwordk`, `Gender`) VALUES
 (1, 'Lucky', 'Makau', 'Lucky', 'makaulucky20@gmail.com', '1f168838cdda252f94323ba3c25bc7d4', '12', 'Male'),
-(7, 'James', 'Kinyua', 'James', 'jameskinyua@gmail.com', '3d5c4fe815d5a46e61a7a113b4fbc054', '123', 'Male');
+(7, 'James', 'Kinyua', 'James', 'jameskinyua@gmail.com', '3d5c4fe815d5a46e61a7a113b4fbc054', '123', 'Male'),
+(8, 'Catherine ', 'Ngave', 'katengave', 'cngave@gmail.com', '4950a2964c3ad7e31cab3bf60c85b63f', 'Ruhamah.2014', 'Female');
 
 -- --------------------------------------------------------
 
@@ -313,19 +315,19 @@ ALTER TABLE `user_reg`
 -- AUTO_INCREMENT for table `admission`
 --
 ALTER TABLE `admission`
-  MODIFY `ccc_no` int(18) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=283;
+  MODIFY `ccc_no` int(18) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=284;
 
 --
 -- AUTO_INCREMENT for table `results`
 --
 ALTER TABLE `results`
-  MODIFY `ResultsID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `ResultsID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `user_reg`
 --
 ALTER TABLE `user_reg`
-  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
