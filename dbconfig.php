@@ -1,5 +1,5 @@
 <?php
-$con = @mysqli_connect("localhost","root","",clinic_db);
+$con = @mysqli_connect("localhost","root","","");
   if(!$con)
 	  {
 	  die(mysqli_error());
