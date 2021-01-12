@@ -39,6 +39,7 @@ $User_Name=$_SESSION["username"] ;
 
 	<div class="mobile-menu-overlay"></div>
 
+	
 	<div class="main-container">
 		<div class="pd-ltr-20">
 			<div class="card-box pd-20 height-100-p mb-30">
@@ -50,8 +51,9 @@ $User_Name=$_SESSION["username"] ;
 						<h4 class="font-20 weight-500 mb-10 text-capitalize">Hi <?php echo "$User_Name";
 						?>,
 							Welcome to<div class="weight-600 font-30 text-blue">NYUMBANI CATHOLIC DISPENSARY</div>
-						</h4>
+						</h4> <p  id="time"></p>
 						<p class="font-18 max-width-600"></p>
+						
 					</div>
 				</div>
 			</div>
@@ -198,6 +200,10 @@ echo $size;
 	<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
 	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 	<script src="vendors/scripts/dashboard.js"></script>
+	<script>
+var d = new Date();
+document.getElementById("time").innerHTML = d;
+</script>
 	
 </body>
 </html>
