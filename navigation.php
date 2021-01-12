@@ -204,7 +204,7 @@
 						</a>
 						<ul class="submenu">
 						<li><a href="#">Clinic Report</a></li>
-							<li><a href="#">Counslling Reports</a></li>
+							<li><a href="#">Counselling Reports</a></li>
 						</ul>
 					</li>
 					
