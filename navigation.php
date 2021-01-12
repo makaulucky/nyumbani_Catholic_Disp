@@ -6,9 +6,6 @@
 		<div class="header-left">
 			<div class="menu-icon dw dw-menu"></div>
 			<div class="search-toggle-icon dw dw-search2" data-toggle="header_search"></div>
-			<p text-center id="time"></p>
-
-
 		</div>
 
 
@@ -178,19 +175,26 @@
 				<ul id="accordion-menu">
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
+							<span class="micon dw dw-house-1"></span><span class="mtext">Clinic</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="index.php">Dashboard</a></li>
+							<li><a href="index.php">Home Dashboard</a></li>
+							<li><a href="admission.php">Admission</a></li>
+							<li><a href="labresults.php" >Results & History</a></li>
+							<li><a href="ccclist.php">Registration List</a></li>
+							<li><a href="ccctable.php">CCC Report</a></li>
+
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-edit2"></span><span class="mtext">Forms</span>
+							<span class="micon dw dw-edit2"></span><span class="mtext">Counselling</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="admission.php">Admission</a></li>
-							<li><a href="labresults.php" >Results & History</a></li>
+						<li><a href="#">Registration</a></li>
+							<li><a href="#" >Registration List</a></li>
+							<li><a href="#">Sessions</a></li>
+							<li><a href="#">Reports</a></li>
 
 						</ul>
 					</li>
@@ -199,8 +203,8 @@
 							<span class="micon dw dw-library"></span><span class="mtext">Reports</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="ccclist.php">Registration List</a></li>
-							<li><a href="ccctable.php">CCC Report</a></li>
+						<li><a href="#">Clinic Report</a></li>
+							<li><a href="#">Counslling Reports</a></li>
 						</ul>
 					</li>
 					
