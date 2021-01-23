@@ -78,7 +78,7 @@ $result = mysqli_query($con,$query);
 echo "	<table id=\"editableTable\" class=\"table hover multiple-select-row data-table-export nowrap\">
 							 <thead>
 								 <tr>
-									 <th class=\"table-plus datatable-nosort\">ccc_no</th>
+									 <th class=\"table-plus datatable-nosort\">CCC NO</th>
 									 <th>Name</th>
 									 <th>Phone N0</th>
 									 <th>Gender</th>
