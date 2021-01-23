@@ -156,7 +156,7 @@ echo $size;
 				</div>
 			</div>
 			
-			<div class="row">
+			<!--div class="row">
 				<div class="col-xl-8 mb-30">
 					<div class="card-box height-100-p pd-20">
 						<h2 class="h4 mb-20">Activity</h2>
@@ -169,23 +169,74 @@ echo $size;
 						<div id="chart6"></div>
 					</div>
 				</div>-->
+			</!--div>
+					<!-- Simple Datatable start -->
+	
+				<!-- Export Datatable start -->
+				<div class="card-box mb-30">
+					<div class="pd-20">
+						<h4 class="text-blue h4">Not Suppressed</h4>
+					</div>
+					<div class="pb-20">
+
+
+
+<?php
+include 'dbconfig.php';
+
+
+$query = "SELECT * FROM detailed_results WHERE viral_load >1000";
+$result = mysqli_query($con,$query); 
+
+echo "	<table id=\"editableTable\" class=\"table hover multiple-select-row data-table-export nowrap\">
+							 <thead>
+								 <tr>
+									 <th class=\"table-plus datatable-nosort\">CCC N0</th>
+									 <th>Name</th>
+									 <th>Age</th>
+									 <th>Gnd</th>
+                                     <th>Date</th>
+                                     <th>Regimen</th>
+                                     <th>Viral Load</th>
+                                     <th>CD4</th>
+									 <th>Line</th>						 
+								 </tr>
+							 </thead>
+							 <tbody>";
+while($row=mysqli_fetch_array($result))
+                            {          
+                                $ccc_no=$row['ccc_no']; 
+								$Fname=$row['Fname']; 
+								$Mname=$row['Mname']; 
+								$Lname=$row['Lname']; 
+								$years=$row['years']; 
+								$Gender=$row['Gender'];
+                                $curr_vl_date=$row['curr_vl_date'];
+                                $art_regimen=$row['art_regimen'];
+								$viral_load=$row['viral_load'];
+								$cd4=$row['cd4'];
+								$mstari=$row['mstari'];
+							echo "         
+								<tr>
+									<td class=\"table-plus\">$ccc_no</td>
+									<td><a href=clientprofile.php?ccc_count=$ccc_no>
+
+									$Fname $Mname $Lname  </a></td>
+									<td>$years</td>
+									<td>$Gender</td>
+                                    <td>$curr_vl_date</td>
+                                    <td>$art_regimen</td>
+                                    <td>$viral_load</td>
+                                    <td>$cd4</td>
+									<td>$mstari</td>
+								</tr>";
+					}
+					echo "	</tbody>
+					</table>";
+?>
 			</div>
-			<div class="card-box mb-30">
-				<h2 class="h4 pd-20">Recent CCC Activities</h2>
-				<table class="data-table table nowrap">
-					<thead>
-						<tr>
-							<th class="table-plus datatable-nosort">Client</th>
-							<th>Full Name</th>
-							<th>Age</th>
-							<th>Regimen</th>
-							<th>Viral Load</th>
-							<th>CD4</th>
-							<th class="datatable-nosort">Action</th>
-						</tr>
-					</thead>
-				</table>
-			</div>
+		</div>
+				<!-- Export Datatable End -->
 			<?php include 'footer.php'; ?>
 		</div>
 	</div>
