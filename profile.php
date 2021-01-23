@@ -13,8 +13,6 @@ $User_Name=$_SESSION["username"] ;
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html>
 
@@ -72,8 +70,8 @@ $User_Name=$_SESSION["username"] ;
 							
 <?php
 include 'dbconfig.php'; 
-$ccc_no=$_GET['ccc_no'];
- $query = "select * FROM user_reg";
+$User_Name=$_SESSION["username"] ;
+ $query = "select * FROM user_reg WHERE username='$User_Name'";
 $result = mysqli_query($con,$query);
 while($row=mysqli_fetch_array($result))
                             {          
@@ -157,8 +155,7 @@ $email= mysqli_real_escape_string($con, $_POST['email']);
 //$Dob = date('Y-m-d', strtotime('$Dob'));
    //$Reg_date = date('Y-m-d', strtotime('$Reg_date') );
 
-
-echo $sql = "UPDATE user_reg set Fname='$Fname', Lname='$Lname', email='$email' WHERE username='$User_Name'
+$sql = "UPDATE user_reg set Fname='$Fname', Lname='$Lname', email='$email' WHERE username='$User_Name'
 
  
 ";
