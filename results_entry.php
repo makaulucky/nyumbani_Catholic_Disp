@@ -107,8 +107,7 @@ while($row=mysqli_fetch_array($result))
 					
                           
 $art_start_date= $art_start_date;
-$art_regimen= mysqli_real_escape_string($con, $_POST['art_regimen']); 
-$current_art_date= mysqli_real_escape_string($con, $_POST['current_art_date']);   
+$art_regimen= mysqli_real_escape_string($con, $_POST['art_regimen']);
 $pre_vl_date= $curr_vl_dateFromPre;
 $pre_vl_results= $viral_loadFromPre;
 $curr_vl_date= $_POST['curr_vl_date'];
@@ -180,9 +179,10 @@ while($row=mysqli_fetch_array($result))
                             {          
                                 $ccc_no=$row['ccc_count']; 
 								$initial_RegDate=$row['Reg_date'];
-								$initial_art_start_date=$row['art_start_date'];
+								$art_start_date=$row['art_start_date'];
 								
 							}
+ 
 ?>
 
 
