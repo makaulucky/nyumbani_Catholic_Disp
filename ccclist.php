@@ -8,10 +8,7 @@ ob_start();
       header("location: login.php");
    }
 
-
 $User_Name=$_SESSION["username"] ;    
-
-
 
 ?>
 <!DOCTYPE html>
