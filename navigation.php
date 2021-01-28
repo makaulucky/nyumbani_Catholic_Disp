@@ -181,7 +181,7 @@
 
 						</ul>
 					</li>
-					<li class="dropdown">
+					<!--li class="#dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
 							<span class="micon dw dw-edit2"></span><span class="mtext">Counselling</span>
 						</a>
@@ -192,8 +192,8 @@
 							<li><a href="#">Reports</a></li>
 
 						</ul>
-					</li>
-					<li class="dropdown">
+					</!--li>
+					<li-- class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
 							<span class="micon dw dw-library"></span><span class="mtext">Reports</span>
 						</a>
@@ -201,7 +201,7 @@
 						<li><a href="#">Clinic Report</a></li>
 							<li><a href="#">Counselling Reports</a></li>
 						</ul>
-					</li>
+					</li-->
 					
 					</li>
 					
