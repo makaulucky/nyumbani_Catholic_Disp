@@ -54,6 +54,7 @@ $Gender= mysqli_real_escape_string($con, $_POST['Gender']);
 
 $Salt="#76#Secure?";  
 $passwordk=md5($passwordk.$Salt);
+$con_passwordk=md5($con_passwordk.$Salt);
 //$Dob = date('Y-m-d', strtotime('$Dob'));
    //$Reg_date = date('Y-m-d', strtotime('$Reg_date') );
 
@@ -93,7 +94,7 @@ if(mysqli_query($con, $sql))
 
 
       </strong> ";
-      echo   '</div>';
+      echo   '</div>'; 
     
         }
 }
@@ -104,10 +105,6 @@ mysqli_close($con);
   
   
   ?>
-
-
-
-
 
 
 							<form class="tab-wizard2 wizard-circle wizard" method="POST">
@@ -144,13 +141,13 @@ mysqli_close($con);
 										<div class="form-group row">
 											<label class="col-sm-4 col-form-label">Password*</label>
 											<div class="col-sm-8">
-												<input name='passwordk' id="psw" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  placeholder='********' class="form-control" required>
+												<input name='passwordk' id="psw" type="password" onChange="onChange()" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  placeholder='********' class="form-control" required>
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-4 col-form-label">Confirm Password*</label>
 											<div class="col-sm-8">
-												<input name='con_passwordk' id="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder='********' type="password" class="form-control">
+												<input name='con_passwordk' id="psw" onChange="onChange()" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder='********' type="password" class="form-control">
 											</div>
 										</div>
 
@@ -177,13 +174,6 @@ mysqli_close($con);
 							  
 						  </div>
 							</form>
-							<div id="message">
-  <h3>Password must contain the following:</h3>
-  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-  <p id="number" class="invalid">A <b>number</b></p>
-  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-</div>
 						</div>
 					</div>
 				</div>
@@ -200,6 +190,20 @@ mysqli_close($con);
 	<script src="vendors/scripts/layout-settings.js"></script>
 	<script src="src/plugins/jquery-steps/jquery.steps.js"></script>
 	<script src="vendors/scripts/steps-setting.js"></script>
+
+<script>
+function onChange() {
+  const password = document.querySelector('input[name=passwordk]');
+  const confirm = document.querySelector('input[name=con_passwordk]');
+  if (confirm.value === password.value) {
+    confirm.setCustomValidity('');
+  } else {
+    confirm.setCustomValidity('Passwords do not match');
+  }
+}
+</script>
+
+
 	<script>
 var myInput = document.getElementById("psw");
 var letter = document.getElementById("letter");
