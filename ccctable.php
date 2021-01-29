@@ -72,9 +72,7 @@ $User_Name=$_SESSION["username"] ;
 include 'dbconfig.php';
 
 
-$query = "SELECT `ccc_no`,(`Fname`),(`Mname`),(`Lname`),(`Gender`),(`years`),(`art_regimen`),(`curr_vl_date`),(`viral_load`),(`cd4`),(`mstari`)
-FROM detailed_results
-GROUP BY `ccc_no`";
+$query = "SELECT * FROM detailed_results WHERE ccc_count=ccc_no GROUP BY `ccc_no` ";
 $result = mysqli_query($con,$query); 
 
 echo "	<table id=\"editableTable\" class=\"table hover multiple-select-row data-table-export nowrap\">
