@@ -80,8 +80,8 @@ $Residence= mysqli_real_escape_string($con, $_POST['Residence']);
 $Id_no= mysqli_real_escape_string($con, $_POST['Id_no']);
 
 
-//$Dob = date('Y-m-d', strtotime('$Dob'));
-   //$Reg_date = date('Y-m-d', strtotime('$Reg_date') );
+$Dob = date('Yy-mm-dd', strtotime('$Dob'));
+$Reg_date = date('Yy-mm-dd', strtotime('$Reg_date') );
 
 
  $sql = "INSERT INTO admission 
@@ -179,7 +179,7 @@ mysqli_close($con);
 									<div class="col-md-6">
 										<div class="form-group">
 											<label >Date of Birth :</label>
-											<input required type="date"  name='Dob' class="form-control " placeholder="Select Date">
+											<input required type="date"  name='Dob' class="form-control " value="$Dob" placeholder="Select Date">
 										</div>
 									</div>
 									
