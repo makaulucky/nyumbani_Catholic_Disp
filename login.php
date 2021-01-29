@@ -86,7 +86,7 @@ $_SESSION["username"] = "$username";
           
        echo   "<div class='alert alert-danger'>";
             echo  "<button class='close' data-dismiss='alert'>&times;</button>";
-            echo  " <strong>Oops! Account does not exist! Kindly contact Admin for Account Creation</strong> ";
+            echo  " <strong>Oops! Details provided does not match any existing account! Kindly contact Admin for assistance. Thank You!</strong> ";
             echo   '</div>';
         
 
@@ -101,15 +101,6 @@ $_SESSION["username"] = "$username";
 ?>                
 
 
-
-
-
-
-
-
-
-
-
 						<form method="POST">
 							<div class="input-group custom">
 								<input type="text" name="username" class="form-control form-control-lg" placeholder="Username" required>
@@ -117,10 +108,9 @@ $_SESSION["username"] = "$username";
 									<span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
 								</div>
 							</div>
-
-
+							
 							<div class="input-group custom">
-								<input type="password" name="passwordk" class="form-control form-control-lg" placeholder="**********" required>
+								<input type="password" id="psw"  name="passwordk" class="form-control form-control-lg" placeholder="**********" required>
 								<div class="input-group-append custom">
 									<span class="input-group-text"><i class="dw dw-padlock1"></i></span>
 								</div>
@@ -167,5 +157,65 @@ $_SESSION["username"] = "$username";
 	<script src="vendors/scripts/script.min.js"></script>
 	<script src="vendors/scripts/process.js"></script>
 	<script src="vendors/scripts/layout-settings.js"></script>
+	<script>
+var myInput = document.getElementById("psw");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+}
+
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+</script>
+
 </body>
 </html>
