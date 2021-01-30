@@ -140,7 +140,7 @@ echo "<div class='error'>
 											use code for form submit
 											<input class="btn btn-primary btn-lg btn-block" type="submit" value="Submit">
 										-->
-										<a class="btn btn-primary btn-lg btn-block" name="password_reset_temp"  type="submit" value="submit">Submit</a>
+										<a class="btn btn-primary btn-lg btn-block" name="email"  type="submit" value="submit">Submit</a>
 									</div>
 								</div>
 								<div class="col-2">
