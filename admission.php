@@ -80,8 +80,10 @@ $Residence= mysqli_real_escape_string($con, $_POST['Residence']);
 $Id_no= mysqli_real_escape_string($con, $_POST['Id_no']);
 
 
-$Dob = date('Yy-mm-dd', strtotime('$Dob'));
-$Reg_date = date('Yy-mm-dd', strtotime('$Reg_date') );
+
+
+$Dob = date("Y-m-d", strtotime($Dob));
+$Reg_date = date("Y-m-d", strtotime($Reg_date));
 
 
  $sql = "INSERT INTO admission 
