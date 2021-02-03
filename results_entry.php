@@ -116,7 +116,9 @@ $cd4= mysqli_real_escape_string($con, $_POST['cd4']);
 $mstari= mysqli_real_escape_string($con, $_POST['mstari']);
 
 
-//$Dob = date('Y-m-d', strtotime('$Dob'));
+$curr_vl_date = date("Y-m-d", strtotime($curr_vl_date));
+
+
    //$Reg_date = date('Y-m-d', strtotime('$Reg_date') );
    //Fname 	Mname 	Lname 	Gender 	Age 	art_start_date 	art_regimen 	current_art_date 	pre_vl_date 	pre_vl_results 	curr_vl_date 	viral_load 	cd4  mstari 	
 
@@ -217,6 +219,14 @@ while($row=mysqli_fetch_array($result))
                                     <div class="col-md-6">
 										<div class="form-group">
 											<label>Previous Viral Date:</label>
+
+										<?php
+
+//$curr_vl_dateFromPre = date('Y-m-d', strtotime('$curr_vl_dateFromPre'));
+$curr_vl_dateFromPre = date("d-M-Y", strtotime($curr_vl_dateFromPre)); 
+										?>
+
+
 											<?php echo "<input readonly  name=\"pre_vl_date\" placeholder=\"$curr_vl_dateFromPre\"; value=\"$curr_vl_dateFromPre\"; class=\"form-control\"> "; ?>
 										</div>
 									</div>
