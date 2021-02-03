@@ -103,9 +103,7 @@ while($row=mysqli_fetch_array($result))
 									
 								}
 	
-								
-					
-                          
+                      
 $art_start_date= $art_start_date;
 $art_regimen= mysqli_real_escape_string($con, $_POST['art_regimen']);
 $pre_vl_date= $curr_vl_dateFromPre;
@@ -122,7 +120,7 @@ $curr_vl_date = date("Y-m-d", strtotime($curr_vl_date));
    //$Reg_date = date('Y-m-d', strtotime('$Reg_date') );
    //Fname 	Mname 	Lname 	Gender 	Age 	art_start_date 	art_regimen 	current_art_date 	pre_vl_date 	pre_vl_results 	curr_vl_date 	viral_load 	cd4  mstari 	
 
- echo $sql = "INSERT INTO results 
+ $sql = "INSERT INTO results 
 (
 	ccc_count,art_start_date,art_regimen,current_art_date,pre_vl_date,pre_vl_results,curr_vl_date,viral_load,cd4,mstari
   ) 
@@ -246,10 +244,7 @@ $curr_vl_dateFromPre = date("d-M-Y", strtotime($curr_vl_dateFromPre));
 										<div class="form-group">
 											<label >Current VL Date:</label>
 											<input required type="date"
-											 class="form-control" placeholder="Pick Date" name= 'curr_vl_date'
-
-										
-											
+											 class="form-control" placeholder="Pick Date" name= 'curr_vl_date'										
 											>
 										</div>
 									</div>

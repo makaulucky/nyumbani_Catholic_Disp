@@ -116,8 +116,6 @@ while($row=mysqli_fetch_array($result))
 										</li>
 									</ul>
 									<div class="tab-content">
-										
-
 										<!-- Setting Tab start -->
 										<div class="tab-pane fade height-100-p" id="setting" role="tabpanel">
 											<div class="profile-setting">
@@ -138,7 +136,6 @@ while($row=mysqli_fetch_array($result))
 							}
 							
 ?>
-
 
 
 <?php
@@ -185,17 +182,7 @@ echo   "<div class='alert alert-success'>";
 mysqli_close($con);
  
   ?>
-
-
-
-
-
-
-
-
-
-
-											
+										
 												<form method="POST">
 													<ul class="profile-edit-list row">
 														<li class="weight-500 col-md-6">
