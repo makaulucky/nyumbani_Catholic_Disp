@@ -272,7 +272,7 @@ $curr_vl_dateFromPre = date("d-M-Y", strtotime($curr_vl_dateFromPre));
 								<div class="col-md-6">
 										<div class="form-group">
 											<label>CD4:</label>
-											<input name='cd4' type="text" placeholder="Anything new?" class="form-control">
+											<input name='cd4' type="number" placeholder="Anything new?" class="form-control">
 										</div>
 									</div>
 									<div class="form-group">
