@@ -174,7 +174,7 @@
 						</a>
 						<ul class="submenu">
 							<li><a href="index.php">Home</a></li>
-							<li><a href="admission.php">Enroll</a></li>
+							<li><a href="admission.php">Admissions</a></li>
 							<li><a href="ccclist.php">Registration List</a></li>
 							<li><a href="ccctable.php">CCC Report</a></li>
 							<li><a href="labresults.php" >Results & History</a></li>
