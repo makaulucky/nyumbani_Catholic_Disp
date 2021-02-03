@@ -201,7 +201,7 @@ mysqli_close($con);
 									</div>
 										<div class="form-group">
 											<label>ID Number:</label>
-											<input name='Id_no' type="value" placeholder="Optional" class="form-control">
+											<input name='Id_no' type="NUMBER" placeholder="Optional" class="form-control">
 										</div>
 									</div>
 									
