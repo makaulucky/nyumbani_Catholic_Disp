@@ -175,7 +175,7 @@ while($row=mysqli_fetch_array($result))
 <?php
 include 'dbconfig.php'; 
 $ccc_no=$_GET['ccc_no'];
- $query = "select * FROM admissions WHERE ccc_no='$ccc_no' order by Reg_date desc limit 1 ";
+ $query = "select * FROM admission WHERE ccc_no='$ccc_no' order by Reg_date desc limit 1 ";
 $result = mysqli_query($con,$query);
 while($row=mysqli_fetch_array($result))
                             {          
@@ -184,7 +184,7 @@ while($row=mysqli_fetch_array($result))
 								$art_start_date=$row['art_start_date'];
 								
 							}
- 
+						
 ?>
 
 
@@ -204,7 +204,12 @@ while($row=mysqli_fetch_array($result))
                                     <div class="col-md-6">
 										<div class="form-group">
 											<label> Facility ART Start Date:</label>
-											<input  name="current_art_date" type="date" class="form-control">
+											
+
+											<?php echo "<input readonly name=\"initial_RegDate\" placeholder=\"$initial_RegDate\"; value=\"$initial_RegDate\"; class=\"form-control\"> ";  ?>
+
+
+
 										</div>
 									</div>
 								</div>
