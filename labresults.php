@@ -73,20 +73,22 @@ $User_Name=$_SESSION["username"] ;
                              $query = "select * FROM  detailed_results";
 							 $result = mysqli_query($con,$query);
 							 
-							 echo "	<table class=\"table table-bordered\">
+							 echo "	<table class=\"table hover multiple-select-row data-table-export nowrap\" id=\"editableTable\">
 							 <thead>
 								 <tr>
 									 <th class=\"table-plus datatable-nosort\">CCC N0</th>
 									 <th>Name</th>
 									 <th>GND</th>
+									 <th>Age</th>
 									 <th>Regimen</th>
-									 <th>Init ART DT</th>
+									 <th>Facil ART DT</th>
 									 <th>Pre VL DT</th>
 									 <th>Pre VL</th>
 									 <th>VL Date</th>
 									 <th>VL</th>
-									 <th>Cd4</th>
+									 <th>CD4</th>
 									 <th>Line</th>
+									 <th>Residence</th>
 									 
 									 
 								 </tr>
@@ -103,6 +105,7 @@ $User_Name=$_SESSION["username"] ;
 								$Mname=$row['Mname']; 
 								$Lname=$row['Lname']; 
 								$Gender=$row['Gender'];
+								$years=$row['years'];
 								$art_regimen=$row['art_regimen'];
 								$current_art_date=$row['current_art_date'];
 								$pre_vl_date=$row['pre_vl_date'];
@@ -111,6 +114,7 @@ $User_Name=$_SESSION["username"] ;
 								$viral_load=$row['viral_load'];
 								$cd4=$row['cd4'];
 								$mstari=$row['mstari'];
+								$Residence=$row['Residence'];
 
 								echo "   
 								<tr>
@@ -119,6 +123,7 @@ $User_Name=$_SESSION["username"] ;
 									<td><a href=clientprofile.php?ccc_count=$ccc_count>
 									$Fname $Mname $Lname</td>
 									<td>$Gender</td>
+									<td>$years</td>
 									<td>$art_regimen</td>
 									<td>$current_art_date</td>
 									<td>$pre_vl_date</td>
@@ -127,6 +132,7 @@ $User_Name=$_SESSION["username"] ;
 									<td>$viral_load</td>
 									<td>$cd4</td>
 									<td>$mstari</td>
+									<td>$Residence</td>
 									
 									
 								</tr>";
