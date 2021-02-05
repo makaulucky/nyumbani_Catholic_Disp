@@ -83,6 +83,7 @@ echo $size;
 						</div>
 					</div>
 				</div>
+				
 				<div class="col-xl-3 mb-30">
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap align-items-center">
@@ -237,6 +238,7 @@ while($row=mysqli_fetch_array($result))
 			</div>
 		</div>
 				<!-- Export Datatable End -->
+
 			<?php include 'footer.php'; ?>
 		</div>
 	</div>
@@ -251,6 +253,16 @@ while($row=mysqli_fetch_array($result))
 	<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
 	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 	<script src="vendors/scripts/dashboard.js"></script>
+	<!-- buttons for Export datatable -->
+	<script src="src/plugins/datatables/js/dataTables.buttons.min.js"></script>
+	<script src="src/plugins/datatables/js/buttons.bootstrap4.min.js"></script>
+	<script src="src/plugins/datatables/js/buttons.print.min.js"></script>
+	<script src="src/plugins/datatables/js/buttons.html5.min.js"></script>
+	<script src="src/plugins/datatables/js/buttons.flash.min.js"></script>
+	<script src="src/plugins/datatables/js/pdfmake.min.js"></script>
+	<script src="src/plugins/datatables/js/vfs_fonts.js"></script>
+	<!-- Datatable Setting js -->
+	<script src="vendors/scripts/datatable-setting.js"></script>
 	<script>
 var d = new Date();
 document.getElementById("time").innerHTML = d;
