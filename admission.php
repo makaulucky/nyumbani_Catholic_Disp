@@ -150,7 +150,7 @@ mysqli_close($con);
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Phone Number *:</label>
-											<input required name="Phone_no"type="tel" placeholder="07XX XXXXXXXX" class="form-control">
+											<input required name="Phone_no"type="NUMBER"  placeholder="07XX XXXXXXXX" class="form-control">
 										</div>
 									</div>
 								</div>
