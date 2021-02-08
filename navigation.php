@@ -171,48 +171,26 @@
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
 							<span class="micon dw dw-house-1"></span><span class="mtext">Clinic</span>
+							<i class="" aria-hidden="true"></i>
 						</a>
 						<ul class="submenu">
 							<li><a href="index.php">Home</a></li>
-							<li><a href="admission.php">Admissions</a></li>
+							<li ><a href="admission.php">Admissions</a></li>
 							<li><a href="ccclist.php">Registration List</a></li>
-							<li><a href="ccctable.php">CCC Report</a></li>
-							<li><a href="labresults.php" >Results & History</a></li>
+						</ul>
+					</li>
+					<li class="#dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon dw dw-analytics-3"></span><span class="mtext">Reports</span>
+						</a>
+						<ul class="submenu">
+						<li><a href="ccctable.php">CCC Report</a></li>
+						<li><a href="labresults.php" >Results & History</a></li>
 
 						</ul>
 					</li>
-					<!--li class="#dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-edit2"></span><span class="mtext">Counselling</span>
-						</a>
-						<ul class="submenu">
-						<li><a href="#">Registration</a></li>
-							<li><a href="#" >Registration List</a></li>
-							<li><a href="#">Sessions</a></li>
-							<li><a href="#">Reports</a></li>
-
-						</ul>
-					</!--li>
-					<li-- class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Reports</span>
-						</a>
-						<ul class="submenu">
-						<li><a href="#">Clinic Report</a></li>
-							<li><a href="#">Counselling Reports</a></li>
-						</ul>
-					</li-->
-					
-					</li>
-					
-					<li>
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-edit-2"></span><span class="mtext">Logout</span>
-						</a>
-						<ul class="submenu">
-							<li><a href="logout.php">Logout Now</a></li>
-						</ul>
-					</li>
+						
+				</li>
 				</ul>
 			</div>
 		</div>
