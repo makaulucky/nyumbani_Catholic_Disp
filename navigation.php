@@ -63,7 +63,7 @@
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 						<a class="dropdown-item" href="profile.php"><i class="dw dw-user1"></i> Profile</a>
 						<a class="dropdown-item" href="faq.php"><i class="dw dw-help"></i>FAQs </a>
-						<a class="dropdown-item" href="#"><i class="dw dw-help"></i>Documentation</a>
+						<a class="dropdown-item" href="#"><i class="fa fa-book"></i>Documentation</a>
 						<a class="dropdown-item" href="logout.php"><i class="dw dw-logout"></i> Log Out</a>
 					</div>
 				</div>
@@ -181,7 +181,7 @@
 					</li>
 					<li class="#dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-analytics-3"></span><span class="mtext">Reports</span>
+							<span class="micon fi-page-edit"></span><span class="mtext">Reports</span>
 						</a>
 						<ul class="submenu">
 						<li><a href="client_namelist.php">Edit Results</a></li>
