@@ -95,9 +95,9 @@ while($row=mysqli_fetch_array($result))
 								$Phone_no=$row['Phone_no']; 
 								$Gender=$row['Gender'];
 								$Residence=$row['Residence'];
-								$Dob=$row['Dob'];
+								$Dob=date("d-M-Y", strtotime($row['Dob']));
 								$Id_no=$row['Id_no'];
-								$Reg_date=$row['Reg_date'];
+								$Reg_date=date("d-M-Y", strtotime($row['Reg_date']));
 							echo "         
 								<tr>
 									<td class=\"table-plus\">$ccc_no</td>
