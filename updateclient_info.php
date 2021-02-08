@@ -8,18 +8,13 @@ ob_start();
       header("location: login.php");
    }
 
-
 $User_Name=$_SESSION["username"] ;    
-
-
 
 ?>
 <!DOCTYPE html>
 <html>
 
 <?php include 'head.php'; ?>
-
-
 
 <body>
 	<div class="pre-loader">
@@ -62,7 +57,6 @@ while($row=mysqli_fetch_array($result))
 								$Lname=$row['Lname']; 
 							}
 ?>
-
 
 <nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
