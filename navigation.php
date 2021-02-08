@@ -170,7 +170,7 @@
 				<ul id="accordion-menu">
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-house-1"></span><span class="mtext">Clinic</span>
+							<span class="micon dw dw-hospital"></span><span class="mtext">Clinic</span>
 							<i class="" aria-hidden="true"></i>
 						</a>
 						<ul class="submenu">
@@ -184,8 +184,18 @@
 							<span class="micon dw dw-analytics-3"></span><span class="mtext">Reports</span>
 						</a>
 						<ul class="submenu">
+						<li><a href="client_namelist.php">Edit Results</a></li>
 						<li><a href="ccctable.php">CCC Report</a></li>
-						<li><a href="labresults.php" >Results & History</a></li>
+						
+
+						</ul>
+					</li>
+					<li class="#dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon fi-archive"></span><span class="mtext">Archives</span>
+						</a>
+						<ul class="submenu">
+						<li><a href="labresults.php" >Client History</a></li>
 
 						</ul>
 					</li>
