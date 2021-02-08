@@ -186,7 +186,7 @@ echo $size;
 include 'dbconfig.php';
 
 
-$query = "SELECT * FROM detailed_results WHERE viral_load >1000";
+$query = "SELECT * FROM detailed_results WHERE viral_load >1000 ORDER BY `curr_vl_date`";
 $result = mysqli_query($con,$query); 
 
 echo "	<table id=\"editableTable\" class=\"table hover multiple-select-row data-table-export nowrap\">
@@ -212,7 +212,7 @@ while($row=mysqli_fetch_array($result))
 								$Lname=$row['Lname']; 
 								$years=$row['years']; 
 								$Gender=$row['Gender'];
-                                $curr_vl_date=$row['curr_vl_date'];
+                                $curr_vl_date=date("d-M-Y", strtotime($row['curr_vl_date']));
                                 $art_regimen=$row['art_regimen'];
 								$viral_load=$row['viral_load'];
 								$cd4=$row['cd4'];
