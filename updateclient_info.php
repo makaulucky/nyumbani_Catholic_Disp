@@ -67,7 +67,7 @@ while($row=mysqli_fetch_array($result))
 <nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.php">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Results Entry</li>
+									<li class="breadcrumb-item active" aria-current="page">About </li>
 									<li class="breadcrumb-item active" aria-current="page">
 										<?php
 										echo "$ccc_no $Fname $Mname $Lname" ;
