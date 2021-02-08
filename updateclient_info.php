@@ -50,11 +50,24 @@ $ccc_no=$_GET['ccc_no'];
 $query = "select * FROM admission WHERE ccc_no='$ccc_no'";
 $result = mysqli_query($con,$query);
 while($row=mysqli_fetch_array($result))
-                            {          
-                                $ccc_no=$row['ccc_no']; 
-								$Fname=$row['Fname']; 
-								$Mname=$row['Mname']; 
-								$Lname=$row['Lname']; 
+                            
+{  
+$Fname=  mysqli_real_escape_string($con, $row['Fname']);                          
+$Mname= mysqli_real_escape_string($con,  $row['Mname']); 
+$Lname= mysqli_real_escape_string($con, $row['Lname']);  
+$Phone_no= $row['Phone_no'];   
+$Gender= mysqli_real_escape_string($con, $row['Gender']);
+$Dob= $row['Dob'];
+$art_start_date= $row['art_start_date'];
+$Reg_date= $row['Reg_date'];
+$Residence= mysqli_real_escape_string($con, $row['Residence']);
+$Id_no= mysqli_real_escape_string($con, $row['Id_no']);
+$Dob = date("Y-m-d", strtotime($Dob));
+$Reg_date = date("Y-m-d", strtotime($Reg_date));        
+                               // $ccc_no=$row['ccc_no']; 
+								//$Fname=$row['Fname']; 
+								//$Mname=$row['Mname']; 
+								//$Lname=$row['Lname']; 
 							}
 ?>
 
@@ -97,7 +110,7 @@ $Dob = date("Y-m-d", strtotime($Dob));
 $Reg_date = date("Y-m-d", strtotime($Reg_date));
 
 
- $sql = "UPDATE admission SET Fname='$Fname', Mname='$Mname', Lname='$Lname',Phone_no'=$Phone_no',Gender='$Gender',Dob='$Dob',art_start_date='$art_start_date',Reg_date='$Reg_date',Residence='$Residence', Id_no='$Id_no' WHERE ccc_no='$ccc_no' ";
+$sql = "UPDATE admission SET Fname='$Fname', Mname='$Mname', Lname='$Lname',Phone_no='$Phone_no',Gender='$Gender', Dob='$Dob', art_start_date='$art_start_date',Reg_date='$Reg_date',Residence='$Residence', Id_no='$Id_no' WHERE ccc_no='$ccc_no' ";
 
 if(mysqli_query($con, $sql)){
 
@@ -150,11 +163,7 @@ mysqli_close($con);
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-										<label>Registered Last Name</label>
-																
-										<?php echo "<input readonly placeholder=\"$Lname\"; value=\"$Lname\"; class=\"form-control form-control-lg\"
-										type=\"text\">";  ?>
-										<label>Update Last Name</label>
+										<label>Last Name</label>
 																
 										<?php echo "<input name=\"Lname\" placeholder=\"$Lname\"; value=\"$Lname\"; class=\"form-control form-control-lg\"					type=\"text\">";  ?>
 										</div>
@@ -175,12 +184,12 @@ mysqli_close($con);
 										<div class="form-group">
 											<label>Gender Given:</label>
 
-											<?php echo "<input name=\"Gender\" placeholder=\"$Gender\"; value=\"$Gender\"; class=\"form-control form-control-lg\"
+											<?php echo "<input readonly name=\"Gender\" placeholder=\"$Gender\"; value=\"$Gender\"; class=\"form-control form-control-lg\"
 																type=\"text\"
 																>";  ?>
 																
 											<label>Update Gender:</label>
-											<select name='Gender' class="custom-select form-control" required>
+											<select name='Gender' class="custom-select form-control">
 												<option value="">Select Option</option>
 												<option value="Male">Male</option>
 												<option value="Female">Female</option>
@@ -192,10 +201,10 @@ mysqli_close($con);
 											<label>Residence Recorded:</label>
 
 											<?php echo "<input readonly name=\"Residence\" placeholder=\"$Residence\"; value=\"$Residence\"; class=\"form-control form-control-lg\"
-																type=\"text\"
+																type=\"select\"
 																>";  ?>
 											<label>Residence:</label>
-											<select name='Residence' class="custom-select form-control" required>
+											<select name='Residence' class="custom-select form-control">
 												<option value="">Select Option</option>
 												<option value="Village">Village</option>
 												<option value="Community">Community</option>
@@ -209,7 +218,7 @@ mysqli_close($con);
 											<label >Date of Birth :</label>
 														
 											<?php echo "<input name=\"Dob\" placeholder=\"$Dob\"; value=\"$Dob\"; class=\"form-control form-control-lg\"
-																type=\"\"
+																type=\"date\"
 																>";  ?>
 										</div>
 									</div>
@@ -218,19 +227,25 @@ mysqli_close($con);
 									<div class="col-md-6">
 										<div class="form-group">
 											<label >Admission Date :</label>
-											<input required  type="date" class="form-control" placeholder="Select Date" name='Reg_date'>
+											<?php echo "<input name=\"Reg_date\" placeholder=\"$Reg_date\"; value=\"$Reg_date\"; class=\"form-control form-control-lg\"
+																type=\"date\"
+																>";  ?>
 										</div>
 									</div>
 
 								<div class="col-md-6">
 								<div class="form-group">
 											<label>Initial Art Start Date::</label>
-											<input required name='art_start_date' type="date" placeholder="Optional" class="form-control">
+											<?php echo "<input name=\"art_start_date\" placeholder=\"$art_start_date\"; value=\"$art_start_date\"; class=\"form-control form-control-lg\"
+																type=\"date\"
+																>";  ?>
 										</div>
 									</div>
 										<div class="form-group">
 											<label>ID Number:</label>
-											<input name='Id_no' type="NUMBER" placeholder="Optional" class="form-control">
+											<?php echo "<input name=\"Id_no\" placeholder=\"$Id_no\"; value=\"$Id_no\"; class=\"form-control form-control-lg\"
+																type=\"number\"
+																>";  ?>
 										</div>
 									</div>
 									
