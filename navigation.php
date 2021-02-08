@@ -185,7 +185,7 @@
 						</a>
 						<ul class="submenu">
 						<li><a href="client_namelist.php">Edit Results</a></li>
-						<li><a href="ccctable.php">CCC Report</a></li>
+						<li><a href="ccctable.php">CCC Results</a></li>
 						
 
 						</ul>
