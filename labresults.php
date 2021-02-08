@@ -120,7 +120,7 @@ $User_Name=$_SESSION["username"] ;
 								<tr>
 									<td class=\"table-plus\">$ccc_count</td>
 									
-									<td><a href=clientprofile.php?ccc_count=$ccc_count>
+									<td><a href=clientprofile.php?ccc_count=$ccc_count data-toggle=\"tooltip\" data-placement=\"top\" title=\"View all History\">
 									$Fname $Mname $Lname</td>
 									<td>$Gender</td>
 									<td>$years</td>

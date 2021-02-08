@@ -101,7 +101,7 @@ while($row=mysqli_fetch_array($result))
 							echo "         
 								<tr>
 									<td class=\"table-plus\">$ccc_no</td>
-									<td><a href=results_entry.php?ccc_no=$ccc_no>
+									<td><a href=updateclient_info.php?ccc_no=$ccc_no data-toggle=\"tooltip\" data-placement=\"top\" title=\"Click to Update Client Informaton\">
 
 									$Fname $Mname $Lname  </a></td>
 									<td>$Phone_no</td>
