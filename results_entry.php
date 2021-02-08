@@ -60,6 +60,7 @@ while($row=mysqli_fetch_array($result))
 								$Fname=$row['Fname']; 
 								$Mname=$row['Mname']; 
 								$Lname=$row['Lname']; 
+								
 							}
 ?>
 
@@ -99,6 +100,7 @@ while($row=mysqli_fetch_array($result))
 									$curr_vl_dateFromPre=$row['curr_vl_date']; 
 									$viral_loadFromPre=$row['viral_load'];
 									$art_start_date=$row['art_start_date'];
+									$mstari=$row['mstari'];
 									
 									
 								}
@@ -276,6 +278,7 @@ $curr_vl_dateFromPre = date("d-M-Y", strtotime($curr_vl_dateFromPre));
 										</div>
 									</div>
 									<div class="form-group">
+
 											<label>Line:</label>
 											<select name='mstari' class="custom-select form-control" required>
 												<option value="">Options</option>
