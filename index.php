@@ -145,7 +145,7 @@ echo $size;
 <?php 
 
 include 'dbconfig.php';
-$result2 = mysqli_query($con,"SELECT COUNT(*) FROM detailed_results WHERE viral_load = 'HEI' ");
+$result2 = mysqli_query($con,"SELECT COUNT(*) FROM detailed_results WHERE art_regimen = 'HEI' ");
 $row = mysqli_fetch_assoc($result2);
 $size = $row['COUNT(*)'];
 echo $size;
