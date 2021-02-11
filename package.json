@@ -1,6 +1,6 @@
 {
   "name": "CCC Management",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "For Nyumbani Use Only",
   "main": "gulpfile.js",
   "scripts": {
