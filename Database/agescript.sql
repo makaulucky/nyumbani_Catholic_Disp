@@ -33,3 +33,40 @@ SELECT
     GROUP BY `years`
 
     ORDER BY `years`
+
+    --End of the script
+
+--Age Group, Gender and Count script starts here
+    SELECT Case 
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) < 1 then '<1'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 1 and 4 then '1-4'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 5 and 9 then '5-9'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 10 and 14 then '10-14'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 15 and 19 then '15-19'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 20 and 24 then '20-24'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 25 and 29 then '25-29'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 30 and 34 then '30-34'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 35 and 39 then '35-39'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 40 and 44 then '40-44'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 45 and 49 then '45-49'
+else '>50' END AS Age Group, 
+sum(if(`Gender`='Male', 1, 0)) as Male, 
+sum(if(`Gender`='Female', 1, 0)) as Female, 
+COUNT(1) as total FROM detailed_results 
+GROUP BY Case 
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) < 1 then '<1'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 1 and 4 then '1-4'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 5 and 9 then '5-9'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 10 and 14 then '10-14'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 15 and 19 then '15-19'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 20 and 24 then '20-24'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 25 and 29 then '25-29'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 30 and 34 then '30-34'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 35 and 39 then '35-39'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 40 and 44 then '40-44'
+when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 45 and 49 then '45-49'
+else '>50' END
+
+
+
+---Ends here
