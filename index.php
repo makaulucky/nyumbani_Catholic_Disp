@@ -95,7 +95,7 @@ echo $size;
 <?php 
 
 include 'dbconfig.php';
-$result2 = mysqli_query($con,"SELECT COUNT(*) FROM detailed_results WHERE viral_load <1000 ");
+$result2 = mysqli_query($con,"SELECT COUNT(*) FROM results WHERE viral_load <1000 ");
 $row = mysqli_fetch_assoc($result2);
 $size = $row['COUNT(*)'];
 
@@ -121,14 +121,14 @@ echo $size;
 								<?php 
 
 include 'dbconfig.php';
-$result2 = mysqli_query($con,"SELECT COUNT(*) FROM detailed_results WHERE viral_load >1000 ");
+$result2 = mysqli_query($con,"SELECT COUNT(*) FROM results WHERE viral_load >1000 ");
 $row = mysqli_fetch_assoc($result2);
 $size = $row['COUNT(*)'];
 
 echo $size;
 ?>
 
-								<div class="weight-600 font-14">Not Suppressed</div>
+								<div class="weight-600 font-14">Not Suppressed with Invalid VL</div>
 							</div>
 						</div>
 					</div>
@@ -145,7 +145,7 @@ echo $size;
 <?php 
 
 include 'dbconfig.php';
-$result2 = mysqli_query($con,"SELECT COUNT(*) FROM detailed_results WHERE art_regimen = 'HEI' ");
+$result2 = mysqli_query($con,"SELECT COUNT(*) FROM results WHERE art_regimen = 'HEI' ");
 $row = mysqli_fetch_assoc($result2);
 $size = $row['COUNT(*)'];
 echo $size;
