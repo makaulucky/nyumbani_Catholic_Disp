@@ -160,7 +160,6 @@ mysqli_close($con);
   
   ?>
 
-
 <?php
 include 'dbconfig.php'; 
 $ccc_no=$_GET['ccc_no'];
@@ -191,8 +190,6 @@ while($row=mysqli_fetch_array($result))
 						
 ?>
 
-
-	
 	<form method="post" class="tab-wizard wizard-circle wizard">
 							<h5></h5>
 							<section>
@@ -201,24 +198,13 @@ while($row=mysqli_fetch_array($result))
 									<div class="col-md-6">
 										<div class="form-group">
 											<label >Initial ART Start Date:</label>
-											<?php
-
-//$art_start_date = date("d-M-Y", strtotime('$art_start_date'));
- 
-										?>
-
-											<?php echo "<input readonly name=\"art_start_date\" placeholder=\"$art_start_date\"; value=\"$art_start_date\"; class=\"form-control\"> ";  ?>
+										<?php echo "<input readonly name=\"art_start_date\" placeholder=\"$art_start_date\"; value=\"$art_start_date\"; class=\"form-control\"> ";  ?>
 										</div>
                                     </div>
                                     <div class="col-md-6">
 										<div class="form-group">
 											<label> Facility ART Start Date:</label>
-											
-
-											<?php echo "<input readonly name=\"initial_RegDate\" placeholder=\"$initial_RegDate\"; value=\"$initial_RegDate\"; class=\"form-control\"> ";  ?>
-
-
-
+										<?php echo "<input readonly name=\"initial_RegDate\" placeholder=\"$initial_RegDate\"; value=\"$initial_RegDate\"; class=\"form-control\"> ";  ?>
 										</div>
 									</div>
 								</div>
@@ -233,19 +219,14 @@ while($row=mysqli_fetch_array($result))
                                     <div class="col-md-6">
 										<div class="form-group">
 											<label>Previous Viral Date:</label>
-
 										<?php
-
 //$art_start_date = date("d-M-Y", strtotime('$art_start_date'));
 $curr_vl_dateFromPre = date("d-M-Y", strtotime($curr_vl_dateFromPre)); 
 										?>
-
-
 											<?php echo "<input readonly  name=\"pre_vl_date\" placeholder=\"$curr_vl_dateFromPre\"; value=\"$curr_vl_dateFromPre\"; class=\"form-control\"> "; ?>
 										</div>
 									</div>
-                                    
-									<div class="col-md-6">
+                                    <div class="col-md-6">
 										<div class="form-group">
 											<label>Viral Load *:</label>
 											<input required name="viral_load"type="text" placeholder="Most Recent Results" class="form-control">
@@ -274,13 +255,11 @@ $curr_vl_dateFromPre = date("d-M-Y", strtotime($curr_vl_dateFromPre));
 										<option value="TDF/3TC/KALETRA">TDF/3TC/KALETRA</option>
 										<option value="ABC/3TC/KALETRA">ABC/3TC/KALETRA</option>
 										<option value="NVP+CTX">NVP+CTX</option>
-										
-										
+												
 										</select>
 										</div>
                                     </div>
-   
-								<div class="col-md-6">
+   								<div class="col-md-6">
 										<div class="form-group">
 											<label>CD4:</label>
 											<?php echo "<input name=\"cd4\" placeholder=\"$cd4\"; value=\"$cd4\"; class=\"form-control\"> ";  ?>
@@ -300,9 +279,7 @@ $curr_vl_dateFromPre = date("d-M-Y", strtotime($curr_vl_dateFromPre));
 									</div>
 								</div>
                             </section>
-						
-							<div class="form-group text-center">
-                                  
+								<div class="form-group text-center">     
 								  <button type="submit" id="submit" name="results" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b>Enter Results</b>
 								</button>
 							</div>
