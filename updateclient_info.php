@@ -173,7 +173,7 @@ mysqli_close($con);
 										<label>Phone Number</label>
 																
 									<?php echo "<input name=\"Phone_no\" placeholder=\"$Phone_no\"; value=\"$Phone_no\"; class=\"form-control form-control-lg\"
-																type=\"number\"
+									type=\"number\"
 																>";  ?>
 										</div>
 									</div>
@@ -182,33 +182,23 @@ mysqli_close($con);
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label>Gender Given:</label>
+											<label>Gender:</label>
 
 											<?php echo "<input readonly name=\"Gender\" placeholder=\"$Gender\"; value=\"$Gender\"; class=\"form-control form-control-lg\"
 																type=\"text\"
 																>";  ?>
 																
-											<label>Update Gender:</label>
-											<select name='Gender' class="custom-select form-control">
-												<option value="">Select Option</option>
-												<option value="Male">Male</option>
-												<option value="Female">Female</option>
-										</select>
+											
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label>Residence Recorded:</label>
+											<label>Residence:</label>
 
 											<?php echo "<input readonly name=\"Residence\" placeholder=\"$Residence\"; value=\"$Residence\"; class=\"form-control form-control-lg\"
 																type=\"select\"
 																>";  ?>
-											<label>Residence:</label>
-											<select name='Residence' class="custom-select form-control">
-												<option value="">Select Option</option>
-												<option value="Village">Village</option>
-												<option value="Community">Community</option>
-										</select>
+											
 										</div>
 									</div>
 
@@ -243,8 +233,7 @@ mysqli_close($con);
 									</div>
 										<div class="form-group">
 											<label>ID Number:</label>
-											<?php echo "<input name=\"Id_no\" placeholder=\"$Id_no\"; value=\"$Id_no\"; class=\"form-control form-control-lg\"
-																type=\"number\"
+											<?php echo "<input name=\"Id_no\" placeholder=\"$Id_no\"; value=\"$Id_no\"; class=\"form-control form-control-lg\" type=\"number\"
 																>";  ?>
 										</div>
 									</div>
