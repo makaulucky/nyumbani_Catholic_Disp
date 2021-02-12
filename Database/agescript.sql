@@ -70,3 +70,10 @@ else '>50' END
 
 
 ---Ends here
+
+--To querry days from Current VL Date
+
+SELECT DATEDIFF(CURDATE(), `curr_vl_date`) AS days
+FROM results
+
+--end!
