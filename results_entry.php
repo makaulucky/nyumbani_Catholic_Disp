@@ -101,6 +101,8 @@ while($row=mysqli_fetch_array($result))
 									$viral_loadFromPre=$row['viral_load'];
 									$art_start_date=$row['art_start_date'];
 									$mstari=$row['mstari'];
+									$art_regimen=$row['art_regimen'];
+									
 									
 									
 								}
@@ -168,8 +170,10 @@ while($row=mysqli_fetch_array($result))
                             {          
                                 $ccc_count=$row['ccc_count']; 
 								$curr_vl_dateFromPre=$row['curr_vl_date']; 
-								$viral_loadFromPre=$row['viral_load']; 
-								
+								$viral_loadFromPre=$row['viral_load'];
+								$cd4=$row['cd4'];
+								$art_regimen=$row['art_regimen'];
+								$mstari=$row['mstari'];
 							}
 ?>
 <?php
@@ -197,6 +201,11 @@ while($row=mysqli_fetch_array($result))
 									<div class="col-md-6">
 										<div class="form-group">
 											<label >Initial ART Start Date:</label>
+											<?php
+
+//$art_start_date = date("d-M-Y", strtotime('$art_start_date'));
+ 
+										?>
 
 											<?php echo "<input readonly name=\"art_start_date\" placeholder=\"$art_start_date\"; value=\"$art_start_date\"; class=\"form-control\"> ";  ?>
 										</div>
@@ -227,7 +236,7 @@ while($row=mysqli_fetch_array($result))
 
 										<?php
 
-//$curr_vl_dateFromPre = date('Y-m-d', strtotime('$curr_vl_dateFromPre'));
+//$art_start_date = date("d-M-Y", strtotime('$art_start_date'));
 $curr_vl_dateFromPre = date("d-M-Y", strtotime($curr_vl_dateFromPre)); 
 										?>
 
@@ -257,14 +266,14 @@ $curr_vl_dateFromPre = date("d-M-Y", strtotime($curr_vl_dateFromPre));
 										<div class="form-group">
 											<label>Regimen:</label>
 											<select name='art_regimen' class="custom-select form-control" required>
-										<option value="">Select Options</option>
+										<option value="<?php echo "$art_regimen";?>"><?php echo "$art_regimen";?></option>
 										<option value="ABC/3TC/LPVR">ABC/3TC/LPVR</option>
                                         <option value="ABC/3TC/DTG">ABC/3TC/DTG</option>
 										<option value="TDF/3TC/DTG">TDF/3TC/DTG</option>
 										<option value="TDF/3TC/EFV">TDF/3TC/EFV</option>
 										<option value="TDF/3TC/KALETRA">TDF/3TC/KALETRA</option>
 										<option value="ABC/3TC/KALETRA">ABC/3TC/KALETRA</option>
-										<option value="HEI">HEI</option>
+										<option value="NVP+CTX">NVP+CTX</option>
 										
 										
 										</select>
@@ -274,16 +283,18 @@ $curr_vl_dateFromPre = date("d-M-Y", strtotime($curr_vl_dateFromPre));
 								<div class="col-md-6">
 										<div class="form-group">
 											<label>CD4:</label>
-											<input name='cd4' type="number" placeholder="Anything new?" class="form-control">
+											<?php echo "<input name=\"cd4\" placeholder=\"$cd4\"; value=\"$cd4\"; class=\"form-control\"> ";  ?>
 										</div>
 									</div>
 									<div class="form-group">
 
 											<label>Line:</label>
 											<select name='mstari' class="custom-select form-control" required>
-												<option value="">Options</option>
+											<option value="<?php echo "$mstari";?>"><?php echo "$mstari";?></option>
 												<option value="1">1</option>
 												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="Exposed">Exposed</option>
 										</select>
 										</div>
 									</div>
@@ -292,7 +303,7 @@ $curr_vl_dateFromPre = date("d-M-Y", strtotime($curr_vl_dateFromPre));
 						
 							<div class="form-group text-center">
                                   
-								  <button type="submit" id="submit" name="results" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b>Update Results</b>
+								  <button type="submit" id="submit" name="results" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b>Enter Results</b>
 								</button>
 							</div>
 						</form>
