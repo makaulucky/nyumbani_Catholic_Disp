@@ -95,7 +95,7 @@ echo $size;
 <?php 
 
 include 'dbconfig.php';
-$result2 = mysqli_query($con,"SELECT COUNT(*) FROM results WHERE viral_load <1000 ");
+$result2 = mysqli_query($con,"SELECT COUNT(*) FROM detailed_results WHERE Curr_VL_duration <180 ");
 $row = mysqli_fetch_assoc($result2);
 $size = $row['COUNT(*)'];
 
@@ -103,7 +103,7 @@ echo $size;
 ?>
 							
 								</div>
-								<div class="weight-600 font-14">Suppressed</div>
+								<div class="weight-600 font-14">With Valid VL Results</div>
 							</div>
 						</div>
 					</div>
@@ -121,14 +121,14 @@ echo $size;
 								<?php 
 
 include 'dbconfig.php';
-$result2 = mysqli_query($con,"SELECT COUNT(*) FROM results WHERE viral_load >1000 ");
+$result2 = mysqli_query($con,"SELECT COUNT(*) FROM detailed_results WHERE Curr_VL_duration >180 order BY curr_vl_date");
 $row = mysqli_fetch_assoc($result2);
 $size = $row['COUNT(*)'];
 
 echo $size;
 ?>
 
-								<div class="weight-600 font-14">Not Suppressed with Invalid VL</div>
+								<div class="weight-600 font-14">With Invalid VL Results</div>
 							</div>
 						</div>
 					</div>
@@ -176,7 +176,7 @@ echo $size;
 				<!-- Export Datatable start -->
 				<div class="card-box mb-30">
 					<div class="pd-20">
-						<h4 class="text-blue h4">Not Suppressed</h4>
+						<h4 class="text-blue h4">Invalid Viral Load</h4>
 					</div>
 					<div class="pb-20">
 
@@ -186,7 +186,7 @@ echo $size;
 include 'dbconfig.php';
 
 
-$query = "SELECT * FROM detailed_results WHERE viral_load >1000 ORDER BY `curr_vl_date`";
+$query = "SELECT * FROM detailed_results WHERE Curr_VL_duration >180 order BY curr_vl_date";
 $result = mysqli_query($con,$query); 
 
 echo "	<table id=\"editableTable\" class=\"table hover multiple-select-row data-table-export nowrap\">
@@ -196,7 +196,8 @@ echo "	<table id=\"editableTable\" class=\"table hover multiple-select-row data-
 									 <th>Name</th>
 									 <th>Age</th>
 									 <th>Gnd</th>
-                                     <th>Date</th>
+                                     <th>VL Date</th>
+									 <th>Days</th>
                                      <th>Regimen</th>
                                      <th>Viral Load</th>
                                      <th>CD4</th>
@@ -213,6 +214,7 @@ while($row=mysqli_fetch_array($result))
 								$years=$row['years']; 
 								$Gender=$row['Gender'];
                                 $curr_vl_date=date("d-M-Y", strtotime($row['curr_vl_date']));
+								$Curr_VL_duration =$row['Curr_VL_duration'];
                                 $art_regimen=$row['art_regimen'];
 								$viral_load=$row['viral_load'];
 								$cd4=$row['cd4'];
@@ -226,6 +228,7 @@ while($row=mysqli_fetch_array($result))
 									<td>$years</td>
 									<td>$Gender</td>
                                     <td>$curr_vl_date</td>
+									<td>$Curr_VL_duration</td>
                                     <td>$art_regimen</td>
                                     <td>$viral_load</td>
                                     <td>$cd4</td>
