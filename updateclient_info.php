@@ -188,8 +188,7 @@ mysqli_close($con);
 																type=\"text\"
 																>";  ?>
 																
-											
-										</div>
+									</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
@@ -198,22 +197,16 @@ mysqli_close($con);
 											<?php echo "<input readonly name=\"Residence\" placeholder=\"$Residence\"; value=\"$Residence\"; class=\"form-control form-control-lg\"
 																type=\"select\"
 																>";  ?>
+																
 											
 										</div>
 									</div>
-
-
 									<div class="col-md-6">
 										<div class="form-group">
 											<label >Date of Birth :</label>
-														
-											<?php echo "<input name=\"Dob\" placeholder=\"$Dob\"; value=\"$Dob\"; class=\"form-control form-control-lg\"
-																type=\"date\"
-																>";  ?>
+										<?php echo "<input name=\"Dob\" placeholder=\"$Dob\"; value=\"$Dob\"; class=\"form-control form-control-lg\" type=\"date\">";  ?>
 										</div>
 									</div>
-									
-
 									<div class="col-md-6">
 										<div class="form-group">
 											<label >Admission Date :</label>
@@ -243,7 +236,7 @@ mysqli_close($con);
 						
 							<div class="form-group text-center">
                                   
-								  <button type="submit" id="submit" name="admission" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b>Update Information</b></button>
+								  <button type="submit" id="submit" name="admission" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b>Update</b></button>
 							  
 						  </div>
 
