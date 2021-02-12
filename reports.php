@@ -58,54 +58,70 @@ $User_Name=$_SESSION["username"] ;
 						</div>
 					</div>
 				</div>
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-30">
-						<div class="pd-20 card-box height-100-p">
-							<h4 class="mb-20 h4">Age Group summery</h4>
-							<ul class="list-group">
-								<li class="list-group-item d-flex justify-content-between align-items-center">
-                                <?php
+
+
+<?php
 include 'dbconfig.php'; 
 $ccc_no=$_GET['ccc_no'];
-$query = "SELECT Case 
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) < 1 then '<1'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 1 and 4 then '1-4'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 5 and 9 then '5-9'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 10 and 14 then '10-14'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 15 and 19 then '15-19'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 20 and 24 then '20-24'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 25 and 29 then '25-29'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 30 and 34 then '30-34'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 35 and 39 then '35-39'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 40 and 44 then '40-44'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 45 and 49 then '45-49'
-else '>50' END AS Age_Group, 
-sum(if(`Gender`='Male', 1, 0)) as Male, 
-sum(if(`Gender`='Female', 1, 0)) as Female, 
-COUNT(1) as total FROM detailed_results 
-GROUP BY Case 
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) < 1 then '<1'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 1 and 4 then '1-4'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 5 and 9 then '5-9'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 10 and 14 then '10-14'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 15 and 19 then '15-19'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 20 and 24 then '20-24'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 25 and 29 then '25-29'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 30 and 34 then '30-34'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 35 and 39 then '35-39'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 40 and 44 then '40-44'
-when TIMESTAMPDIFF(YEAR, `Dob`, NOW()) between 45 and 49 then '45-49'
-else '>50' END  
-ORDER BY `Male` ASC";
+$query = "select * FROM summary_report ";
 $result = mysqli_query($con,$query);
 while($row=mysqli_fetch_array($result))
                             
+{  
+$Age_Group=  mysqli_real_escape_string($con, $row['Age_Group']);                          
+$Male= mysqli_real_escape_string($con,  $row['Male']); 
+$Female= mysqli_real_escape_string($con, $row['Female']);
+$total= mysqli_real_escape_string($con, $row['total']);
+}
+?>   
+
+
+
+
+<?php
+include 'dbconfig.php';
+
+
+$query = "select * FROM summary_report";
+$result = mysqli_query($con,$query); 
+
+echo "	<table id=\"editableTable\" class=\"table hover multiple-select-row data-table-export nowrap\">
+							 <thead>
+								 <tr>
+									 <th class=\"table-plus datatable-nosort\">Age Group</th>
+									 <th>Male</th>
+									 <th>Female</th>
+									 <th>total</th>					 
+								 </tr>
+							 </thead>
+							 <tbody>";
+while($row=mysqli_fetch_array($result))
+                            {          
+                                $Age_Group=$row['Age_Group']; 
+								$Male=$row['Male']; 
+								$Female=$row['Female']; 
+								$Lname=$row['total']; 
+								
+								
+
+							echo "         
+								<tr>
+									<td class=\"table-plus\">$Age_Group</td>
+									<td>$Male</td>
+									<td>$Female</td>
+									<td>$total</td>
+									
+								</tr>";
+					}
+					echo "	</tbody>
+					</table>";
 ?>
-									Cras justo odio
-									<span class="badge badge-primary badge-pill">14</span>
-								</li>
-							</ul>
-						</div>
-					</div>
+
+
+
+
+
+
 				
 			</div>
 			<?php include 'footer.php'; ?>
