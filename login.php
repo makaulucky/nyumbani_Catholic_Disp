@@ -7,7 +7,7 @@ session_start();
 
 <!DOCTYPE html>
 <html>
-<?php include 'head.php'; ?>
+<?php include './includes/head.php'; ?>
 <body class="login-page">
 	<div class="login-header box-shadow">
 		<div class="container-fluid d-flex justify-content-between align-items-center">
@@ -129,10 +129,7 @@ $_SESSION["username"] = "$username";
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="input-group mb-0">
-
-
-
-								<button type="submit" value="submit" id="submit" name="Submit" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b>Login</b>
+									<button type="submit" value="submit" id="submit" name="Submit" class="btn btn-primary btn-lg btn-block" style=" background-color: darkgreen" aria-pressed="false" autocomplete="off"><b>Login</b>
 								</button>
 										<!--
 											use code for form submit
@@ -143,7 +140,8 @@ $_SESSION["username"] = "$username";
 									<!--div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">OR</!--div>
 									<div class="input-group mb-0">
 										<a class="btn btn-outline-primary btn-lg btn-block" href="register.php">Register To Create Account</a>
-									</div>-->
+									</div>--> <br>
+									<p class="text-center">Developed by Lucky Makau</p>
 								</div>
 							</div>
 						</form>

@@ -17,7 +17,7 @@ $User_Name=$_SESSION["username"] ;
 
 <!DOCTYPE html>
 <html>
-<?php include 'head.php'; ?>
+<?php include './includes/head.php'; ?>
 <body>
 	<div class="pre-loader">
 		<div class="pre-loader-box">
@@ -32,7 +32,7 @@ $User_Name=$_SESSION["username"] ;
 		</div>
 	</div>
 
-	<?php include 'navigation.php'; ?>
+	<?php include './includes/navigation.php'; ?>
 
 	
 	<div class="mobile-menu-overlay"></div>
@@ -124,7 +124,7 @@ while($row=mysqli_fetch_array($result))
 
 				
 			</div>
-			<?php include 'footer.php'; ?>
+			<?php include './includes/footer.php'; ?>
 		</div>
 	</div>
 

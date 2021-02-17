@@ -6,7 +6,7 @@ session_start();
 
 <!DOCTYPE html>
 <html>
-<?php include 'head.php'; ?>
+<?php include './includes/head.php'; ?>
 
 <body class="login-page">
 	<div class="login-header box-shadow">

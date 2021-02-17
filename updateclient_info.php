@@ -14,7 +14,7 @@ $User_Name=$_SESSION["username"] ;
 <!DOCTYPE html>
 <html>
 
-<?php include 'head.php'; ?>
+<?php include './includes/head.php'; ?>
 
 <body>
 	<div class="pre-loader">
@@ -30,7 +30,7 @@ $User_Name=$_SESSION["username"] ;
 		</div>
 	</div>
 
-<?php include 'navigation.php'; ?>
+<?php include './includes/navigation.php'; ?>
 
 	
 	<div class="mobile-menu-overlay"></div>
@@ -74,7 +74,7 @@ $Reg_date = date("Y-m-d", strtotime($Reg_date));
 <nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.php">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">About </li>
+									<li class="breadcrumb-item active" aria-current="page">Client details </li>
 									<li class="breadcrumb-item active" aria-current="page">
 										<?php
 										echo "$ccc_no $Fname $Mname $Lname" ;
@@ -245,7 +245,7 @@ mysqli_close($con);
 				</div>
 
 <!-- END-->
-<?php include 'footer.php'; ?>
+<?php include './includes/footer.php'; ?>
 		
 </div>
 	
