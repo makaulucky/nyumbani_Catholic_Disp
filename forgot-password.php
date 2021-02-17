@@ -102,7 +102,7 @@ require_once('phpmail/PHPMailerAutoload.php');
     // GMAIL username
     $mail->Username = "testtesttest@gmail.com";
     // GMAIL password
-    $mail->Password = "123456789";
+    $mail->Password = "12345678911";
     $mail->SMTPSecure = "ssl";  
     // sets GMAIL as the SMTP server
     $mail->Host = "smtp.gmail.com";
