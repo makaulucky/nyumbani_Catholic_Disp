@@ -100,9 +100,9 @@ require_once('phpmail/PHPMailerAutoload.php');
     // enable SMTP authentication
     $mail->SMTPAuth = true;                  
     // GMAIL username
-    $mail->Username = "makaulucky5@gmail.com";
+    $mail->Username = "testtesttest@gmail.com";
     // GMAIL password
-    $mail->Password = "Lmakau@5!";
+    $mail->Password = "123456789";
     $mail->SMTPSecure = "ssl";  
     // sets GMAIL as the SMTP server
     $mail->Host = "smtp.gmail.com";
