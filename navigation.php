@@ -186,21 +186,31 @@
 						<ul class="submenu">
 						<li><a href="client_namelist.php">Edit Results</a></li>
 						<li><a href="ccctable.php">CCC Results</a></li>
-						
-
-						</ul>
+					</ul>
 					</li>
 					<li class="#dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon fi-archive"></span><span class="mtext">Archives</span>
+							<span class="micon dw dw-analytics-4 "></span><span class="mtext">Reports</span>
 						</a>
-						<ul class="submenu">
-						<li><a href="labresults.php" >Client History</a></li>
-
+						<ul class="submenu">				
+							<li><a href="javascript:;">Age Group Report</a></li>
+							<li><a href="javascript:;">Regimen Report</a></li>
+							<li class="dropdown">
+								<a href="javascript:;" class="dropdown-toggle">
+									<span class="micon fi-archive"></span><span class="mtext">Archives</span>
+								</a>
+								<ul class="submenu child">
+									<li><a href="labresults.php">Client's all history</a></li>
+									
+								</ul>
+							</li>
+						
 						</ul>
 					</li>
+					
 						
 				</li>
+				
 				</ul>
 			</div>
 		</div>
