@@ -160,25 +160,25 @@ echo $size;
 			</div>
 			
 			<!--div class="row">
-				<div class="col-xl-8 mb-30">
+				<!--div-- class="col-xl-8 mb-30">
 					<div class="card-box height-100-p pd-20">
 						<h2 class="h4 mb-20">Activity</h2>
 						<div id="chart5"></div>
 					</div>
-				</div>
-				<!--div class="col-xl-4 mb-30">
+				</!--div>
+				<div class="col-xl-4 mb-30">
 					<div class="card-box height-100-p pd-20">
-						<h2 class="h4 mb-20">Set Target</h2>
+						<h2 class="h4 mb-20">Set Target Suppression</h2>
 						<div id="chart6"></div>
 					</div>
-				</div>-->
-			</!--div>
+				</div>
+			</div-->
 					<!-- Simple Datatable start -->
 	
 				<!-- Export Datatable start -->
 				<div class="card-box mb-30">
 					<div class="pd-20">
-						<h4 class="text-blue h4">Invalid Viral Load</h4>
+						<h4 class="text-blue h4">Invalid Viral Load List</h4>
 					</div>
 					<div class="pb-20">
 	<!--Dashboard data projection ends here-->

@@ -1,6 +1,6 @@
 var options = {
 	// add value here
-	series: [71],
+	series: [69],
 	grid: {
 		padding: {
 			top: 0,
@@ -141,7 +141,7 @@ var options2 = {
 };
 
 var options3 = {
-	series: [89],
+	series: [84],
 	grid: {
 		padding: {
 			top: 0,
@@ -378,7 +378,7 @@ var options5 = {
 }
 
 var options6 = {
-	series: [73],
+	series: [95],
 	chart: {
 	  height: 350,
 	  type: 'radialBar',
