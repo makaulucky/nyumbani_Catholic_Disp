@@ -39,7 +39,7 @@ $User_Name=$_SESSION["username"] ;
 
 	<div class="mobile-menu-overlay"></div>
 
-	
+	<!--Welcome note Dashboard-->
 	<div class="main-container">
 		<div class="pd-ltr-20">
 			<div class="card-box pd-20 height-100-p mb-30">
@@ -57,7 +57,8 @@ $User_Name=$_SESSION["username"] ;
 					</div>
 				</div>
 			</div>
-			
+		<!--Welcome note Dashboard ends here-->	
+			<!--Dashboard data projection starts here-->	
 			<div class="row">
 				<div class="col-xl-3 mb-30">
 					<div class="card-box height-100-p widget-style1">
@@ -179,9 +180,9 @@ echo $size;
 						<h4 class="text-blue h4">Invalid Viral Load</h4>
 					</div>
 					<div class="pb-20">
+	<!--Dashboard data projection ends here-->
 
-
-
+	<!--Invalid data table projection starts here-->
 <?php
 include 'dbconfig.php';
 
@@ -238,6 +239,7 @@ while($row=mysqli_fetch_array($result))
 					echo "	</tbody>
 					</table>";
 ?>
+	<!--Invalid data table projection starts here-->
 			</div>
 		</div>
 				<!-- Export Datatable End -->
