@@ -40,12 +40,12 @@ $User_Name=$_SESSION["username"] ;
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>DataTable</h4>
+								<h4>Results Entry</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.php">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">All Clients</li>
+									<li class="breadcrumb-item active" aria-current="page">Client List</li>
 								</ol>
 							</nav>
 						</div>
@@ -59,7 +59,7 @@ $User_Name=$_SESSION["username"] ;
 				<!-- Export Datatable start -->
 				<div class="card-box mb-30">
 					<div class="pd-20">
-						<h4 class="text-blue h4">Client List</h4>
+						<h4 class="text-blue h4">Name List</h4>
 					</div>
 					<div class="pb-20">
 

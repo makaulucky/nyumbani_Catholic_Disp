@@ -44,12 +44,12 @@ $User_Name=$_SESSION["username"] ;
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Results Table</h4>
+								<h4>Archive</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.php">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Results Table</li>
+									<li class="breadcrumb-item active" aria-current="page">All History</li>
 								</ol>
 							</nav>
 						</div>
@@ -61,7 +61,7 @@ $User_Name=$_SESSION["username"] ;
 				<!-- Simple Datatable start -->
 				<div class="pd-20 card-box mb-30">
 					<div class="clearfix mb-2">
-						<h4 class="text-blue h4">Results Table</h4>
+						<h4 class="text-blue h4">Name List</h4>
 				</div>
 
 
