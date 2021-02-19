@@ -1,5 +1,5 @@
 
-//header start here
+<!--header starts here-->
 	<div class="header">
 		<div class="header-left">
 			<div class="menu-icon dw dw-menu"></div>		
@@ -74,9 +74,9 @@
 		</div>
 	</div>
 
-//header ends here
+<!--Header ends here-->
 
-//Nav starts here
+<!--Nav starts here-->
 	<div class="right-sidebar">
 		<div class="sidebar-title">
 			<h3 class="weight-600 font-16 text-blue">
@@ -151,9 +151,7 @@
 			</div>
 		</div>
 	</div>
-
-	//left Nav starts here
-
+<!--Left starts here-->
 
 	<div class="left-side-bar">
 		<div class="brand-logo">
@@ -193,7 +191,7 @@
 							<span class="micon dw dw-analytics-4 "></span><span class="mtext">Reports</span>
 						</a>
 						<ul class="submenu">				
-							<li><a href="javascript:;">Age Group Report</a></li>
+							<li><a href="javascript:;">ART Report</a></li>
 							<li><a href="javascript:;">Regimen Report</a></li>
 							<li class="dropdown">
 								<a href="javascript:;" class="dropdown-toggle">
@@ -215,7 +213,7 @@
 			</div>
 		</div>
 	</div>
-	//left Nav Ends here
+	<!--Left Nav end here-->
 
 	<script>
 var d = new Date();
