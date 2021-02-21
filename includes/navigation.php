@@ -191,7 +191,7 @@
 							<span class="micon dw dw-analytics-4 "></span><span class="mtext">Reports</span>
 						</a>
 						<ul class="submenu">				
-							<li><a href="javascript:;">ART Report</a></li>
+							<li><a href="reports.php">ART Report</a></li>
 							<li><a href="javascript:;">Regimen Report</a></li>
 							<li class="dropdown">
 								<a href="javascript:;" class="dropdown-toggle">
