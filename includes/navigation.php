@@ -157,7 +157,7 @@
 		<div class="brand-logo">
 			<a href="index.php">
 				<img src="vendors/images/deskapp-logo.gif" alt="" class="dark-logo">
-				<img src="vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
+				<img src="vendors/images/deskapp-logo-white.gif" alt="" class="light-logo">
 			</a>
 			<div class="close-sidebar" data-toggle="left-sidebar-close">
 				<i class="ion-close-round"></i>
