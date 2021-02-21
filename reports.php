@@ -44,12 +44,12 @@ $User_Name=$_SESSION["username"] ;
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Results Table</h4>
+								<h4>TX CURR REPORT</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.php">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Results Table</li>
+									<li class="breadcrumb-item active" aria-current="page">TX Curr Report</li>
 								</ol>
 							</nav>
 						</div>
@@ -75,65 +75,53 @@ $total= mysqli_real_escape_string($con, $row['total']);
 }
 ?>   
 
+<!--Report Table starts here-->
 
-
-
-<?php
+<?php 
 include 'dbconfig.php';
-
 
 $query = "select * FROM summary_report";
 $result = mysqli_query($con,$query); 
 
-echo "	<table id=\"editableTable\" class=\"table hover multiple-select-row data-table-export nowrap\">
-							 <thead>
-								 <tr>
-									 <th class=\"table-plus datatable-nosort\">Age Group</th>
-									 <th>Male</th>
-									 <th>Female</th>
-									 <th>total</th>					 
-								 </tr>
-							 </thead>
-							 <tbody>";
+echo "<div class=\"table-responsive\">
+	<table class=\"table table-striped\">
+	  <thead>
+	    <tr>
+	      <th scope=\"col\">Age Group</th>
+		  <th scope=\"col\">Male</th>
+		  <th scope=\"col\">Female</th>
+		  <th scope=\"col\">Total</th>
+	    </tr>
+	  </thead>
+	  <tbody>";
 while($row=mysqli_fetch_array($result))
                             {          
                                 $Age_Group=$row['Age_Group']; 
 								$Male=$row['Male']; 
 								$Female=$row['Female']; 
-								$Lname=$row['total']; 
-								
-								
+								$total=$row['total']; 
 
-							echo "         
-								<tr>
-									<td class=\"table-plus\">$Age_Group</td>
-									<td>$Male</td>
-									<td>$Female</td>
-									<td>$total</td>
-									
-								</tr>";
-					}
-					echo "	</tbody>
-					</table>";
-?>
+	     echo "<tr>
+	      <th scope=\"row\">$Age_Group</th>
+		  <th scope=\"row\">$Male</th>
+		  <th scope=\"row\">$Female</th>
+		  <th scope=\"row\">$total</th>
+	      </tr>";
+		}
 
-
-
-
-
-
+	 echo "</tbody>
+	</table>"
+	?>
+</div>
+						
+<!--Report Table ends here-->
 				
 			</div>
 			<?php include './includes/footer.php'; ?>
 		</div>
 	</div>
 
-
-				<!-- Simple Datatable End -->
-				<!-- multiple select row Datatable start -->
-				<!-- Export Datatable start -->
-				<!-- Export Datatable End -->
-			
+	
 	<!-- js -->
 	<script src="vendors/scripts/core.js"></script>
 	<script src="vendors/scripts/script.min.js"></script>
@@ -143,14 +131,6 @@ while($row=mysqli_fetch_array($result))
 	<script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
 	<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
 	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
-	<!-- buttons for Export datatable -->
-	<script src="src/plugins/datatables/js/dataTables.buttons.min.js"></script>
-	<script src="src/plugins/datatables/js/buttons.bootstrap4.min.js"></script>
-	<script src="src/plugins/datatables/js/buttons.print.min.js"></script>
-	<script src="src/plugins/datatables/js/buttons.html5.min.js"></script>
-	<script src="src/plugins/datatables/js/buttons.flash.min.js"></script>
-	<script src="src/plugins/datatables/js/pdfmake.min.js"></script>
-	<script src="src/plugins/datatables/js/vfs_fonts.js"></script>
 	<!-- Datatable Setting js -->
 	<script src="vendors/scripts/datatable-setting.js"></script></body>
 </html>
