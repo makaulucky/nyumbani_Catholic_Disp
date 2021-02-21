@@ -224,7 +224,7 @@ while($row=mysqli_fetch_array($result))
 							echo "         
 								<tr>
 									<td class=\"table-plus\">$ccc_no</td>
-									<td><a href=clientprofile.php?ccc_count=$ccc_no>
+									<td><a href=#php?ccc_count=$ccc_no>
 
 									$Fname $Mname $Lname  </a></td>
 									<td>$years</td>
