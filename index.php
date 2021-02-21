@@ -10,8 +10,6 @@ ob_start();
 
 $User_Name=$_SESSION["username"] ;    
 
-
-
 ?>
 <!DOCTYPE html>
 <html>
