@@ -44,12 +44,12 @@ $User_Name=$_SESSION["username"] ;
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>TX CURR REPORT</h4>
+								<h4>ART REPORT</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.php">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">TX Curr Report</li>
+									<li class="breadcrumb-item active" aria-current="page">Report</li>
 								</ol>
 							</nav>
 						</div>
@@ -58,6 +58,18 @@ $User_Name=$_SESSION["username"] ;
 						</div>
 					</div>
 				</div>
+
+				<div class="pd-20 card-box mb-30">
+					<div class="clearfix mb-20">
+						<div class="pull-left">
+							<h4 class="text-blue h4">TX Curr Report</h4>
+							<p>A projection on clients under care in each age group.</p>
+						</div>
+						<div class="pull-right">
+							<a href="#download" class="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i class=""></i> Download</a>
+						</div>
+					</div>
+
 
 
 <?php
