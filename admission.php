@@ -123,7 +123,7 @@ mysqli_close($con);
  
   ?>
 
-						<form method="post" class="tab-wizard wizard-circle wizard">
+						<form method="post" class=" wizard-circle wizard">
 							<h5></h5>
 							<section>
 								<div class="row">
