@@ -318,7 +318,7 @@ var options5 = {
 		data: [30, 20, 37, 10, 28, 11]
 	}],
 	xaxis: {
-		categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+		categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
 		labels: {
 			style: {
 				colors: ['#353535'],
