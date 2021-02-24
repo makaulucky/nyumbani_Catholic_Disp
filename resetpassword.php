@@ -34,7 +34,7 @@ session_start();
 				<div class="col-md-6">
 					<div class="login-box bg-white box-shadow border-radius-10">
 						<div class="login-title">
-							<h2 class="text-center text-primary">Reset Password</h2>
+							<h2 class="text-center text-primary">Reset Password.</h2>
 						</div>
 						<h6 class="mb-20">Enter your new Password</h6>		
 							<form method="POST" action="" name="reset">

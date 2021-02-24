@@ -10,8 +10,6 @@ ob_start();
 
 $User_Name=$_SESSION["username"] ;    
 
-
-
 ?>
 
 
@@ -64,9 +62,6 @@ $User_Name=$_SESSION["username"] ;
 						<h4 class="text-blue h4">Name List</h4>
 				</div>
 
-
-
-
 <?php
 					include 'dbconfig.php';
                           
@@ -95,9 +90,7 @@ $User_Name=$_SESSION["username"] ;
 							 </thead>
 							 <tbody>";
 
-
-
-                            while($row=mysqli_fetch_array($result))
+							 while($row=mysqli_fetch_array($result))
                             {  
                                
                                 $ccc_count=$row['ccc_count']; 

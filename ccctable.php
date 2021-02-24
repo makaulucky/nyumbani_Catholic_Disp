@@ -11,8 +11,6 @@ ob_start();
 
 $User_Name=$_SESSION["username"] ;    
 
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -65,7 +63,6 @@ $User_Name=$_SESSION["username"] ;
 						<h4 class="text-blue h4">Name List</h4>
 					</div>
 					<div class="pb-20">
-
 
 
 <?php
