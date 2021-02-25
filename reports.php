@@ -100,8 +100,8 @@ echo "<div class=\"table-responsive\">
 	  <thead>
 	    <tr>
 	      <th scope=\"col\">Age Group</th>
-		  <th scope=\"col\">Male</th>
 		  <th scope=\"col\">Female</th>
+		  <th scope=\"col\">Male</th>
 		  <th scope=\"col\">Total</th>
 	    </tr>
 	  </thead>
@@ -109,14 +109,14 @@ echo "<div class=\"table-responsive\">
 while($row=mysqli_fetch_array($result))
                             {          
                                 $Age_Group=$row['Age_Group']; 
-								$Male=$row['Male']; 
 								$Female=$row['Female']; 
+								$Male=$row['Male']; 
 								$total=$row['total']; 
 
 	     echo "<tr>
 	      <th scope=\"row\">$Age_Group</th>
-		  <th scope=\"row\">$Male</th>
 		  <th scope=\"row\">$Female</th>
+		  <th scope=\"row\">$Male</th>
 		  <th scope=\"row\">$total</th>
 	      </tr>";
 		}
