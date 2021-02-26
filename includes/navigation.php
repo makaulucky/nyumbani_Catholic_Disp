@@ -192,6 +192,7 @@
 						</a>
 						<ul class="submenu">				
 							<li><a href="reports.php">ART Report</a></li>
+							<li><a href="latest_results.php">Latest VL</a></li>
 							<li><a href="javascript:;">Regimen Report</a></li>
 							<li class="dropdown">
 								<a href="javascript:;" class="dropdown-toggle">
