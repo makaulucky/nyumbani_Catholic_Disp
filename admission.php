@@ -88,11 +88,11 @@ $Reg_date = date("Y-m-d", strtotime($Reg_date));
 
  $sql = "INSERT INTO admission 
 (
-    Fname,Mname,Lname,Phone_no,Gender,Dob,art_start_date,Reg_date,Residence,Id_no
+    Fname,Mname,Lname,Phone_no,Gender,Dob,art_start_date,initial_regimen,iniation_line,Reg_date,Residence,Id_no
   ) 
 
 VALUES (
- '$Fname', '$Mname', '$Lname', '$Phone_no','$Gender','$Dob','$art_start_date','$Reg_date','$Residence','$Id_no'
+ '$Fname', '$Mname', '$Lname', '$Phone_no','$Gender','$Dob','$art_start_date','$initial_regimen','$iniation_line','$Reg_date','$Residence','$Id_no'
  
 )";
 
@@ -195,10 +195,42 @@ mysqli_close($con);
 
 								<div class="col-md-6">
 								<div class="form-group">
-											<label>Initial Art Start Date::</label>
+											<label>Initial Art Start Date:</label>
 											<input required name='art_start_date' type="date" placeholder="Optional" class="form-control">
 										</div>
 									</div>
+
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Initial Art Regimen:</label>
+											<select name='initial_regimen' class="custom-select form-control" required>
+												<option value="">Select Option</option>
+										<option value="ABC/3TC/LPVR">ABC/3TC/LPVR</option>
+                                        <option value="ABC/3TC/DTG">ABC/3TC/DTG</option>
+										<option value="TDF/3TC/DTG">TDF/3TC/DTG</option>
+										<option value="TDF/3TC/EFV">TDF/3TC/EFV</option>
+										<option value="TDF/3TC/KALETRA">TDF/3TC/KALETRA</option>
+										<option value="ABC/3TC/KALETRA">ABC/3TC/KALETRA</option>
+										<option value="NVP+CTX">NVP+CTX</option>
+										</select>
+										</div>
+									</div>
+
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Initial Art Line:</label>
+											<select name='iniation_line' class="custom-select form-control" required>
+												<option value="">Select Option</option>
+												<option value="First Line">First Line</option>
+												<option value="Second Line">Second Line</option>
+												<option value="Third Line">Third Line</option>
+												<option value="Exposed">Exposed</option>
+										</select>
+										</div>
+									</div>
+
 										<div class="form-group">
 											<label>ID Number:</label>
 											<input name='Id_no' type="NUMBER" placeholder="Optional" class="form-control">
