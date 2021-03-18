@@ -270,9 +270,9 @@ $curr_vl_dateFromPre = date("d-M-Y", strtotime($curr_vl_dateFromPre));
 											<label>Line:</label>
 											<select name='mstari' class="custom-select form-control" required>
 											<option value="<?php echo "$mstari";?>"><?php echo "$mstari";?></option>
-												<option value="1">1</option>
-												<option value="2">2</option>
-												<option value="3">3</option>
+												<option value="1">First Line</option>
+												<option value="2">Second Line</option>
+												<option value="3">Third Line</option>
 												<option value="Exposed">Exposed</option>
 										</select>
 										</div>
