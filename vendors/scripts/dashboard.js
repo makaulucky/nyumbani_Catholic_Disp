@@ -1,6 +1,6 @@
 var options = {
 	// add value here
-	series: [69],
+	series: ['__'],
 	grid: {
 		padding: {
 			top: 0,
