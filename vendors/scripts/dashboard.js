@@ -71,7 +71,7 @@ var options = {
 
 var options2 = {
 	// add second value here
-	series: [10],
+	series: ['__'],
 	grid: {
 		padding: {
 			top: 0,
@@ -141,7 +141,7 @@ var options2 = {
 };
 
 var options3 = {
-	series: [84],
+	series: ['__'],
 	grid: {
 		padding: {
 			top: 0,
@@ -211,7 +211,7 @@ var options3 = {
 };
 
 var options4 = {
-	series: [1],
+	series: ['__'],
 	grid: {
 		padding: {
 			top: 0,
