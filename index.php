@@ -121,7 +121,7 @@ echo $size;
 								<?php 
 
 include 'dbconfig.php';
-$result2 = mysqli_query($con,"SELECT count(distinct(ccc_no)) as count FROM detailed_results WHERE Curr_VL_duration >=181 order by curr_vl_date desc ");
+$result2 = mysqli_query($con,"SELECT count(distinct(ccc_no)) as count FROM detailed_results WHERE Curr_VL_duration >=200 order by curr_vl_date desc ");
 $row = mysqli_fetch_assoc($result2);
 $size = $row['count'];
 
