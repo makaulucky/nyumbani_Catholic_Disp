@@ -59,11 +59,15 @@ $User_Name=$_SESSION["username"] ;
 				<!-- Export Datatable start -->
 				<div class="card-box mb-30">
 					<div class="pd-20">
+					<div class="btn-list text-right">
+								<button onclick="location.href='./admission.php';" type="button" class="btn btn-primary">New Registration</button>
+							</div>
 						<h4 class="text-blue h4">Registration List</h4>
 					</div>
 					<div class="pb-20">
 
 
+					
 
 <?php
 include 'dbconfig.php';
