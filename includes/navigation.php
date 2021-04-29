@@ -166,17 +166,30 @@
 		<div class="menu-block customscroll">
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-hospital"></span><span class="mtext">Clinic</span>
+					<li class="#dropdown">
+						<a href="index.php" class="dropdown-toggle">
+							<span class="micon dw dw-hospital">
+							</span><span class="mtext">
+							Clinic
+							</span>
 							<i class="" aria-hidden="true"></i>
 						</a>
-						<ul class="submenu">
-							<li><a href="index.php">Home</a></li>
-							<li ><a href="admission.php">Admissions</a></li>
-							<li><a href="ccclist.php">Registration List</a></li>
-						</ul>
 					</li>
+					<li class="#dropdown">
+						
+						<a href="ccclist.php" class="dropdown-toggle">
+						<span class="micon fa fa-address-card">
+						</span><span class="mtext">
+						Registration List
+						</span>
+						<i class="" aria-hidden="true"></i>
+						</a>
+					</li>
+
+
+
+
+
 					<li class="#dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
 							<span class="micon fi-page-edit"></span><span class="mtext">Forms</span>
