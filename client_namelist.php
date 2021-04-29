@@ -8,7 +8,7 @@ ob_start();
       header("location: login.php");
    }
 
-$User_Name=$_SESSION["username"] ;    
+$User_Name=$_SESSION["username"] ;
 
 ?>
 <!DOCTYPE html>
@@ -49,8 +49,12 @@ $User_Name=$_SESSION["username"] ;
 								</ol>
 							</nav>
 						</div>
-						<div class="col-md-6 col-sm-12 text-right">
+
+						<div class="col-md-6 col-sm-12 mb-30">
 							
+						
+						<div class="col-md-6 col-sm-12 text-right">
+						
 						</div>
 					</div>
 				</div>
@@ -60,15 +64,16 @@ $User_Name=$_SESSION["username"] ;
 				<div class="card-box mb-30">
 					<div class="pd-20">
 						<h4 class="text-blue h4">Name List</h4>
+
 					</div>
 					<div class="pb-20">
-
+					<div class="btn-list text-right">
+								<button type="button" class="btn btn-primary">Enroll</button>
+							</div>
 
 
 <?php
 include 'dbconfig.php';
-
-
 $query = "select * FROM admission";
 $result = mysqli_query($con,$query); 
 
