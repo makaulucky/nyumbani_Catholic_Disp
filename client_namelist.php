@@ -67,10 +67,7 @@ $User_Name=$_SESSION["username"] ;
 
 					</div>
 					<div class="pb-20">
-					<div class="btn-list text-right">
-								<button type="button" class="btn btn-primary">Enroll</button>
-							</div>
-
+					
 
 <?php
 include 'dbconfig.php';
