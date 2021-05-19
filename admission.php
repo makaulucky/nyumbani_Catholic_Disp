@@ -11,15 +11,11 @@ ob_start();
 
 $User_Name=$_SESSION["username"] ;    
 
-
-
 ?>
 <!DOCTYPE html>
 <html>
 
 <?php include './includes/head.php'; ?>
-
-
 
 <body>
 	<div class="pre-loader">
@@ -73,10 +69,12 @@ $Mname= mysqli_real_escape_string($con, $_POST['Mname']);
 $Lname= mysqli_real_escape_string($con, $_POST['Lname']);  
 $Phone_no= mysqli_real_escape_string($con, $_POST['Phone_no']);   
 $Gender= mysqli_real_escape_string($con, $_POST['Gender']);
+$Residence= mysqli_real_escape_string($con, $_POST['Residence']);
 $Dob= $_POST['Dob'];
 $art_start_date= $_POST['art_start_date'];
+$initial_regimen= mysqli_real_escape_string($con, $_POST['initial_regimen']);
+$iniation_line= mysqli_real_escape_string($con, $_POST['iniation_line']);
 $Reg_date= $_POST['Reg_date'];
-$Residence= mysqli_real_escape_string($con, $_POST['Residence']);
 $Id_no= mysqli_real_escape_string($con, $_POST['Id_no']);
 
 
@@ -86,7 +84,7 @@ $Dob = date("Y-m-d", strtotime($Dob));
 $Reg_date = date("Y-m-d", strtotime($Reg_date));
 
 
- $sql = "INSERT INTO admission 
+$sql = "INSERT INTO admission 
 (
     Fname,Mname,Lname,Phone_no,Gender,Dob,art_start_date,initial_regimen,iniation_line,Reg_date,Residence,Id_no
   ) 
@@ -150,7 +148,7 @@ mysqli_close($con);
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Phone Number *:</label>
-											<input required name="Phone_no"type="NUMBER"  placeholder="07XX XXXXXXXX" class="form-control">
+											<input name="Phone_no"type="NUMBER"  placeholder="07XX XXXXXXXX" class="form-control">
 										</div>
 									</div>
 								</div>
