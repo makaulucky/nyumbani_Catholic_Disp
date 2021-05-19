@@ -73,24 +73,20 @@ $Residence= mysqli_real_escape_string($con, $_POST['Residence']);
 $Dob= $_POST['Dob'];
 $art_start_date= $_POST['art_start_date'];
 $initial_regimen= mysqli_real_escape_string($con, $_POST['initial_regimen']);
-$iniation_line= mysqli_real_escape_string($con, $_POST['iniation_line']);
+$initiation_line= mysqli_real_escape_string($con, $_POST['initiation_line']);
 $Reg_date= $_POST['Reg_date'];
 $Id_no= mysqli_real_escape_string($con, $_POST['Id_no']);
-
-
-
-
 $Dob = date("Y-m-d", strtotime($Dob));
 $Reg_date = date("Y-m-d", strtotime($Reg_date));
 
 
-$sql = "INSERT INTO admission 
+ $sql = "INSERT INTO admission 
 (
-    Fname,Mname,Lname,Phone_no,Gender,Dob,art_start_date,initial_regimen,iniation_line,Reg_date,Residence,Id_no
+    Fname,Mname,Lname,Phone_no,Gender,Dob,art_start_date,initial_regimen,initiation_line,Reg_date,Residence,Id_no
   ) 
 
 VALUES (
- '$Fname', '$Mname', '$Lname', '$Phone_no','$Gender','$Dob','$art_start_date','$initial_regimen','$iniation_line','$Reg_date','$Residence','$Id_no'
+ '$Fname', '$Mname', '$Lname', '$Phone_no','$Gender','$Dob','$art_start_date','$initial_regimen','$initiation_line','$Reg_date','$Residence','$Id_no'
  
 )";
 
@@ -219,7 +215,7 @@ mysqli_close($con);
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Initial Art Line:</label>
-											<select name='iniation_line' class="custom-select form-control" required>
+											<select name='initiation_line' class="custom-select form-control" required>
 												<option value="">Select Option</option>
 												<option value="First Line">First Line</option>
 												<option value="Second Line">Second Line</option>
