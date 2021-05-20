@@ -140,8 +140,8 @@ if(mysqli_query($con, $sql)){
 echo   "<div class='alert alert-success'>";
                       echo  "<button class='close' data-dismiss='alert'>&times;</button>";
 					  echo "<h5><b>Results Updated Successfully!</h5>";
-					  
-                      echo   '</div>';        
+                      echo   '</div>';   
+					  header('Refresh:5; url=client_namelist.php');      
         } else
         {
 

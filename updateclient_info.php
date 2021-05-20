@@ -32,7 +32,7 @@ $User_Name=$_SESSION["username"] ;
 
 <?php include './includes/navigation.php'; ?>
 
-	
+	 
 	<div class="mobile-menu-overlay"></div>
 
 	<div class="main-container">
@@ -51,7 +51,7 @@ $query = "select * FROM admission WHERE ccc_no='$ccc_no'";
 $result = mysqli_query($con,$query);
 while($row=mysqli_fetch_array($result))
                             
-{  
+{ 
 $Fname=  mysqli_real_escape_string($con, $row['Fname']);                          
 $Mname= mysqli_real_escape_string($con,  $row['Mname']); 
 $Lname= mysqli_real_escape_string($con, $row['Lname']);  
@@ -118,7 +118,8 @@ if(mysqli_query($con, $sql)){
 echo   "<div class='alert alert-success'>";
                       echo  "<button class='close' data-dismiss='alert'>&times;</button>";
                       echo "<h5><b>Client Information Updated Successfully!</h5>";
-                      echo   '</div>';    
+                      echo   '</div>';  
+					  header('Refresh:8; url=client_namelist.php');   
 
     
         } else

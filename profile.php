@@ -163,7 +163,8 @@ if(mysqli_query($con, $sql)){
 echo   "<div class='alert alert-success'>";
                       echo  "<button class='close' data-dismiss='alert'>&times;</button>";
                       echo "<h5><b>Profile Updated Successfully!</h5>";
-                      echo   '</div>';    
+                      echo   '</div>';
+					  header('Refresh:0; url=profile.php');     
 
     
         } else
