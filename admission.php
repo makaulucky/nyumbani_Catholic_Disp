@@ -97,7 +97,7 @@ echo   "<div class='alert alert-success'>";
                       echo  "<button class='close' data-dismiss='alert'>&times;</button>";
                       echo "<h5><b>Client Registered Successfully!</h5>";
                       echo   '</div>'; 
-					  header("Refresh:0");  
+					  header('location:ccclist.php');   
 
     
         }
