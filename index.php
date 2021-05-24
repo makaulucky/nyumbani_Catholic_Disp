@@ -7,8 +7,7 @@ ob_start();
       header("location: login.php");
    }
 
-
-$User_Name=$_SESSION["username"] ;    
+   $User_Name=$_SESSION["username"] ;    
 
 ?>
 <!DOCTYPE html>
@@ -95,7 +94,8 @@ echo $size;
 <?php 
 
 include 'dbconfig.php';
-$result2 = mysqli_query($con,"SELECT count(distinct(ccc_no)) as count FROM detailed_results WHERE Curr_VL_duration <=365 order by curr_vl_date desc ");
+$result2 = mysqli_query($con,"SELECT count(distinct(ccc_no)) as count FROM detailed_results 
+WHERE `viral_load` <=1000 order by `curr_vl_date` desc ");
 $row = mysqli_fetch_assoc($result2);
 $size = $row['count'];
 
@@ -103,7 +103,7 @@ echo $size;
 ?>
 							
 								</div>
-								<div class="weight-600 font-14">With Valid VL Results</div>
+								<div class="weight-600 font-14">Suppressed</div>
 							</div>
 						</div>
 					</div>
@@ -121,14 +121,15 @@ echo $size;
 								<?php 
 
 include 'dbconfig.php';
-$result2 = mysqli_query($con,"SELECT count(distinct(ccc_no)) as count FROM detailed_results WHERE Curr_VL_duration >=366 order by curr_vl_date desc ");
+$result2 = mysqli_query($con,"SELECT count(distinct(ccc_no)) as count FROM detailed_results 
+WHERE `viral_load` >=999 order by `curr_vl_date` desc ");
 $row = mysqli_fetch_assoc($result2);
 $size = $row['count'];
 
 echo $size;
 ?>
 
-								<div class="weight-600 font-14">With Invalid VL Results</div>
+								<div class="weight-600 font-14">Not Suppressed</div>
 							</div>
 						</div>
 					</div>
@@ -145,9 +146,11 @@ echo $size;
 <?php 
 
 include 'dbconfig.php';
-$result2 = mysqli_query($con,"SELECT COUNT(*) FROM results WHERE art_regimen = 'NVP+CTX' ");
+$result2 = mysqli_query($con,"SELECT count(distinct(`ccc_no`)) as count FROM detailed_results 
+WHERE `mstari` ='Exposed' order by `ccc_no` desc");
 $row = mysqli_fetch_assoc($result2);
-$size = $row['COUNT(*)'];
+$size = $row['count'];
+
 echo $size;
 ?>
 								<div class="weight-600 font-14">Exposed</div>
