@@ -64,10 +64,7 @@ $User_Name=$_SESSION["username"] ;
 							</div>
 						<h4 class="text-blue h4">Registration List</h4>
 					</div>
-					<div class="pb-20">
-
-
-					
+						
 
 <?php
 include 'dbconfig.php';
